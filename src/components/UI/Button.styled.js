@@ -1,5 +1,20 @@
 import styled, { css } from 'styled-components';
 
+const standardHover = css`
+  background: ${({ theme }) => theme.colors.ctaEerieBlack};
+`;
+const altHover = css`
+  background: ${({ theme }) => theme.colors.ctaSecondaryBgClr};
+  border: 1.5px solid ${({ theme }) => theme.colors.ctaSecondaryBgClr};
+`;
+
+const getCtaHoverClr = ({ ctaAltHover }) => {
+  if (ctaAltHover) {
+    return altHover;
+  }
+  return standardHover;
+};
+
 const commonBtnStyling = css`
   letter-spacing: 0.125rem;
   text-align: center;
@@ -19,9 +34,10 @@ export const CtaButton = styled.button`
   border-radius: 0.15rem;
   background: transparent;
   transition: all 400ms ease-in-out;
+  align-self: ${({ alignSelf }) => alignSelf || 'initial'};
   ${commonBtnStyling};
   &:hover {
-    background: ${({ theme }) => theme.colors.ctaEerieBlack};
+    ${getCtaHoverClr};
     color: ${({ theme }) => theme.colors.mainBg};
   }
 `;
