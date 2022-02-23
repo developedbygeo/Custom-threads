@@ -4,14 +4,18 @@ import { flexMixin } from '../shared/mixins';
 const StyledHeader = styled.header`
   width: 100vw;
   height: 10vh;
-  position: sticky;
+  position: relative;
   padding: 2rem;
-  top: 0%;
   ${flexMixin('space-evenly', 'center', 'row')};
+  & > a {
+    flex: 2;
+  }
+  & > div {
+    position: relative;
+  }
 
   & > h1 {
     letter-spacing: 0.15rem;
-    flex: 2;
   }
   & > nav {
     ${flexMixin('space-between', 'flex-end;', 'row')};
@@ -26,10 +30,14 @@ const StyledHeader = styled.header`
     min-width: 5.5rem;
     min-height: 5.5rem;
     font-size: 1.8rem;
+    transition: all 150ms ease-in-out;
     ${flexMixin('center', 'center', 'row')}
+    color: ${({ theme }) => theme.colors.mainText};
+    &:hover {
+      color: ${({ theme }) => theme.colors.activeNav};
+    }
   }
   svg {
-    color: ${({ theme }) => theme.colors.mainText};
     min-width: 2rem;
     min-height: 2rem;
     max-width: 65%;
