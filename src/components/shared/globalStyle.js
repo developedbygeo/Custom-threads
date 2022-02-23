@@ -58,8 +58,8 @@ header{
 
 main{
     position: relative;
-    height: 90vh;
-    width: 90vw;
+    height: 85vh;
+    width: 100vw;
     margin: auto;
     background: ${({ theme }) => theme.colors.mainBg};
 }
