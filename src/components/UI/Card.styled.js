@@ -1,17 +1,26 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { devices } from '../shared/breakpoints';
-import { flexMixin } from '../shared/mixins';
-import { bumpText } from '../shared/animations';
+import { getLayout } from '../shared/utils';
 
-const Card = styled.div`
-  padding: 2rem;
-  border-radius: 1rem;
+export const Card = styled.div`
+  padding: ${({ p }) => p || '2rem'};
   background: ${({ theme, BgClr }) => BgClr || theme.colors.cardBgClr};
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+  margin: ${({ customMargin }) => customMargin || 'initial'};
+  ${getLayout}
 
-  & > .bump {
-    animation: ${bumpText} 400ms ease-out;
+  p {
+    margin-block: 1rem;
   }
 `;
 
-export default Card;
+export const ImageCard = styled.div`
+  width: auto;
+  height: auto;
+  max-width: fit-content;
+  max-height: fit-content;
+  align-self: ${({ alignSelf }) => alignSelf || 'initial'};
+  & > img {
+    max-width: 30rem;
+    height: 100%;
+  }
+`;
