@@ -6,6 +6,7 @@ import theme from './components/shared/themeSettings';
 
 import Header from './components/Header/Header';
 import Landing from './pages/Landing';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </main>
     </ThemeProvider>
