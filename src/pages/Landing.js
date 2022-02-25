@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import modelHero from '../assets/modelHero.webp';
 import jacketHero from '../assets/jacketHero.webp';
 import { ImageCard, Card } from '../components/UI/Card.styled';
@@ -34,7 +36,9 @@ const Landing = () => {
             <p>HOT DEALS</p>
             <h2>SALE UP TO 50%</h2>
           </div>
-          <CtaButton>VIEW NOW</CtaButton>
+          <Link to="/home">
+            <CtaButton>VIEW NOW</CtaButton>
+          </Link>
         </Card>
       </StyledHero>
       <StyledHero gridSettings={gridSettings}>
@@ -43,9 +47,9 @@ const Landing = () => {
             <h3>Finishing touches? </h3>
             <p>Accessories have landed!</p>
           </div>
-          <CtaButton ctaAltHover alignSelf="flex-start">
-            SHOP NOW
-          </CtaButton>
+          <Link to="/home">
+            <CtaButton ctaAltHover>SHOP NOW</CtaButton>
+          </Link>
         </Card>
         <ImageCard>
           <img src={jacketHero} alt="fancy hanging bomber jacket" />
