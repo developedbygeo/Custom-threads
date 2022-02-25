@@ -25,6 +25,9 @@ const commonBtnStyling = css`
   min-height: 2rem;
   color: ${({ theme }) => theme.colors.mainText};
   align-self: ${({ alignSelf }) => alignSelf || 'inherit'};
+  &:active {
+    transform: scale(1.025);
+  }
 `;
 
 export const CtaButton = styled.button`
@@ -33,7 +36,7 @@ export const CtaButton = styled.button`
   font-weight: 700;
   border-radius: 0.15rem;
   background: transparent;
-  transition: all 400ms ease-in-out;
+  transition: all 200ms ease-in-out;
   align-self: ${({ alignSelf }) => alignSelf || 'initial'};
   ${commonBtnStyling};
   &:hover {
