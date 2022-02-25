@@ -24,4 +24,7 @@ export const StyledHero = styled.section`
   h2 {
     margin-block: 0.5rem;
   }
+  a {
+    align-self: flex-start;
+  }
 `;
