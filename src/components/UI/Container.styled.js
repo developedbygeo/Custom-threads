@@ -8,10 +8,14 @@ const sectionDefaults = css`
 `;
 
 export const StyledHero = styled.section`
-  ${sectionDefaults}
-  ${getLayout}
+  ${sectionDefaults};
+  ${getLayout};
   background: ${({ bgClr }) => bgClr || 'inherit'};
   max-height: 45vh;
+
+  & > div {
+    max-height: 45vh;
+  }
 
   button {
     margin-block: 2rem;
@@ -24,7 +28,9 @@ export const StyledHero = styled.section`
   h2 {
     margin-block: 0.5rem;
   }
-  a {
-    align-self: flex-start;
-  }
+`;
+
+export const StyledSection = styled.section`
+  ${sectionDefaults};
+  overflow-y: auto;
 `;
