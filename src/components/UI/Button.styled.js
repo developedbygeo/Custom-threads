@@ -25,6 +25,7 @@ const commonBtnStyling = css`
   min-height: 2rem;
   color: ${({ theme }) => theme.colors.mainText};
   align-self: ${({ alignSelf }) => alignSelf || 'inherit'};
+  justify-self: ${({ justifySelf }) => justifySelf || 'initial'};
   &:active {
     transform: scale(1.025);
   }
@@ -37,7 +38,6 @@ export const CtaButton = styled.button`
   border-radius: 0.15rem;
   background: transparent;
   transition: all 200ms ease-in-out;
-  align-self: ${({ alignSelf }) => alignSelf || 'initial'};
   ${commonBtnStyling};
   &:hover {
     ${getCtaHoverClr};
@@ -50,8 +50,8 @@ export const StyledCartButton = styled.button`
 
   & > .total {
     position: absolute;
-    bottom: -1%;
-    right: -1%;
+    top: 60%;
+    right: -30%;
     font-weight: 700;
   }
 `;
