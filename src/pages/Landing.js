@@ -8,7 +8,7 @@ import { CtaButton } from '../components/UI/Button.styled';
 import { getColor } from '../components/shared/utils';
 
 const gridSettings = {
-  cols: 'repeat(2, 1fr)',
+  cols: '0.9fr 1fr',
   rows: '1fr',
 };
 
@@ -19,7 +19,7 @@ const flexPrimary = {
 };
 
 const flexSecondary = {
-  align: 'center',
+  align: 'flex-start',
   justify: 'center',
   dir: 'column',
 };
@@ -51,8 +51,8 @@ const Landing = () => {
             <CtaButton ctaAltHover>SHOP NOW</CtaButton>
           </Link>
         </Card>
-        <ImageCard>
-          <img src={jacketHero} alt="fancy hanging bomber jacket" />
+        <ImageCard justifySelf="flex-end" textAlign="right">
+          <img src={jacketHero} alt="fancy bomber jacket hanging" />
         </ImageCard>
       </StyledHero>
     </>
