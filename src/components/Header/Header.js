@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import Dropdown from './Dropdown.js';
 import StyledHeader from './Header.styled';
@@ -12,25 +12,38 @@ const Header = () => {
 
   const showDropdownHandler = () => setShowDropdown((prevState) => !prevState);
 
-  console.log('header rendered');
-
   return (
     <StyledHeader>
       <>
-        <Link title="Home" to="/">
+        <Link to="/" className="logo">
           <h1>Custom Threads</h1>
         </Link>
       </>
-      <nav>
+      <nav className="mobileNav">
         <button>
           <Person />
         </button>
         <CartButton />
         <div>
-          <button onClick={showDropdownHandler} title="Toggle menu">
+          <button onClick={showDropdownHandler} className="burger" title="Toggle menu">
             <MenuAltRight />
           </button>
           {showDropdown && <Dropdown onActivate={showDropdownHandler} />}
+        </div>
+      </nav>
+      <nav className="desktopNav">
+        <div>
+          <NavLink to="/home">Home</NavLink>
+          <NavLink to="/men">Men</NavLink>
+          <NavLink to="/women">Women</NavLink>
+          <NavLink to="/jewelry">Jewelry</NavLink>
+          <NavLink to="/electronics">Electronics</NavLink>
+        </div>
+        <div className="desktopNavCtrl">
+          <button>
+            <Person />
+          </button>
+          <CartButton />
         </div>
       </nav>
     </StyledHeader>
