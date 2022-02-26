@@ -20,10 +20,10 @@ html{
       font-size: 40%;
     }
     @media ${devices.mobileL}{
-      font-size: 50%;
+      font-size: 45%;
     }
     @media ${devices.tablet}{
-      font-size: 60%;
+      font-size: 55%;
     }
     @media ${devices.laptopL}{
       font-size: 65.5%;
