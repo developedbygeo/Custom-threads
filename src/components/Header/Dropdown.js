@@ -1,20 +1,15 @@
 import { NavLink } from 'react-router-dom';
-import { useEffect } from 'react';
 
 import StyledDropdown from './Dropdown.styled';
 
 const Dropdown = ({ onActivate }) => {
-  useEffect(() => {
-    console.log('fn recreated');
-  }, [onActivate]);
-
   return (
     <StyledDropdown>
       <NavLink
         onClick={onActivate}
         title="Men"
         className={({ isActive }) => (isActive ? 'active' : '')}
-        to="/"
+        to="/home"
       >
         Home
       </NavLink>
