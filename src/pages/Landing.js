@@ -12,13 +12,7 @@ const gridSettings = {
   rows: '1fr',
 };
 
-const flexPrimary = {
-  align: 'flex-start',
-  justify: 'center',
-  dir: 'column',
-};
-
-const flexSecondary = {
+const flexSettings = {
   align: 'flex-start',
   justify: 'center',
   dir: 'column',
@@ -31,7 +25,7 @@ const Landing = () => {
         <ImageCard>
           <img src={modelHero} alt="model posing with clothing" />
         </ImageCard>
-        <Card flexSettings={flexPrimary}>
+        <Card flexSettings={flexSettings}>
           <div>
             <p>HOT DEALS</p>
             <h2>SALE UP TO 50%</h2>
@@ -42,7 +36,7 @@ const Landing = () => {
         </Card>
       </StyledHero>
       <StyledHero gridSettings={gridSettings}>
-        <Card flexSettings={flexSecondary} p="4rem">
+        <Card flexSettings={flexSettings} p="4rem">
           <div>
             <h3>Finishing touches? </h3>
             <p>Accessories have landed!</p>
