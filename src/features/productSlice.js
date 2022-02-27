@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const productSlice = createSlice({
   name: 'products',
-  initialState: { fetched: false, products: null },
+  initialState: { fetched: false, products: [] },
   reducers: {
     addProducts(state, action) {
       state.products = action.payload;
