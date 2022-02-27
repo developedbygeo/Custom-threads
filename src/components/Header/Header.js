@@ -6,6 +6,7 @@ import StyledHeader from './Header.styled';
 import CartButton from './CartButton';
 import { Person } from '@styled-icons/bootstrap/Person';
 import { MenuAltRight } from '@styled-icons/boxicons-regular/MenuAltRight';
+import { Menu } from '@styled-icons/boxicons-regular/Menu';
 
 const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -26,7 +27,7 @@ const Header = () => {
         <CartButton />
         <div>
           <button onClick={showDropdownHandler} className="burger" title="Toggle menu">
-            <MenuAltRight />
+            {showDropdown ? <MenuAltRight /> : <Menu />}
           </button>
           {showDropdown && <Dropdown onActivate={showDropdownHandler} />}
         </div>
