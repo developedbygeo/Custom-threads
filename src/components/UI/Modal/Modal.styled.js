@@ -1,17 +1,12 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { houdini } from '../../shared/animations';
-import { flexMixin } from '../../mixins';
-
-const max = css`
-  width: 100%;
-  height: 100%;
-`;
+import { flexMixin, maxContainer } from '../../mixins';
 
 const backdropStyle = css`
   position: fixed;
   top: 0;
   left: 0;
-  ${max};
+  ${maxContainer()};
   z-index: 20;
   background-color: rgba(0, 0, 0, 0.65);
 `;
