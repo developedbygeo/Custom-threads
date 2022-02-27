@@ -62,6 +62,7 @@ main{
     width: 100vw;
     margin: auto;
     background: ${({ theme }) => theme.colors.mainBg};
+    overflow-y: auto;
 }
 
 h1 {
