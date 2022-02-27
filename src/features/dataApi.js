@@ -19,7 +19,6 @@ export const fetchDataAPI = () => {
       };
       try {
         const dataAPI = await fetchData();
-        console.log('async');
         dispatch(productActions.addProducts(dataAPI));
       } catch (err) {
         uiActions.createNotification({
