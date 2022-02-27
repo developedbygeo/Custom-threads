@@ -1,9 +1,10 @@
 import { css } from 'styled-components';
 
-export const gridMixin = (columns, rows) => css`
+export const gridMixin = (columns, rows, gap) => css`
   display: grid;
   grid-template-columns: ${columns};
   grid-template-rows: ${rows};
+  gap: ${gap};
 `;
 
 export const flexMixin = (justify, align, direction) => css`
