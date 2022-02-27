@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { flexMixin, gridMixin, colorInteract, showActive } from '../shared/mixins';
+import { flexMixin, colorInteract, showActive } from '../shared/mixins';
 import { devices } from '../shared/breakpoints';
 
 const StyledHeader = styled.header`
@@ -8,6 +8,7 @@ const StyledHeader = styled.header`
   height: 10vh;
   position: relative;
   padding: 0 2rem;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.ctaDavysGray};
   ${flexMixin('space-evenly', 'center', 'row')};
   & > a {
     flex: 2;
