@@ -12,6 +12,7 @@ const theme = {
     ctaEerieBlack: '#141414',
     ctaSecondaryBgClr: '#a96248',
     activeNav: '#dd6636',
+    activeNavRGB: '221, 102, 54',
   },
 };
 
