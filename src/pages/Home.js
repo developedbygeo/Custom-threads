@@ -19,7 +19,7 @@ const Home = () => {
 
   const fetchedItems = items.map((item) => {
     return (
-      <ItemCard key={item.id} p="1rem">
+      <ItemCard as="li" key={item.id} p="1rem">
         <div>
           <img src={item.image} alt={item.description} />
         </div>
@@ -41,7 +41,9 @@ const Home = () => {
         <Filter />
         Filter & Sort
       </UtilityButton>
-      <StyledSection gridSettings={gridSettings}>{items ? fetchedItems : loading}</StyledSection>
+      <StyledSection className="products" as="ul" gridSettings={gridSettings}>
+        {items ? fetchedItems : loading}
+      </StyledSection>
     </>
   );
 };
