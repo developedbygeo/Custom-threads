@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { flexMixin, colorInteract } from '../shared/mixins';
+
 const standardHover = css`
   background: ${({ theme }) => theme.colors.ctaEerieBlack};
 `;
@@ -23,6 +25,9 @@ const commonBtnStyling = css`
   max-width: 30rem;
   min-width: 2rem;
   min-height: 2rem;
+  border: none;
+  outline: none;
+  background: none;
   color: ${({ theme }) => theme.colors.mainText};
   align-self: ${({ alignSelf }) => alignSelf || 'inherit'};
   justify-self: ${({ justifySelf }) => justifySelf || 'initial'};
@@ -32,19 +37,19 @@ const commonBtnStyling = css`
 `;
 
 export const CtaButton = styled.button`
+  ${commonBtnStyling};
   border: 1.5px solid ${({ theme }) => theme.colors.footerBg};
   color: ${({ theme }) => theme.colors.mainText};
   font-weight: 700;
   border-radius: 0.15rem;
   background: transparent;
   transition: all 200ms ease-in-out;
-  ${commonBtnStyling};
   &:hover {
     ${getCtaHoverClr};
     color: ${({ theme }) => theme.colors.mainBg};
+    transform: scale(1.1);
   }
 `;
-
 export const StyledCartButton = styled.button`
   position: relative;
 
@@ -58,3 +63,29 @@ export const StyledCartButton = styled.button`
 
 export const SecondaryButton = styled.button``;
 export const TertiaryButton = styled.button``;
+
+export const StyledUtilityBtn = styled.button`
+  ${commonBtnStyling}
+  ${colorInteract()}
+  ${flexMixin('center', 'center', 'row')};
+  gap: 1rem;
+  padding: 0.5rem;
+  max-width: 15rem;
+  min-height: 5rem;
+  min-width: 6rem;
+  & > span {
+    height: 100%;
+    width: auto;
+  }
+  svg {
+    height: 100%;
+    width: auto;
+    max-width: 2rem;
+  }
+  .text {
+    ${flexMixin('center', 'center', 'row')};
+  }
+  .icon {
+    ${flexMixin('center', 'center', 'row')};
+  }
+`;
