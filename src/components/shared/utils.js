@@ -10,6 +10,6 @@ export const getLayout = ({ flexSettings, gridSettings }) => {
     return flexMixin(flexSettings.justify, flexSettings.align, flexSettings.dir);
   }
   if (gridSettings) {
-    return gridMixin(gridSettings.cols, gridSettings.rows);
+    return gridMixin(gridSettings.cols, gridSettings.rows, gridSettings?.gap);
   }
 };
