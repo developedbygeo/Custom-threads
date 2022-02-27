@@ -3,6 +3,19 @@ import { devices } from '../shared/breakpoints';
 import { getLayout } from '../shared/utils';
 import { flexMixin } from '../shared/mixins';
 
+const stickyCardUtility = css`
+  position: sticky;
+  top: 0;
+  background: ${({ theme }) => theme.colors.cardBg};
+  box-shadow: 1px 6px 2px -1px rgba(0, 0, 0, 0.09);
+`;
+
+const isCardUtility = ({ sticky }) => {
+  if (sticky) {
+    return stickyCardUtility;
+  }
+};
+
 const baseCardSettings = css`
   width: ${({ w }) => w || 'initial'};
   height: ${({ h }) => h || 'auto'};
@@ -13,8 +26,11 @@ export const Card = styled.div`
   background: ${({ theme, BgClr }) => BgClr || theme.colors.cardBgClr};
   margin: ${({ customMargin }) => customMargin || 'auto'};
   text-align: ${({ textAlign }) => textAlign || 'initial'};
+  position: ${({ customPosition }) => customPosition || 'static'};
+  top: ${({ top }) => top || 'initial'};
   ${getLayout}
   ${baseCardSettings}
+  ${isCardUtility}
 
   &>div {
     width: ${({ w }) => w || '100%'};
