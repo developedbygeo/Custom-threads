@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
+import { devices } from '../shared/breakpoints';
 import { getLayout } from '../shared/utils';
+import { flexMixin } from '../shared/mixins';
 
 const sectionDefaults = css`
   width: 100vw;
@@ -30,7 +32,45 @@ export const StyledHero = styled.section`
   }
 `;
 
-export const StyledSection = styled.section`
+export const StyledPromo = styled.section`
   ${sectionDefaults};
-  overflow-y: auto;
+  background: ${({ theme }) => theme.colors.promoText};
+  color: ${({ theme }) => theme.colors.mainBg};
+
+  & > article {
+    width: 90%;
+    max-height: 20vh;
+    margin: auto;
+    ${flexMixin('center', 'center', 'row')}
+    /* text container */
+    &>div:nth-child(1) {
+      ${flexMixin('center', 'flex-start', 'column')};
+      gap: 3rem;
+      flex: 2;
+      & > div {
+        ${flexMixin('center', 'flex-start', 'column')};
+        gap: 1.25rem;
+        & > span {
+          font-weight: 500;
+          letter-spacing: 0.1025rem;
+          text-decoration: underline;
+        }
+      }
+    }
+    /* image container */
+    & > div:nth-child(2) {
+      max-height: 20vh;
+    }
+    img {
+      max-width: 25rem;
+      max-height: 20vh;
+    }
+  }
+`;
+
+export const StyledSection = styled.section`
+  ${sectionDefaults}
+  width: 95%;
+  margin: auto;
+  ${getLayout}
 `;
