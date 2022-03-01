@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { flexMixin, colorInteract, showActive } from '../shared/mixins';
-import { devices } from '../shared/breakpoints';
 
 const StyledHeader = styled.header`
   width: 100vw;
