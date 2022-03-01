@@ -13,7 +13,8 @@ const theme = {
     ctaSecondaryBgClr: '#a96248',
     activeNav: '#dd6636',
     activeNavRGB: '221, 102, 54',
-  },
+    filtersRGB: '235, 235, 235'
+  }
 };
 
 export default theme;
