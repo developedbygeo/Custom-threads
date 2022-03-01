@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 import { flexMixin } from '../shared/mixins';
+import { labelStyle } from '../shared/styles/miscStyling';
 
 const StyledFilters = styled.form`
+  position: absolute;
+  z-index: 20;
   padding: 1.25rem;
   margin-top: 3vh;
   gap: 3rem;
-  z-index: 20;
-  position: absolute;
+  padding: 3rem;
+  background: rgba(${({ theme }) => theme.colors.filtersRGB}, 0.9);
+  backdrop-filter: blur(10px);
   ${flexMixin('center', 'flex-start', 'column')};
-  background: ${({ theme }) => theme.colors.mainBg};
   & > h3 {
     font-weight: 500;
   }
@@ -16,6 +19,16 @@ const StyledFilters = styled.form`
     width: 100%;
     position: relative;
     ${flexMixin('space-between', 'center', 'row')}
+  }
+  label {
+    ${labelStyle}
+  }
+  .price > label {
+    font-size: 2rem;
+  }
+  .selected-price {
+    font-size: 2rem;
+    font-weight: 500;
   }
 `;
 
