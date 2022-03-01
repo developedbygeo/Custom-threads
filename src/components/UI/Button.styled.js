@@ -21,7 +21,7 @@ const commonBtnStyling = css`
   letter-spacing: 0.125rem;
   text-align: center;
   max-width: 100%;
-  padding: 1.5rem 2.5rem;
+  padding: ${({ p }) => p || '2rem 4rem'};
   max-width: 30rem;
   min-width: 2rem;
   min-height: 2rem;
@@ -70,11 +70,12 @@ export const StyledUtilityBtn = styled.button`
   ${flexMixin('center', 'center', 'row')};
   gap: 1rem;
   padding: 0.5rem;
-  max-width: 15rem;
+  max-width: 20rem;
   min-height: 5rem;
-  min-width: 6rem;
+  min-width: 7rem;
   & > span {
     height: 100%;
+    font-weight: 500;
     width: auto;
   }
   svg {
