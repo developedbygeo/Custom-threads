@@ -13,7 +13,7 @@ export const StyledHero = styled.section`
   ${sectionDefaults};
   ${getLayout};
   background: ${({ bgClr }) => bgClr || 'inherit'};
-  max-height: 45vh;
+  max-height: ${({ mHeight }) => mHeight || '45vh'};
 
   & > div {
     max-height: 45vh;
@@ -34,16 +34,16 @@ export const StyledHero = styled.section`
 
 export const StyledPromo = styled.section`
   ${sectionDefaults};
-  background: ${({ theme }) => theme.colors.promoText};
-  color: ${({ theme }) => theme.colors.mainBg};
+  background: ${({ customBg, theme }) => customBg || theme.colors.promoText};
+  color: ${({ customClr, theme }) => customClr || theme.colors.mainBg};
 
   & > article {
     width: 90%;
     max-height: 20vh;
     margin: auto;
     ${flexMixin('center', 'center', 'row')}
-    /* text container */
-    &>div:nth-child(1) {
+
+    &>.text-wrapper {
       ${flexMixin('center', 'flex-start', 'column')};
       gap: 3rem;
       flex: 2;
@@ -57,13 +57,38 @@ export const StyledPromo = styled.section`
         }
       }
     }
-    /* image container */
-    & > div:nth-child(2) {
+
+    & > .img-cont {
       max-height: 20vh;
     }
     img {
       max-width: 25rem;
       max-height: 20vh;
+    }
+  }
+  /* dual image setup */
+  .dualImageBanner {
+    position: relative;
+    justify-content: space-between;
+    @media ${devices.tablet} {
+      justify-content: space-between;
+    }
+    & > .img-cont,
+    .img-cont2 {
+      max-height: 20vh;
+    }
+    img {
+      max-width: 50vw;
+    }
+    .text-wrapper {
+      padding: 1.5rem;
+      text-align: center;
+      align-items: center;
+      gap: 1rem;
+      p {
+        font-weight: 400;
+        letter-spacing: 0.125rem;
+      }
     }
   }
 `;
