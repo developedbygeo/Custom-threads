@@ -10,6 +10,7 @@ import theme from './components/shared/themeSettings';
 import Header from './components/Header/Header';
 import Landing from './pages/Landing';
 import Home from './pages/Home';
+import Men from './pages/Men';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/men" element={<Men />} />
         </Routes>
       </main>
     </ThemeProvider>
