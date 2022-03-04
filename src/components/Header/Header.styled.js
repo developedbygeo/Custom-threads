@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { flexMixin, colorInteract, showActive } from '../shared/mixins';
+import { flexMixin, colorInteract, showActive, underlineEffect } from '../shared/mixins';
 
 const StyledHeader = styled.header`
   width: 100vw;
@@ -37,10 +37,15 @@ const StyledHeader = styled.header`
   }
   button,
   a:not(.logo) {
-    ${colorInteract()}
+    ${colorInteract}
+  }
+  a:not(.logo) {
+    font-weight: 500;
+    padding: 1rem 2rem;
+    ${underlineEffect}
   }
   .active {
-    ${showActive()}
+    ${showActive}
   }
   svg,
   span {
