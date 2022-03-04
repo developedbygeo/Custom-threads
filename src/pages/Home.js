@@ -1,17 +1,25 @@
 import { useSelector } from 'react-redux';
 
-import MemberPromo from '../components/Extra/MemberPromo';
+import Banner from '../components/UI/Banner';
 import { StyledSection } from '../components/UI/Container.styled';
 import { CtaButton } from '../components/UI/Button.styled';
 import { ItemCard, DescriptionCard } from '../components/UI/Card.styled';
 import { UtilityButton } from '../components/Extra/Controls';
 import { Filter } from '@styled-icons/fa-solid/Filter';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
+import promoImage from '../assets/home.png';
 
 const gridSettings = {
   cols: '1fr',
   rows: 'auto',
   gap: '3rem',
+};
+
+const memberPromoContent = {
+  header: 'Member Exclusive',
+  subheader1: '15% off everything + extra $10 off for the first order.',
+  subheader2: 'Not a member? Join now!',
+  imgURL: promoImage,
 };
 
 const Home = () => {
@@ -36,7 +44,7 @@ const Home = () => {
 
   return (
     <>
-      <MemberPromo />
+      <Banner content={memberPromoContent} alt="models posing" />
       <UtilityButton>
         <Filter />
         Filter & Sort
