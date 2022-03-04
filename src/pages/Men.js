@@ -1,3 +1,5 @@
+import useRetrieve from '../hooks/useRetrieve';
+
 import Banner from '../components/UI/Banner';
 import maleModel1 from '../assets/male-model-1.webp';
 import maleModel2 from '../assets/male-model-2.webp';
@@ -10,9 +12,12 @@ const menContent = {
 };
 
 const Men = () => {
+  const { status, ItemsComponent, LoadingSpinner } = useRetrieve("men's clothing");
+
   return (
     <>
       <Banner content={menContent} customBg="#e2d9d6" customClr="#141414" customClass="dualImageBanner" />
+      {status ? <ItemsComponent /> : <LoadingSpinner />}
     </>
   );
 };
