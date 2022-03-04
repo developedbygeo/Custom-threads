@@ -41,12 +41,13 @@ export const StyledPromo = styled.section`
     width: 90%;
     max-height: 20vh;
     margin: auto;
-    ${flexMixin('center', 'center', 'row')}
-
-    &>.text-wrapper {
+    ${flexMixin('center', 'center', 'row')};
+    flex-direction: ${({ rowReverse }) => rowReverse && 'row-reverse'};
+    & > .text-wrapper {
       ${flexMixin('center', 'flex-start', 'column')};
       gap: 3rem;
       flex: 2;
+      text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
       & > div {
         ${flexMixin('center', 'flex-start', 'column')};
         gap: 1.25rem;
@@ -81,7 +82,7 @@ export const StyledPromo = styled.section`
       max-width: 50vw;
     }
     .text-wrapper {
-      padding: 1.5rem;
+      padding: 1.5rem 0.5rem;
       text-align: center;
       align-items: center;
       gap: 1rem;
@@ -97,5 +98,6 @@ export const StyledSection = styled.section`
   ${sectionDefaults}
   width: 95%;
   margin: auto;
+  margin-top: 2vh;
   ${getLayout}
 `;
