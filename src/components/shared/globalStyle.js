@@ -1,5 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+
 import { devices } from './breakpoints';
+import { flexMixin } from './mixins';
+
+import wall from '../../assets/wall-pattern.jpg';
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -63,6 +67,20 @@ main{
     margin: auto;
     background: ${({ theme }) => theme.colors.mainBg};
     overflow-y: auto;
+
+    &>.loading{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      ${flexMixin('center', 'center', 'column')};
+      gap: 10vh;
+    }
+
+    &>.wall{
+      background: url(${wall}) no-repeat center;
+      background-size: cover;
+    }
 }
 
 h1 {
