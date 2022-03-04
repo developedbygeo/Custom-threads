@@ -65,7 +65,7 @@ export const ItemCard = styled(Card)`
   & > div {
     max-height: 35rem;
     width: 25rem;
-    padding: 2rem;
+    padding: 1rem 2rem;
   }
 
   img {
