@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 import Dropdown from './Dropdown.js';
 import StyledHeader from './Header.styled';
@@ -10,6 +10,11 @@ import { Menu } from '@styled-icons/boxicons-regular/Menu';
 
 const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setShowDropdown(false);
+  }, [pathname]);
 
   const showDropdownHandler = () => setShowDropdown((prevState) => !prevState);
 
