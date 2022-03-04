@@ -5,5 +5,5 @@ import productSlice from '../features/productSlice';
 import uiSlice from '../features/uiSlice';
 
 export const store = configureStore({
-  reducer: { cart: cartSlice.reducer, product: productSlice.reducer, ui: uiSlice.reducer },
+  reducer: { cart: cartSlice.reducer, data: productSlice.reducer, ui: uiSlice.reducer },
 });
