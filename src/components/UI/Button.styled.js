@@ -66,7 +66,7 @@ export const TertiaryButton = styled.button``;
 
 export const StyledUtilityBtn = styled.button`
   ${commonBtnStyling}
-  ${colorInteract()}
+  ${colorInteract}
   ${flexMixin('center', 'center', 'row')};
   gap: 1rem;
   padding: 0.5rem;
