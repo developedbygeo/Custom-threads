@@ -33,7 +33,7 @@ const Filters = () => {
           step="100"
           value={price}
         />
-        <CtaButton type="submit" p="1.75rem 6rem" alignSelf="center">
+        <CtaButton type="submit" p="1.25rem 4rem" alignSelf="center">
           Search
         </CtaButton>
       </StyledFilters>
