@@ -1,11 +1,11 @@
 import { StyledPromo } from './Container.styled';
 import { ImageCard } from './Card.styled';
 
-const Banner = ({ customClass, content, alt, customBg, customClr }) => {
+const Banner = ({ customClass, parentClass, content, alt, customBg, customClr, rowReverse }) => {
   const additionalImageExists = 'imgURL2' in content;
 
   return (
-    <StyledPromo customBg={customBg} customClr={customClr}>
+    <StyledPromo className={parentClass} customBg={customBg} customClr={customClr} rowReverse={rowReverse}>
       <article className={customClass}>
         {additionalImageExists && (
           <ImageCard className="image-cont2">
