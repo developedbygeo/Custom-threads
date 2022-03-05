@@ -12,9 +12,10 @@ const theme = {
     ctaEerieBlack: '#141414',
     ctaSecondaryBgClr: '#a96248',
     activeNav: '#dd6636',
+    accent: '#ae471e',
     activeNavRGB: '221, 102, 54',
-    filtersRGB: '235, 235, 235'
-  }
+    filtersRGB: '235, 235, 235',
+  },
 };
 
 export default theme;
