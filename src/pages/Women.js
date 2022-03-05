@@ -1,4 +1,7 @@
-import useRetrieve from '../hooks/useRetrieve';
+import withSelectedProducts from '../components/Products/withSelectedProducts';
+
+import LoadingSpinner from '../components/UI/LoadingSpinner';
+import ProductList from '../components/Products/ProductList';
 
 import Banner from '../components/UI/Banner';
 import femaleModel1 from '../assets/female-model-1.webp';
@@ -11,13 +14,19 @@ const womenContent = {
   imgURL2: femaleModel2,
 };
 
-const Women = () => {
-  const { status, ItemsComponent, LoadingSpinner } = useRetrieve("women's clothing");
+const WomenProducts = withSelectedProducts(ProductList, LoadingSpinner);
 
+const Women = () => {
   return (
     <>
-      <Banner content={womenContent} customBg="#f9844a" customClr="#eaeaea" customClass="dualImageBanner" />
-      {status ? <ItemsComponent /> : <LoadingSpinner />}
+      <Banner
+        content={womenContent}
+        customBg="#b13d3d"
+        parentClass="two-tone"
+        customClr="#eaeaea"
+        customClass="dualImageBanner"
+      />
+      <WomenProducts retrieveID="women's clothing" />
     </>
   );
 };
