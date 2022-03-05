@@ -40,7 +40,8 @@ const StyledHeader = styled.header`
     ${colorInteract}
   }
   a:not(.logo) {
-    font-weight: 500;
+    font-weight: 400;
+    letter-spacing: 0.125rem;
     padding: 1rem 2rem;
     ${underlineEffect}
   }
