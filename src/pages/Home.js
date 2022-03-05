@@ -1,4 +1,7 @@
-import useRetrieve from '../hooks/useRetrieve';
+import withSelectedProducts from '../components/Products/withSelectedProducts';
+
+import LoadingSpinner from '../components/UI/LoadingSpinner';
+import ProductList from '../components/Products/ProductList';
 
 import Banner from '../components/UI/Banner';
 import { UtilityButton } from '../components/Extra/Controls';
@@ -12,8 +15,9 @@ const memberPromoContent = {
   imgURL: promoImage,
 };
 
+const AllProducts = withSelectedProducts(ProductList, LoadingSpinner);
+
 const Home = () => {
-  const { status, ItemsComponent, LoadingSpinner } = useRetrieve();
   return (
     <>
       <Banner content={memberPromoContent} alt="models posing" />
@@ -21,7 +25,7 @@ const Home = () => {
         <Filter />
         Filter & Sort
       </UtilityButton>
-      {status ? <ItemsComponent /> : <LoadingSpinner />}
+      <AllProducts />
     </>
   );
 };
