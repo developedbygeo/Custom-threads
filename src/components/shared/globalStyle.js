@@ -62,7 +62,7 @@ header{
 
 main{
     position: relative;
-    height: 85vh;
+    height: 90vh;
     width: 100vw;
     margin: auto;
     background: ${({ theme }) => theme.colors.mainBg};
