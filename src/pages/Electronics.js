@@ -1,4 +1,7 @@
-import useRetrieve from '../hooks/useRetrieve';
+import withSelectedProducts from '../components/Products/withSelectedProducts';
+
+import LoadingSpinner from '../components/UI/LoadingSpinner';
+import ProductList from '../components/Products/ProductList';
 
 import Banner from '../components/UI/Banner';
 import electronics from '../assets/electronics.webp';
@@ -9,9 +12,9 @@ const electronicsContent = {
   imgURL: electronics,
 };
 
-const Electronics = () => {
-  const { status, ItemsComponent, LoadingSpinner } = useRetrieve('electronics');
+const ElectronicProducts = withSelectedProducts(ProductList, LoadingSpinner);
 
+const Electronics = () => {
   return (
     <>
       <Banner
@@ -22,7 +25,7 @@ const Electronics = () => {
         rowReverse={true}
         parentClass="wall"
       />
-      {status ? <ItemsComponent /> : <LoadingSpinner />}
+      <ElectronicProducts retrieveID="electronics" />
     </>
   );
 };
