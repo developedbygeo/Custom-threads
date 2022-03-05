@@ -62,10 +62,10 @@ export const ItemCard = styled(Card)`
   ${flexMixin('center', 'center', 'column')};
   gap: 1rem;
   border: 1px solid ${({ theme }) => theme.colors.cardBg};
-  & > div {
-    max-height: 35rem;
+  & > .img-wrapper {
+    max-height: 25rem;
     width: 25rem;
-    padding: 1rem 2rem;
+    padding: 3rem;
   }
 
   img {
@@ -76,25 +76,32 @@ export const ItemCard = styled(Card)`
   h4 {
     text-align: center;
   }
+  .price {
+    color: ${({ theme }) => theme.colors.accent};
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+  }
 `;
 
 export const DescriptionCard = styled(Card)`
   height: 100%;
   width: 100%;
   border-top: 1px solid ${({ theme }) => theme.colors.cardBg};
-  ${flexMixin('center', 'flex-start', 'column')};
+  ${flexMixin('space-between', 'flex-start', 'column')};
   gap: 1rem;
   padding: 1rem;
   line-height: 1.75;
-  button {
-    min-height: 2rem;
-    width: 100%;
-  }
+  text-align: center;
   p {
     letter-spacing: 0.1015rem;
     font-weight: 500;
   }
-  h4 {
-    text-align: left;
+  & > .cta-wrapper {
+    padding: 2rem;
+    button {
+      min-height: 2rem;
+      max-width: 25rem;
+    }
   }
 `;
