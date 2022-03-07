@@ -68,9 +68,6 @@ export const StyledCartButton = styled.button`
   }
 `;
 
-export const SecondaryButton = styled.button``;
-export const TertiaryButton = styled.button``;
-
 export const StyledUtilityBtn = styled.button`
   ${commonBtnStyling}
   ${colorInteract}
