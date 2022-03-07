@@ -1,7 +1,7 @@
 import { ItemCard, DescriptionCard } from '../UI/Card.styled';
 import { CtaButton } from '../UI/Button.styled';
 
-const Product = ({ product }) => {
+const Product = ({ product, onAddItem }) => {
   return (
     <ItemCard as="li" p="1rem">
       <div className="img-wrapper">
@@ -13,7 +13,7 @@ const Product = ({ product }) => {
           <p className="price">${product.price}</p>
         </div>
         <div className="cta-wrapper">
-          <CtaButton>Add to Cart</CtaButton>
+          <CtaButton onClick={onAddItem}>Add to Cart</CtaButton>
         </div>
       </DescriptionCard>
     </ItemCard>
