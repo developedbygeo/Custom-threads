@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 import { houdini } from '../../shared/animations';
-import { flexMixin, maxContainer } from '../../mixins';
+import { flexMixin, maxContainer } from '../../shared/mixins';
 
 const backdropStyle = css`
   position: fixed;
   top: 0;
   left: 0;
-  ${maxContainer()};
+  ${maxContainer};
   z-index: 20;
   background-color: rgba(0, 0, 0, 0.65);
 `;
@@ -15,6 +15,7 @@ const modalStyle = css`
   position: fixed;
   top: 50%;
   left: 50%;
+  width: 85%;
   z-index: 30;
   background-color: white;
   transform: translate(-50%, -50%);
@@ -34,6 +35,11 @@ const getDivStyle = (props) => {
 
 const DynamicDiv = styled.div`
   ${getDivStyle}
+
+  &>.cart {
+    ${flexMixin('center', 'space-between', 'column')};
+    gap: 1rem;
+  }
 `;
 
 export default DynamicDiv;
