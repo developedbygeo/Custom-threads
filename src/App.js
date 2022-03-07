@@ -14,6 +14,7 @@ import Men from './pages/Men';
 import Women from './pages/Women';
 import Jewelry from './pages/Jewelry';
 import Electronics from './pages/Electronics';
+import Checkout from './pages/Checkout';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/women" element={<Women />} />
           <Route path="/jewelry" element={<Jewelry />} />
           <Route path="/electronics" element={<Electronics />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </main>
     </ThemeProvider>
