@@ -63,7 +63,7 @@ export const ItemCard = styled(Card)`
   gap: 1rem;
   border: 1px solid ${({ theme }) => theme.colors.cardBg};
   & > .img-wrapper {
-    max-height: 25rem;
+    max-height: 30rem;
     width: 25rem;
     padding: 3rem;
   }
