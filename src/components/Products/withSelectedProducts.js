@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
+import LoadingSpinner from '../UI/LoadingSpinner';
+
 const withSelectedProducts = (Component, Fallback) => {
   const NewProductList = ({ retrieveID }) => {
     const [itemsExist, setItemsExist] = useState(false);
@@ -16,7 +18,7 @@ const withSelectedProducts = (Component, Fallback) => {
       ? currentItems.filter((item) => item.category === retrieveID)
       : currentItems;
 
-    return <>{itemsExist ? <Component products={filteredItems} /> : <Fallback />}</>;
+    return <>{itemsExist ? <Component products={filteredItems} /> : <LoadingSpinner />}</>;
   };
   return NewProductList;
 };
