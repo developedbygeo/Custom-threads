@@ -1,3 +1,6 @@
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../features/cartSlice';
+
 import Product from './Product';
 import { StyledSection } from '../UI/Container.styled';
 
@@ -8,10 +11,16 @@ const gridSettings = {
 };
 
 const ProductList = ({ products }) => {
+  const dispatch = useDispatch();
+
+  const addItemToCartHandler = ({ id, title, price }) => {
+    dispatch(cartActions.addItem({ id, title, price }));
+  };
+
   return (
     <StyledSection className="products" as="ul" gridSettings={gridSettings}>
       {products.map((product) => (
-        <Product key={product.id} product={product} />
+        <Product key={product.id} product={product} onAddItem={addItemToCartHandler.bind(null, product)} />
       ))}
     </StyledSection>
   );
