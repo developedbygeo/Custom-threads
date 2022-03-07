@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { flexMixin, colorInteract } from '../shared/mixins';
+import { bumpText } from '../shared/animations';
 
 const standardHover = css`
   background: ${({ theme }) => theme.colors.ctaEerieBlack};
@@ -56,8 +57,14 @@ export const StyledCartButton = styled.button`
   & > .total {
     position: absolute;
     top: 60%;
-    right: -30%;
+    right: -35%;
     font-weight: 700;
+  }
+  .total-active {
+    color: ${({ theme }) => theme.colors.accent};
+  }
+  .bump {
+    animation: ${bumpText} 250ms ease-in-out;
   }
 `;
 
