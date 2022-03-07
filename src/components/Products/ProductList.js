@@ -13,8 +13,8 @@ const gridSettings = {
 const ProductList = ({ products }) => {
   const dispatch = useDispatch();
 
-  const addItemToCartHandler = ({ id, title, price }) => {
-    dispatch(cartActions.addItem({ id, title, price }));
+  const addItemToCartHandler = ({ id, title, price, image }) => {
+    dispatch(cartActions.addItem({ id, title, price, image }));
   };
 
   return (
