@@ -1,19 +1,18 @@
 import withSelectedProducts from '../components/Products/withSelectedProducts';
 
-import LoadingSpinner from '../components/UI/LoadingSpinner';
 import ProductList from '../components/Products/ProductList';
 
 import Banner from '../components/UI/Banner';
 import jewelry from '../assets/jewelry.webp';
 
 const jewelryContent = {
-  header: 'Jewelry?',
-  subheader1: '',
-  subheader2: 'We got that too!',
+  header: 'Jewelry!',
+  subheader1: 'A fancy necklace or casual earrings?',
+  subheader2: 'We got those too!',
   imgURL: jewelry,
 };
 
-const JewelryProducts = withSelectedProducts(ProductList, LoadingSpinner);
+const JewelryProducts = withSelectedProducts(ProductList);
 
 const Jewelry = () => {
   return (
