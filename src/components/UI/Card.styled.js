@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
-import { devices } from '../shared/breakpoints';
 import { getLayout } from '../shared/utils';
-import { flexMixin } from '../shared/mixins';
 
 const stickyCardUtility = css`
   position: sticky;
@@ -52,56 +50,5 @@ export const ImageCard = styled.div`
   & > img {
     max-width: 30rem;
     height: 100%;
-  }
-`;
-
-export const ItemCard = styled(Card)`
-  height: 100%;
-  width: 90%;
-  margin: auto;
-  ${flexMixin('center', 'center', 'column')};
-  gap: 1rem;
-  border: 1px solid ${({ theme }) => theme.colors.cardBg};
-  & > .img-wrapper {
-    max-height: 30rem;
-    width: 25rem;
-    padding: 3rem;
-  }
-
-  img {
-    height: 100%;
-    width: 100%;
-    display: block;
-  }
-  h4 {
-    text-align: center;
-  }
-  .price {
-    color: ${({ theme }) => theme.colors.accent};
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 0.15rem;
-  }
-`;
-
-export const DescriptionCard = styled(Card)`
-  height: 100%;
-  width: 100%;
-  border-top: 1px solid ${({ theme }) => theme.colors.cardBg};
-  ${flexMixin('space-between', 'flex-start', 'column')};
-  gap: 1rem;
-  padding: 1rem;
-  line-height: 1.75;
-  text-align: center;
-  p {
-    letter-spacing: 0.1015rem;
-    font-weight: 500;
-  }
-  & > .cta-wrapper {
-    padding: 2rem;
-    button {
-      min-height: 2rem;
-      max-width: 25rem;
-    }
   }
 `;
