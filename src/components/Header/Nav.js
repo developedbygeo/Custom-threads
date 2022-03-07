@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import Dropdown from './Dropdown.js';
+import Modal from '../UI/Modal/Modal';
+import { CartDialogue } from '../UI/Modal/Dialogues.js';
 import CartButton from './CartButton';
 import { Person } from '@styled-icons/bootstrap/Person';
 import { MenuAltRight } from '@styled-icons/boxicons-regular/MenuAltRight';
@@ -9,6 +11,7 @@ import { Menu } from '@styled-icons/boxicons-regular/Menu';
 
 const Nav = () => {
   const [windowDimension, setWindowDimension] = useState(null);
+  const [isCartVisible, setIsCartVisible] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const { pathname } = useLocation();
 
@@ -30,6 +33,8 @@ const Nav = () => {
 
   const showDropdownHandler = () => setShowDropdown((prevState) => !prevState);
 
+  const showCartHandler = () => setIsCartVisible((prevState) => !prevState);
+
   const isMobile = windowDimension <= 768;
 
   const mobileView = (
@@ -37,7 +42,7 @@ const Nav = () => {
       <button>
         <Person />
       </button>
-      <CartButton />
+      <CartButton onClick={showCartHandler} />
       <div>
         <button onClick={showDropdownHandler} className="burger" title="Toggle menu">
           {showDropdown ? <MenuAltRight /> : <Menu />}
@@ -65,7 +70,16 @@ const Nav = () => {
     </nav>
   );
 
-  return <>{isMobile ? mobileView : desktopView}</>;
+  return (
+    <>
+      {isCartVisible && (
+        <Modal onDisable={showCartHandler}>
+          <CartDialogue onDisable={showCartHandler} />
+        </Modal>
+      )}
+      {isMobile ? mobileView : desktopView}
+    </>
+  );
 };
 
 export default Nav;
