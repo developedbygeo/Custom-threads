@@ -1,6 +1,5 @@
 import withSelectedProducts from '../components/Products/withSelectedProducts';
 
-import LoadingSpinner from '../components/UI/LoadingSpinner';
 import ProductList from '../components/Products/ProductList';
 
 import Banner from '../components/UI/Banner';
@@ -14,7 +13,7 @@ const menContent = {
   imgURL2: maleModel2,
 };
 
-const MenProducts = withSelectedProducts(ProductList, LoadingSpinner);
+const MenProducts = withSelectedProducts(ProductList);
 
 const Men = () => {
   return (

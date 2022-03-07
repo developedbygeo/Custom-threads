@@ -12,7 +12,7 @@ const electronicsContent = {
   imgURL: electronics,
 };
 
-const ElectronicProducts = withSelectedProducts(ProductList, LoadingSpinner);
+const ElectronicProducts = withSelectedProducts(ProductList);
 
 const Electronics = () => {
   return (

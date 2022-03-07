@@ -14,7 +14,7 @@ const womenContent = {
   imgURL2: femaleModel2,
 };
 
-const WomenProducts = withSelectedProducts(ProductList, LoadingSpinner);
+const WomenProducts = withSelectedProducts(ProductList);
 
 const Women = () => {
   return (

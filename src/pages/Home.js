@@ -1,6 +1,5 @@
 import withSelectedProducts from '../components/Products/withSelectedProducts';
 
-import LoadingSpinner from '../components/UI/LoadingSpinner';
 import ProductList from '../components/Products/ProductList';
 
 import Banner from '../components/UI/Banner';
@@ -15,7 +14,7 @@ const memberPromoContent = {
   imgURL: promoImage,
 };
 
-const AllProducts = withSelectedProducts(ProductList, LoadingSpinner);
+const AllProducts = withSelectedProducts(ProductList);
 
 const Home = () => {
   return (
