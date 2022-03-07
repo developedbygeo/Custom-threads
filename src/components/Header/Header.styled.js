@@ -63,27 +63,16 @@ const StyledHeader = styled.header`
   .total {
     margin-left: 1rem;
   }
-
-  @media screen and (max-width: 900px) {
-    .desktopNav {
-      display: none;
-    }
-  }
-  @media screen and (min-width: 900px) {
-    .mobileNav {
-      display: none;
-    }
-    .desktopNav {
-      ${flexMixin('space-between', 'center', 'row')};
-      flex: 3.5;
-      & > div {
-        ${flexMixin('space-evenly', 'center', 'row')};
-        gap: 2rem;
-        &:not(.desktopNavCtrl) {
-          height: 8vh;
-          border: 2px solid ${({ theme }) => theme.colors.heroBg};
-          border-inline: none;
-        }
+  .desktopNav {
+    ${flexMixin('space-between', 'center', 'row')};
+    flex: 3.5;
+    & > div {
+      ${flexMixin('space-evenly', 'center', 'row')};
+      gap: 2rem;
+      &:not(.desktopNavCtrl) {
+        height: 8vh;
+        border: 2px solid ${({ theme }) => theme.colors.heroBg};
+        border-inline: none;
       }
     }
   }
