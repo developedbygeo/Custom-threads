@@ -12,7 +12,7 @@ const ModalOverlay = ({ children, purpose }) => {
   return <DynamicDiv purpose={purpose}>{children}</DynamicDiv>;
 };
 
-const Modal = ({ onDisable, children, purpose }) => {
+const Modal = ({ onDisable, purpose, children }) => {
   return (
     <>
       {reactDom.createPortal(<Backdrop onDisable={onDisable} />, modalContainer)}
