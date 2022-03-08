@@ -34,10 +34,12 @@ export const underlineEffect = css`
       background: ${({ theme }) => theme.colors.activeNav};
       transition: transform 350ms ease;
     }
-    &:hover {
-      &::after {
-        transform-origin: left;
-        transform: scaleX(1);
+    @media (hover: hover) {
+      &:hover {
+        &::after {
+          transform-origin: left;
+          transform: scaleX(1);
+        }
       }
     }
   }
@@ -48,7 +50,7 @@ export const colorInteract = css`
   transition: color 200ms ease-in-out;
   @media (hover: hover) {
     &:hover {
-      color: ${({ theme }) => theme.colors.activeNav};
+      color: ${({ theme, customClr }) => customClr || theme.colors.activeNav};
     }
   }
 `;
