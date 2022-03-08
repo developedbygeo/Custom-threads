@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { houdini } from '../../shared/animations';
-import { flexMixin, maxContainer } from '../../shared/mixins';
+import { maxContainer } from '../../shared/mixins';
+import { cartView } from '../../Cart/cartView.styled';
 
 const backdropStyle = css`
   position: fixed;
@@ -23,7 +24,7 @@ const modalStyle = css`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 1rem;
   min-height: 25vh;
-  animation: ${houdini} 400ms ease-in-out;
+  animation: ${houdini} 150ms ease-in-out;
 `;
 
 const getDivStyle = (props) => {
@@ -33,13 +34,16 @@ const getDivStyle = (props) => {
   return modalStyle;
 };
 
+// TODO add default case for the profile view
+const getPurposeStyle = ({ purpose }) => {
+  if (purpose) {
+    return cartView;
+  }
+};
+
 const DynamicDiv = styled.div`
   ${getDivStyle}
-
-  &>.cart {
-    ${flexMixin('center', 'space-between', 'column')};
-    gap: 1rem;
-  }
+  ${getPurposeStyle}
 `;
 
 export default DynamicDiv;
