@@ -11,11 +11,20 @@ const altHover = css`
   border: 1.5px solid ${({ theme }) => theme.colors.ctaSecondaryBgClr};
 `;
 
+const hoverTransformScale = css`
+  transform: scale(1.1);
+`;
+
 const getCtaHoverClr = ({ ctaAltHover }) => {
   if (ctaAltHover) {
     return altHover;
   }
   return standardHover;
+};
+
+const getTransformHover = ({ disableTransform }) => {
+  if (disableTransform) return '';
+  return hoverTransformScale;
 };
 
 const commonBtnStyling = css`
@@ -45,12 +54,22 @@ export const CtaButton = styled.button`
   border-radius: 0.15rem;
   background: transparent;
   transition: all 200ms ease-in-out;
-  &:hover {
-    ${getCtaHoverClr};
-    color: ${({ theme }) => theme.colors.mainBg};
-    transform: scale(1.1);
+  @media (hover: hover) {
+    &:hover {
+      ${getCtaHoverClr};
+      color: ${({ theme }) => theme.colors.mainBg};
+      ${getTransformHover}
+    }
   }
 `;
+
+export const SecondaryButton = styled.button`
+  ${commonBtnStyling};
+  color: ${({ theme }) => theme.colors.ctaDavysGray};
+  text-decoration: underline;
+  ${colorInteract}
+`;
+
 export const StyledCartButton = styled.button`
   position: relative;
 
