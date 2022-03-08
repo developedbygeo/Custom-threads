@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useViewport from '../../hooks/useViewport';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import Dropdown from './Dropdown.js';
@@ -10,22 +11,10 @@ import { MenuAltRight } from '@styled-icons/boxicons-regular/MenuAltRight';
 import { Menu } from '@styled-icons/boxicons-regular/Menu';
 
 const Nav = () => {
-  const [windowDimension, setWindowDimension] = useState(null);
+  const windowWidth = useViewport();
   const [isCartVisible, setIsCartVisible] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const { pathname } = useLocation();
-
-  useEffect(() => {
-    setWindowDimension(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowDimension(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     setShowDropdown(false);
@@ -35,7 +24,7 @@ const Nav = () => {
 
   const showCartHandler = () => setIsCartVisible((prevState) => !prevState);
 
-  const isMobile = windowDimension <= 768;
+  const isMobile = windowWidth <= 768;
 
   const mobileView = (
     <nav className="mobileNav">
@@ -73,7 +62,7 @@ const Nav = () => {
   return (
     <>
       {isCartVisible && (
-        <Modal onDisable={showCartHandler}>
+        <Modal purpose="cart" onDisable={showCartHandler}>
           <CartDialogue onDisable={showCartHandler} />
         </Modal>
       )}
