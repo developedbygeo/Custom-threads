@@ -27,7 +27,7 @@ const Product = ({ product, isCartItem, onAddItem }) => {
   const itemDescription = isCartItem ? (
     <div className="cart-desc">
       <p className="price">${product.price}</p>
-      <p>Quantity: {product.quantity}</p>
+      <p className="quantity">Quantity: {product.quantity}</p>
     </div>
   ) : (
     <p className="price">${product.price}</p>
@@ -38,7 +38,7 @@ const Product = ({ product, isCartItem, onAddItem }) => {
       <div className="img-wrapper">
         <img src={product.image} alt={`${product.title} visual placeholder`} />
       </div>
-      <DescriptionCard>
+      <DescriptionCard className="description">
         <div className="info-wrapper">
           <h3>{product.title}</h3>
           {itemDescription}
