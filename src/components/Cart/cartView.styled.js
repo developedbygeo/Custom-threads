@@ -1,12 +1,12 @@
 import { css } from 'styled-components';
 
-import { flexMixin, gridMixin } from '../shared/mixins';
+import { flexMixin, gridMixin, maxContainer } from '../shared/mixins';
 
 export const cartView = css`
   max-height: 85vh;
   min-height: 35vh;
   height: auto;
-  ${flexMixin('space-evenly', 'flex-start', 'column')};
+  ${flexMixin('space-between', 'flex-start', 'column')};
 
   & > .cart-header {
     padding-block: 1rem;
@@ -61,7 +61,14 @@ export const cartView = css`
     margin-left: 2vw;
   }
   .cart-actions {
+    height: 100%;
     border-left: 1px solid ${({ theme }) => theme.colors.cardBg};
+    ${flexMixin('center', 'center', 'column')};
+    & > button {
+      ${maxContainer}
+      padding: 0;
+      border-radius: 0.5rem;
+    }
     svg {
       transform: scale(1.65);
     }
