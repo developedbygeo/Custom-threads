@@ -13,12 +13,15 @@ const menContent = {
   imgURL2: maleModel2,
 };
 
+const gradient =
+  'linear-gradient(-250deg, rgba(198,137,222,0.736842105263158) 0%, rgba(172,140,223,0.7918660287081339) 40%, rgba(131,203,250,0.700956937799043) 60%, rgba(165,198,219,0.8133971291866029) 100%);';
+
 const MenProducts = withSelectedProducts(ProductList);
 
 const Men = () => {
   return (
     <>
-      <Banner content={menContent} customBg="#A5C6DB" customClr="#141414" customClass="dualImageBanner" />
+      <Banner content={menContent} customBg={gradient} customClr="#141414" customClass="dualImageBanner" />
       <MenProducts retrieveID="men's clothing" />
     </>
   );
