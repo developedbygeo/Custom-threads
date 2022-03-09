@@ -13,6 +13,8 @@ const womenContent = {
   imgURL2: femaleModel2,
 };
 
+const gradient = 'linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)';
+
 const WomenProducts = withSelectedProducts(ProductList);
 
 const Women = () => {
@@ -20,7 +22,7 @@ const Women = () => {
     <>
       <Banner
         content={womenContent}
-        customBg="#b13d3d"
+        customBg={gradient}
         parentClass="two-tone"
         customClr="#eaeaea"
         customClass="dualImageBanner"
