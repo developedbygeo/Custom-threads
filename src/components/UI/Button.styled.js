@@ -4,11 +4,19 @@ import { flexMixin, colorInteract } from '../shared/mixins';
 import { bumpText } from '../shared/animations';
 
 const standardHover = css`
-  background: ${({ theme }) => theme.colors.ctaEerieBlack};
+  @media (hover: hover) {
+    &:hover {
+      background: ${({ theme }) => theme.colors.ctaEerieBlack};
+    }
+  }
 `;
 const altHover = css`
-  background: ${({ theme }) => theme.colors.ctaSecondaryBgClr};
-  border: 1.5px solid ${({ theme }) => theme.colors.ctaSecondaryBgClr};
+  @media (hover: hover) {
+    &:hover {
+      background: ${({ theme }) => theme.colors.ctaSecondaryBgClr};
+      border: 1.5px solid ${({ theme }) => theme.colors.ctaSecondaryBgClr};
+    }
+  }
 `;
 
 const hoverTransformScale = css`
@@ -54,9 +62,9 @@ export const CtaButton = styled.button`
   border-radius: 0.15rem;
   background: transparent;
   transition: all 200ms ease-in-out;
+  ${getCtaHoverClr};
   @media (hover: hover) {
     &:hover {
-      ${getCtaHoverClr};
       color: ${({ theme }) => theme.colors.mainBg};
       ${getTransformHover}
     }
@@ -87,6 +95,10 @@ export const StyledCartButton = styled.button`
   }
 `;
 
+const cartButtonInteract = ({ isCartAction }) => {
+  if (isCartAction) return altHover;
+};
+
 export const StyledUtilityBtn = styled.button`
   ${commonBtnStyling}
   ${colorInteract}
@@ -96,6 +108,8 @@ export const StyledUtilityBtn = styled.button`
   max-width: 20rem;
   min-height: 5rem;
   min-width: 7rem;
+  transition: all 100ms ease-in-out;
+  ${cartButtonInteract}
   & > span {
     height: 100%;
     font-weight: 500;
