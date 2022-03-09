@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { devices } from './breakpoints';
-import { flexMixin } from './mixins';
+import { flexMixin, maxContainer } from './mixins';
 
 import wall from '../../assets/wall-pattern.jpg';
 
@@ -53,6 +53,13 @@ body{
     height: 100vh;
     width: 100vw;
     overflow-y: hidden;
+}
+#root{
+  box-sizing: border-box;
+  ${maxContainer};
+  &>svg{
+    ${maxContainer};
+  }
 }
 
 header{
