@@ -1,4 +1,4 @@
-import withSelectedProducts from '../components/Products/withSelectedProducts';
+import withSelectedList from '../components/Products/withSelectedList';
 
 import ProductList from '../components/Products/ProductList';
 
@@ -12,7 +12,7 @@ const jewelryContent = {
   imgURL: jewelry,
 };
 
-const JewelryProducts = withSelectedProducts(ProductList);
+const JewelryProducts = withSelectedList(ProductList);
 
 const Jewelry = () => {
   return (

@@ -1,4 +1,4 @@
-import withSelectedProducts from '../components/Products/withSelectedProducts';
+import withSelectedList from '../components/Products/withSelectedList';
 
 import ProductList from '../components/Products/ProductList';
 
@@ -11,7 +11,7 @@ const electronicsContent = {
   imgURL: electronics,
 };
 
-const ElectronicProducts = withSelectedProducts(ProductList);
+const ElectronicProducts = withSelectedList(ProductList);
 
 const Electronics = () => {
   return (

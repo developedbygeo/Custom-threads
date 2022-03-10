@@ -1,4 +1,4 @@
-import withSelectedProducts from '../components/Products/withSelectedProducts';
+import withSelectedList from '../components/Products/withSelectedList';
 
 import ProductList from '../components/Products/ProductList';
 
@@ -14,7 +14,7 @@ const memberPromoContent = {
   imgURL: promoImage,
 };
 
-const AllProducts = withSelectedProducts(ProductList);
+const AllProducts = withSelectedList(ProductList);
 
 const Home = () => {
   return (
