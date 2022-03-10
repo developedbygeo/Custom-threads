@@ -66,6 +66,7 @@ export const cartView = css`
     ${flexMixin('center', 'center', 'column')};
     & > button {
       ${maxContainer}
+      transition: all 50ms ease;
       padding: 0;
       border-radius: 0.5rem;
     }
