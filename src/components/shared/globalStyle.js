@@ -122,7 +122,7 @@ a {
   font-size: 1.8rem;
   font-family: 'Roboto', sans-serif;
 }
-button{
+button, a{
   cursor: pointer;
 }
 
