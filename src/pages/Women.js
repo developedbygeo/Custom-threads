@@ -1,4 +1,4 @@
-import withSelectedProducts from '../components/Products/withSelectedProducts';
+import withSelectedList from '../components/Products/withSelectedList';
 
 import ProductList from '../components/Products/ProductList';
 
@@ -15,7 +15,7 @@ const womenContent = {
 
 const gradient = 'linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)';
 
-const WomenProducts = withSelectedProducts(ProductList);
+const WomenProducts = withSelectedList(ProductList);
 
 const Women = () => {
   return (
