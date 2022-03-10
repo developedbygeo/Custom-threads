@@ -1,51 +1,21 @@
 import { ItemCard, DescriptionCard } from './Product.styled';
-import { Card } from '../UI/Card.styled';
 import { CtaButton } from '../UI/Button.styled';
-import { StyledUtilityBtn } from '../UI/Button.styled';
-import { BiPlus, BiMinus } from 'react-icons/bi';
 
-const Product = ({ product, isCartItem, onAddItem }) => {
-  const cartActions = isCartItem && (
-    <>
-      <Card className="cart-actions">
-        <StyledUtilityBtn>
-          <BiPlus />
-        </StyledUtilityBtn>
-        <StyledUtilityBtn>
-          <BiMinus />
-        </StyledUtilityBtn>
-      </Card>
-    </>
-  );
-
-  const productItemButton = onAddItem && (
-    <div className="cta-wrapper">
-      <CtaButton onClick={onAddItem}>Add to Cart</CtaButton>
-    </div>
-  );
-
-  const itemDescription = isCartItem ? (
-    <div className="cart-desc">
-      <p className="price">${product.price}</p>
-      <p className="quantity">Quantity: {product.quantity}</p>
-    </div>
-  ) : (
-    <p className="price">${product.price}</p>
-  );
-
+const Product = ({ product, onAddItem }) => {
   return (
-    <ItemCard as="li" p="1rem" isCartItem={isCartItem}>
+    <ItemCard as="li" p="1rem">
       <div className="img-wrapper">
         <img src={product.image} alt={`${product.title} visual placeholder`} />
       </div>
       <DescriptionCard className="description">
         <div className="info-wrapper">
-          <h3>{product.title}</h3>
-          {itemDescription}
+          <h3 title={product.title}>{product.title}</h3>
+          <p className="price">${product.price}</p>
         </div>
-        {productItemButton}
+        <div className="cta-wrapper">
+          <CtaButton onClick={onAddItem}>Add to Cart</CtaButton>
+        </div>
       </DescriptionCard>
-      {cartActions}
     </ItemCard>
   );
 };
