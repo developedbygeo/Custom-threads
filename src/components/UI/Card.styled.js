@@ -4,6 +4,7 @@ import { getLayout } from '../shared/utils';
 const stickyCardUtility = css`
   position: sticky;
   top: 0;
+  z-index: 10;
   background: ${({ theme }) => theme.colors.cardBg};
   box-shadow: 1px 6px 2px -1px rgba(0, 0, 0, 0.09);
 `;
