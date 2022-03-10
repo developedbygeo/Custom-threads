@@ -16,6 +16,7 @@ const Men = React.lazy(() => import('./pages/Men'));
 const Women = React.lazy(() => import('./pages/Women'));
 const Jewelry = React.lazy(() => import('./pages/Jewelry'));
 const Electronics = React.lazy(() => import('./pages/Electronics'));
+const ProductDetails = React.lazy(() => import('./pages/ProductDetails'));
 const Checkout = React.lazy(() => import('./pages/Checkout'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
@@ -40,6 +41,7 @@ const App = () => {
             <Route path="jewelry" element={<Jewelry />} />
             <Route path="electronics" element={<Electronics />} />
             <Route path="checkout" element={<Checkout />} />
+            <Route path="product-details/:id" element={<ProductDetails />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
@@ -48,4 +50,5 @@ const App = () => {
   );
 };
 
+// export default App;
 export default App;
