@@ -24,7 +24,7 @@ const modalStyle = css`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 1rem;
   min-height: 25vh;
-  animation: ${houdini} 150ms ease-in-out;
+  animation: ${houdini} 50ms ease-in-out;
 `;
 
 const getDivStyle = (props) => {
