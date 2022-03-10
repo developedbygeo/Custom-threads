@@ -66,7 +66,6 @@ const getItemStyle = ({ isCartItem }) => {
 
 const getDetailsStyle = ({ isDetails }) => {
   if (isDetails) {
-    console.log(detailsStyles);
     return detailsStyles;
   }
 };
