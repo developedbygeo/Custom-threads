@@ -15,6 +15,7 @@ const altHover = css`
     &:hover {
       background: ${({ theme }) => theme.colors.ctaSecondaryBgClr};
       border: 1.5px solid ${({ theme }) => theme.colors.ctaSecondaryBgClr};
+      color: ${({ customClr }) => customClr || 'initial'};
     }
   }
 `;
