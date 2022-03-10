@@ -9,7 +9,7 @@ const StyledDropdown = styled.div`
   height: auto;
   position: absolute;
   right: 1%;
-  z-index: 10;
+  z-index: 11;
   box-shadow: 9px 13px 15px -6px rgba(0, 0, 0, 0.42);
   background: ${({ theme }) => theme.colors.mainBg};
   ${flexMixin('center', 'center', 'column')};
