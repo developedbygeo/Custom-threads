@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { cartActions } from '../../features/cartSlice';
@@ -6,21 +7,25 @@ import CartItem from './CartItem';
 import { CtaButton, SecondaryButton } from '../UI/Button.styled';
 import { AiOutlineShoppingCart, AiOutlineArrowLeft } from 'react-icons/ai';
 
-export const CartView = ({ onDisable }) => {
+const CartView = ({ onDisable }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const totalPrice = useSelector((state) => state.cart.totalCost.toFixed(2));
   const itemsExist = cartItems.length > 0;
 
-  console.log('cart rendered');
+  const addItemHandler = useCallback(
+    (item) => {
+      dispatch(cartActions.addItem(item));
+    },
+    [dispatch]
+  );
 
-  const addItemHandler = (item) => {
-    dispatch(cartActions.addItem(item));
-  };
-
-  const removeItemHandler = (item) => {
-    dispatch(cartActions.removeItem(item.id));
-  };
+  const removeItemHandler = useCallback(
+    (item) => {
+      dispatch(cartActions.removeItem(item.id));
+    },
+    [dispatch]
+  );
 
   const cartView = cartItems.map((item) => (
     <CartItem
@@ -73,3 +78,5 @@ export const CartView = ({ onDisable }) => {
     </>
   );
 };
+
+export default CartView;
