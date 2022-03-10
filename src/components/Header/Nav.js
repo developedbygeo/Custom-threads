@@ -4,7 +4,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 import Dropdown from './Dropdown.js';
 import Modal from '../UI/Modal/Modal';
-import { CartView } from '../Cart/CartView.js';
+import CartView from '../Cart/CartView.js';
 import CartButton from './CartButton';
 import { Person } from '@styled-icons/bootstrap/Person';
 import { MenuAltRight } from '@styled-icons/boxicons-regular/MenuAltRight';
