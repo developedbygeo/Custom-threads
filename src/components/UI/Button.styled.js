@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { Link } from 'react-router-dom';
+
 import { flexMixin, colorInteract } from '../shared/mixins';
 import { bumpText } from '../shared/animations';
 
@@ -36,6 +38,10 @@ const getTransformHover = ({ disableTransform }) => {
   return hoverTransformScale;
 };
 
+const cartButtonInteract = ({ isCartAction }) => {
+  if (isCartAction) return altHover;
+};
+
 const commonBtnStyling = css`
   letter-spacing: 0.125rem;
   text-align: center;
@@ -52,6 +58,35 @@ const commonBtnStyling = css`
   justify-self: ${({ justifySelf }) => justifySelf || 'initial'};
   &:active {
     transform: scale(1.025);
+  }
+`;
+
+const utilityStyling = css`
+  ${commonBtnStyling}
+  ${colorInteract}
+  ${flexMixin('center', 'center', 'row')};
+  gap: 1rem;
+  padding: 0.5rem;
+  max-width: 20rem;
+  min-height: 5rem;
+  min-width: 7rem;
+  transition: all 100ms ease-in-out;
+  ${cartButtonInteract}
+  & > span {
+    height: 100%;
+    font-weight: 500;
+    width: auto;
+  }
+  svg {
+    height: 100%;
+    width: auto;
+    max-width: 2rem;
+  }
+  .text {
+    ${flexMixin('center', 'center', 'row')};
+  }
+  .icon {
+    ${flexMixin('center', 'center', 'row')};
   }
 `;
 
@@ -96,35 +131,30 @@ export const StyledCartButton = styled.button`
   }
 `;
 
-const cartButtonInteract = ({ isCartAction }) => {
-  if (isCartAction) return altHover;
-};
-
 export const StyledUtilityBtn = styled.button`
-  ${commonBtnStyling}
-  ${colorInteract}
+  ${utilityStyling}
+`;
+
+export const StyledLink = styled(Link)`
+  position: relative;
+  ${utilityStyling}
   ${flexMixin('center', 'center', 'row')};
-  gap: 1rem;
-  padding: 0.5rem;
-  max-width: 20rem;
-  min-height: 5rem;
-  min-width: 7rem;
-  transition: all 100ms ease-in-out;
-  ${cartButtonInteract}
-  & > span {
-    height: 100%;
-    font-weight: 500;
-    width: auto;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    background: ${({ theme }) => theme.colors.lightText};
+    height: 0.5px;
+    width: 100%;
+    margin: auto;
+    transition: all 50ms ease-in-out;
+  }
+  @media (hover: hover) {
+    &:hover::before {
+      background: ${({ theme }) => theme.colors.activeNav};
+    }
   }
   svg {
-    height: 100%;
-    width: auto;
-    max-width: 2rem;
-  }
-  .text {
-    ${flexMixin('center', 'center', 'row')};
-  }
-  .icon {
-    ${flexMixin('center', 'center', 'row')};
+    margin-top: 1rem;
   }
 `;
