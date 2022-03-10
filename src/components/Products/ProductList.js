@@ -20,7 +20,7 @@ const ProductList = ({ products }) => {
   return (
     <StyledSection className="products" as="ul" gridSettings={gridSettings}>
       {products.map((product) => (
-        <Product key={product.id} product={product} onAddItem={addItemToCartHandler.bind(null, product)} />
+        <Product key={product.id} product={product} onAddItem={addItemToCartHandler} />
       ))}
     </StyledSection>
   );
