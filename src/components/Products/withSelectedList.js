@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-const withSelectedProducts = (Component) => {
+const withSelectedList = (Component) => {
   const NewProductList = ({ retrieveID }) => {
     const currentItems = useSelector((state) => state.data.products);
 
@@ -13,4 +13,4 @@ const withSelectedProducts = (Component) => {
   return NewProductList;
 };
 
-export default withSelectedProducts;
+export default withSelectedList;
