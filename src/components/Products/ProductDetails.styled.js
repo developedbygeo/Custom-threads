@@ -3,15 +3,14 @@ import { css } from 'styled-components';
 import { flexMixin } from '../shared/mixins';
 
 export const detailsStyles = css`
-  min-height: 65vh;
-  height: 100%;
+  min-height: 80vh;
+  height: auto;
   margin: auto;
   margin-top: 2vh;
   padding: 2rem;
   ${flexMixin('flex-start', 'center', 'column')};
   & > .img-wrapper {
     max-width: 20rem;
-    max-height: 20rem;
     padding: 0;
     margin: auto;
   }
