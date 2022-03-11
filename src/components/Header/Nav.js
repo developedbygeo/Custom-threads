@@ -5,6 +5,8 @@ import { NavLink, useLocation } from 'react-router-dom';
 import Dropdown from './Dropdown.js';
 import Modal from '../UI/Modal/Modal';
 import CartView from '../Cart/CartView.js';
+import ActionButtons from '../Extra/ActionButtons';
+
 import CartButton from './CartButton';
 import { Person } from '@styled-icons/bootstrap/Person';
 import { MenuAltRight } from '@styled-icons/boxicons-regular/MenuAltRight';
@@ -63,7 +65,8 @@ const Nav = () => {
     <>
       {isCartVisible && (
         <Modal purpose="cart" onDisable={showCartHandler}>
-          <CartView onDisable={showCartHandler} />
+          <CartView onDisable={showCartHandler} isCart />
+          <ActionButtons onDisable={showCartHandler} isCart />
         </Modal>
       )}
       {isMobile ? mobileView : desktopView}
