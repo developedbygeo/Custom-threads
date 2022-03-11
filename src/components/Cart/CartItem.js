@@ -4,6 +4,8 @@ import { StyledUtilityBtn } from '../UI/Button.styled';
 import { BiPlus, BiMinus } from 'react-icons/bi';
 
 const CartItem = ({ product, onAddItem, onRemoveItem }) => {
+  const { totalPrice } = product;
+
   const cartActions = (
     <>
       <Card className="cart-actions">
@@ -26,8 +28,12 @@ const CartItem = ({ product, onAddItem, onRemoveItem }) => {
         <div className="info-wrapper">
           <h3 title={product.title}>{product.title}</h3>
           <div className="cart-desc">
-            <p className="price">${product.totalPrice.toFixed(2)}</p>
-            <p className="quantity">Quantity: {product.quantity}</p>
+            <p className="price" title={`Total price for this item: $${totalPrice.toFixed(2)}`}>
+              ${totalPrice.toFixed(2)}
+            </p>
+            <p className="quantity" title={`Total number of items: ${product.quantity}`}>
+              Quantity: {product.quantity}
+            </p>
           </div>
         </div>
       </DescriptionCard>
