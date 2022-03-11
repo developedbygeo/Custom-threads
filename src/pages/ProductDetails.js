@@ -27,7 +27,7 @@ const ProductDetails = () => {
     <>
       <Product
         product={itemToRender}
-        asElement="div"
+        asElement="section"
         isDetails
         onAddItem={addItemHandler}
         onGoBack={goBackHandler}
