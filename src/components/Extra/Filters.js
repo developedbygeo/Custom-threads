@@ -12,9 +12,13 @@ const Filters = () => {
     setPrice(e.target.value);
   };
 
+  const submitFiltersHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
-      <StyledFilters>
+      <StyledFilters onSubmit={submitFiltersHandler}>
         <h3>By Category</h3>
         <Checkbox>Men</Checkbox>
         <Checkbox>Women</Checkbox>
