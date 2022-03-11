@@ -1,13 +1,10 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { cartActions } from '../../features/cartSlice';
 
 import CartItem from './CartItem';
-import { CtaButton, SecondaryButton } from '../UI/Button.styled';
-import { AiOutlineShoppingCart, AiOutlineArrowLeft } from 'react-icons/ai';
 
-const CartView = ({ onDisable }) => {
+const CartView = ({ isCart }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const totalPrice = useSelector((state) => state.cart.totalCost.toFixed(2));
@@ -27,6 +24,14 @@ const CartView = ({ onDisable }) => {
     [dispatch]
   );
 
+  const cartHeader = isCart && (
+    <div className="cart-header">
+      <h2>
+        My <span>Cart</span>
+      </h2>
+    </div>
+  );
+
   const cartView = cartItems.map((item) => (
     <CartItem
       key={item.id}
@@ -37,44 +42,24 @@ const CartView = ({ onDisable }) => {
   ));
 
   const emptyView = (
-    <>
+    <div className="not-found">
       <h4>No items were found in your cart.</h4>
       <p>Please feel free to add some and check back again.</p>
-    </>
+    </div>
   );
 
   return (
     <>
-      <div className="cart-header">
-        <h2>
-          My <span>Cart</span>
-        </h2>
-      </div>
-      <div className="cart">{itemsExist ? cartView : emptyView}</div>
+      {cartHeader}
+      {itemsExist ? <ul className="cart">{cartView}</ul> : emptyView}
       {itemsExist && (
         <div className="price-wrapper">
           <p className="price-header">Price:</p>
-          <p className="price-text">${totalPrice}</p>
+          <p className="price-text" title={`Total price: $${totalPrice}`}>
+            ${totalPrice}
+          </p>
         </div>
       )}
-      <div className={`action-wrapper ${!itemsExist ? 'single-btn-layout' : ''}`}>
-        <SecondaryButton onClick={onDisable} className="return-btn">
-          <span className="cart-icon-left">
-            <AiOutlineArrowLeft />
-          </span>
-          <span>Return</span>
-        </SecondaryButton>
-        {itemsExist && (
-          <Link to="/checkout" onClick={onDisable}>
-            <CtaButton ctaAltHover disableTransform className="checkout-btn">
-              <span>Checkout</span>
-              <span className="cart-icon-right">
-                <AiOutlineShoppingCart />
-              </span>
-            </CtaButton>
-          </Link>
-        )}
-      </div>
     </>
   );
 };
