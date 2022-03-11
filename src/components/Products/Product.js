@@ -21,18 +21,20 @@ const Product = ({ product, onAddItem, onGoBack, isDetails, asElement }) => {
     </StyledUtilityBtn>
   );
 
+  const productInfo = isDetails ? (
+    <h2 title={product.title}>{product.title}</h2>
+  ) : (
+    <h3 title={product.title}>{product.title}</h3>
+  );
+
   return (
     <ItemCard isDetails={isDetails} as={asElement || 'li'} p="1rem">
       <div className="img-wrapper">
         <img src={product.image} alt={`${product.title} visual placeholder`} />
       </div>
-      <DescriptionCard isDetails={isDetails} className="description">
+      <DescriptionCard isDetails={isDetails} className="description" as="article">
         <div className="info-wrapper">
-          {isDetails ? (
-            <h2 title={product.title}>{product.title}</h2>
-          ) : (
-            <h3 title={product.title}>{product.title}</h3>
-          )}
+          {productInfo}
           {isDetails && <p className="prod-desc">{product.description}</p>}
           <p className="price">${product.price}</p>
         </div>
