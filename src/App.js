@@ -9,6 +9,7 @@ import theme from './components/shared/themeSettings';
 
 import Skeleton from './components/UI/Skeleton';
 import Header from './components/Header/Header';
+import ScrollToTop from './components/Extra/ScrollToTop';
 
 const Landing = React.lazy(() => import('./pages/Landing'));
 const Home = React.lazy(() => import('./pages/Home'));
@@ -31,21 +32,23 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
-      <main>
-        <Suspense fallback={<Skeleton />}>
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="home" element={<Home />} />
-            <Route path="men" element={<Men />} />
-            <Route path="women" element={<Women />} />
-            <Route path="jewelry" element={<Jewelry />} />
-            <Route path="electronics" element={<Electronics />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route path="product-details/:id" element={<ProductDetails />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </main>
+      <ScrollToTop>
+        <main>
+          <Suspense fallback={<Skeleton />}>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="home" element={<Home />} />
+              <Route path="men" element={<Men />} />
+              <Route path="women" element={<Women />} />
+              <Route path="jewelry" element={<Jewelry />} />
+              <Route path="electronics" element={<Electronics />} />
+              <Route path="checkout" element={<Checkout />} />
+              <Route path="product-details/:id" exact element={<ProductDetails />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </main>
+      </ScrollToTop>
     </ThemeProvider>
   );
 };
