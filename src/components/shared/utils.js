@@ -13,3 +13,8 @@ export const getLayout = ({ flexSettings, gridSettings }) => {
     return gridMixin(gridSettings.cols, gridSettings.rows, gridSettings?.gap);
   }
 };
+
+export const getFormData = (...refFields) => {
+  const results = refFields.filter((element) => element.status === true).map((res) => res.id);
+  return results;
+};
