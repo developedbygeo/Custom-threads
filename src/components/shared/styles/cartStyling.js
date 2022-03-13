@@ -18,7 +18,7 @@ export const svgAdjustments = css`
 
 export const cartStyling = css`
   & > .cart {
-    ${gridMixin('1fr', 'auto', '2vh')};
+    ${gridMixin('1fr', 'repeat(auto-fill, minmax(min-content, 40px))', '2vh')};
     max-height: 80vh;
     overflow-y: auto;
     & > li {
@@ -73,11 +73,13 @@ export const priceStyling = css`
     ${flexMixin('space-between', 'center', 'row')};
     & > .price-header {
       font-weight: 300;
+      font-size: 2rem;
     }
     & > .price-text {
       color: ${({ theme }) => theme.colors.accent};
       font-weight: 500;
       letter-spacing: 1px;
+      font-size: 2rem;
     }
   }
 `;
