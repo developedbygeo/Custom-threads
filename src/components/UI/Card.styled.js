@@ -6,7 +6,7 @@ const stickyCardUtility = css`
   top: 0;
   z-index: 10;
   background: ${({ theme }) => theme.colors.cardBg};
-  box-shadow: 1px 6px 2px -1px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 6px 2px -1px rgba(0, 0, 0, 0.09);
 `;
 
 const isCardUtility = ({ sticky }) => {
@@ -29,15 +29,21 @@ export const Card = styled.div`
   top: ${({ top }) => top || 'initial'};
   ${getLayout}
   ${baseCardSettings}
-  ${isCardUtility}
 
-  &>div {
+  & > div {
     width: ${({ w }) => w || '100%'};
   }
 
   p {
     margin-block: 1rem;
   }
+`;
+
+export const ActionWrapper = styled.div`
+  background: ${({ theme, BgClr }) => BgClr || theme.colors.cardBgClr};
+  ${getLayout};
+  ${baseCardSettings};
+  ${isCardUtility};
 `;
 
 export const ImageCard = styled.div`
