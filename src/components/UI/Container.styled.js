@@ -151,6 +151,7 @@ export const StyledCheckout = styled(StyledSection)`
     width: 100%;
     padding: 1rem 0.5rem;
     margin-bottom: 1vh;
+    font-size: 2rem;
   }
   .action-wrapper {
     ${flexMixin('space-between', 'center', 'row')};
@@ -171,6 +172,7 @@ export const StyledCheckout = styled(StyledSection)`
   & > p {
     width: 100%;
     padding: 0.75rem;
+    font-size: 2rem;
     .step {
       background: rgba(${({ theme }) => theme.colors.activeNavRGB}, 0.8);
       color: ${({ theme }) => theme.colors.mainBg};
