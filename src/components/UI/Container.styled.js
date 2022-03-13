@@ -39,6 +39,13 @@ export const StyledHero = styled.section`
   .notFound button {
     font-size: 2.4rem;
   }
+  .notFound-msg {
+    text-align: center;
+    & > p {
+      margin-top: 2vh;
+      font-size: 2rem;
+    }
+  }
 `;
 
 export const StyledPromo = styled.section`
