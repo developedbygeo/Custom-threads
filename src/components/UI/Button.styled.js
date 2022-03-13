@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { flexMixin, colorInteract } from '../shared/mixins';
+import { smallIconStyle } from '../shared/styles/miscStyling';
 import { bumpText } from '../shared/animations';
 
 const standardHover = css`
@@ -133,12 +134,14 @@ export const StyledCartButton = styled.button`
 
 export const StyledUtilityBtn = styled.button`
   ${utilityStyling}
+  ${smallIconStyle}
 `;
 
 export const StyledLink = styled(Link)`
   position: relative;
   ${utilityStyling}
   ${flexMixin('center', 'center', 'row')};
+  ${smallIconStyle}
   &::before {
     content: '';
     position: absolute;
