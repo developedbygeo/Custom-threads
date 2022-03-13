@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <>
-        <Link to="/" className="logo">
+        <Link to="/home" className="logo">
           <h1>Custom Threads</h1>
         </Link>
       </>
