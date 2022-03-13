@@ -3,8 +3,7 @@ import withSelectedList from '../components/Products/withSelectedList';
 import ProductList from '../components/Products/ProductList';
 
 import Banner from '../components/UI/Banner';
-import { UtilityButton } from '../components/Extra/Controls';
-import { Filter } from '@styled-icons/fa-solid/Filter';
+import { Controls } from '../components/Extra/Controls';
 import promoImage from '../assets/home.png';
 
 const memberPromoContent = {
@@ -20,10 +19,7 @@ const Home = () => {
   return (
     <>
       <Banner content={memberPromoContent} alt="models posing" />
-      <UtilityButton>
-        <Filter />
-        Filter & Sort
-      </UtilityButton>
+      <Controls />
       <AllProducts />
     </>
   );
