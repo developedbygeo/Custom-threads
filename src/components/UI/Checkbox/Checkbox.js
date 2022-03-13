@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useImperativeHandle } from 'react';
 
 import { Check } from '@styled-icons/bootstrap/Check';
 import StyledCheckbox from './Checkbox.styled.js';
 
-const Checkbox = ({ children, getState }) => {
+const Checkbox = React.forwardRef(({ children }, ref) => {
   const [isChecked, setIsChecked] = useState(true);
+
+  useImperativeHandle(ref, () => ({ isChecked: () => isChecked }), [isChecked]);
 
   const changeStatusHandler = () => setIsChecked((prevState) => !prevState);
 
@@ -17,6 +19,6 @@ const Checkbox = ({ children, getState }) => {
       </span>
     </StyledCheckbox>
   );
-};
+});
 
 export default React.memo(Checkbox);
