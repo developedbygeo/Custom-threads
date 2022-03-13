@@ -3,10 +3,12 @@ import { CtaButton, StyledLink, StyledUtilityBtn } from '../UI/Button.styled';
 import { AiOutlineArrowLeft, AiOutlineEye } from 'react-icons/ai';
 
 const Product = ({ product, onAddItem, onGoBack, isDetails, asElement }) => {
+  if (!product) return <p></p>;
+
   const seeMoreDetailsButton = (
-    <StyledLink to={`/product-details/${product.id}`}>
+    <StyledLink to={`/product-details/product-${product.id}`}>
       <span>See more</span>
-      <span>
+      <span className="smallIcon">
         <AiOutlineEye />
       </span>
     </StyledLink>
@@ -14,7 +16,7 @@ const Product = ({ product, onAddItem, onGoBack, isDetails, asElement }) => {
 
   const takeMeBackButton = (
     <StyledUtilityBtn onClick={onGoBack} as="a" title="Go back">
-      <span className="icon">
+      <span className="icon smallIcon">
         <AiOutlineArrowLeft />
       </span>
       <span className="text">Take me back</span>
