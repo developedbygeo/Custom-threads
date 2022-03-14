@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
 import { fetchDataAPI } from './features/dataApi';
@@ -25,6 +25,8 @@ const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const App = () => {
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
+  const cartItemsExist = cartItems.length > 0;
 
   useEffect(() => {
     dispatch(fetchDataAPI());
@@ -44,10 +46,12 @@ const App = () => {
               <Route path="women" element={<Women />} />
               <Route path="jewelry" element={<Jewelry />} />
               <Route path="electronics" element={<Electronics />} />
-              <Route path="checkout/" element={<Checkout />}>
-                <Route path="review" element={<CheckoutReview />} />
-                <Route path="details" element={<CheckoutInfo />} />
-              </Route>
+              {cartItemsExist && (
+                <Route path="checkout/" element={<Checkout />}>
+                  <Route path="review" element={<CheckoutReview />} />
+                  <Route path="details" element={<CheckoutInfo />} />
+                </Route>
+              )}
               <Route path="product-details/:id" exact element={<ProductDetails />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
