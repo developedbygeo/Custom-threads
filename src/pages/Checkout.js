@@ -1,11 +1,12 @@
-import useCheckout from '../hooks/useCheckout';
 import { Outlet } from 'react-router-dom';
+import useCheckout from '../hooks/useCheckout';
 
 import ActionButtons from '../components/Extra/ActionButtons';
-import { StyledCheckout } from '../components/UI/Container.styled';
+import { StyledCheckout } from '../components/UI/Checkout.styled';
 
 const Checkout = () => {
-  const { onReturn, onProceed, layout, currentStepNum, currentStepText } = useCheckout();
+  const { onReturn, onProceed, layout, currentStepNum, currentStepText, areDetailsInvalid, isLastStep } =
+    useCheckout();
 
   return (
     <>
@@ -15,7 +16,14 @@ const Checkout = () => {
           <span className="step-description">{currentStepText}</span>
         </p>
         <Outlet />
-        <ActionButtons isCheckout onDisable={onReturn} onAction={onProceed} />
+        {!isLastStep && (
+          <ActionButtons
+            isCheckout
+            onDisable={onReturn}
+            onAction={onProceed}
+            isDisabled={areDetailsInvalid}
+          />
+        )}
       </StyledCheckout>
     </>
   );
