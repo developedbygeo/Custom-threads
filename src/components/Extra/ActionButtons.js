@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { CtaButton, SecondaryButton } from '../UI/Button.styled';
 import { AiOutlineShoppingCart, AiOutlineArrowLeft } from 'react-icons/ai';
 
-const ActionButtons = ({ isCart, isCheckout, onDisable, onAction }) => {
+const ActionButtons = ({ isCart, isCheckout, onDisable, onAction, isDisabled }) => {
   const cartItems = useSelector((state) => state.cart.items);
   const itemsExist = cartItems.length > 0;
 
@@ -38,7 +38,13 @@ const ActionButtons = ({ isCart, isCheckout, onDisable, onAction }) => {
         <span>Return</span>
       </SecondaryButton>
       {itemsExist && (
-        <CtaButton onClick={onAction} ctaAltHover disableTransform className="checkout-btn">
+        <CtaButton
+          onClick={onAction}
+          disabled={isDisabled}
+          ctaAltHover
+          disableTransform
+          className="checkout-btn"
+        >
           <span>Continue</span>
           <span className="cart-icon-right">
             <AiOutlineShoppingCart />
@@ -57,7 +63,13 @@ const ActionButtons = ({ isCart, isCheckout, onDisable, onAction }) => {
         <span>Return</span>
       </SecondaryButton>
       {itemsExist && (
-        <CtaButton onClick={onAction} ctaAltHover disableTransform className="checkout-btn">
+        <CtaButton
+          onClick={onAction}
+          ctaAltHover
+          disableTransform
+          className="checkout-btn"
+          disabled={isDisabled}
+        >
           <span>Continue</span>
           <span className="cart-icon-right">
             <AiOutlineShoppingCart />
