@@ -19,6 +19,8 @@ const Jewelry = React.lazy(() => import('./pages/Jewelry'));
 const Electronics = React.lazy(() => import('./pages/Electronics'));
 const ProductDetails = React.lazy(() => import('./pages/ProductDetails'));
 const Checkout = React.lazy(() => import('./pages/Checkout'));
+const CheckoutInfo = React.lazy(() => import('./pages/CheckoutInfo'));
+const CheckoutReview = React.lazy(() => import('./pages/CheckoutReview'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const App = () => {
@@ -42,7 +44,10 @@ const App = () => {
               <Route path="women" element={<Women />} />
               <Route path="jewelry" element={<Jewelry />} />
               <Route path="electronics" element={<Electronics />} />
-              <Route path="checkout" element={<Checkout />} />
+              <Route path="checkout/" element={<Checkout />}>
+                <Route path="review" element={<CheckoutReview />} />
+                <Route path="details" element={<CheckoutInfo />} />
+              </Route>
               <Route path="product-details/:id" exact element={<ProductDetails />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
