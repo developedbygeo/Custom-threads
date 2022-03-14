@@ -1,6 +1,7 @@
 import withSelectedList from '../components/Products/withSelectedList';
 
 import ProductList from '../components/Products/ProductList';
+import { Controls } from '../components/Extra/Controls';
 
 import Banner from '../components/UI/Banner';
 import femaleModel1 from '../assets/female-model-1.webp';
@@ -27,6 +28,7 @@ const Women = () => {
         customClr="#eaeaea"
         customClass="dualImageBanner"
       />
+      <Controls />
       <WomenProducts retrieveID="women's clothing" />
     </>
   );
