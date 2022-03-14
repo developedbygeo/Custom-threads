@@ -1,6 +1,7 @@
 import withSelectedList from '../components/Products/withSelectedList';
 
 import ProductList from '../components/Products/ProductList';
+import { Controls } from '../components/Extra/Controls';
 
 import Banner from '../components/UI/Banner';
 import electronics from '../assets/electronics.webp';
@@ -24,6 +25,7 @@ const Electronics = () => {
         rowReverse={true}
         parentClass="wall"
       />
+      <Controls />
       <ElectronicProducts retrieveID="electronics" />
     </>
   );
