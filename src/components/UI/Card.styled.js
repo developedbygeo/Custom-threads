@@ -5,12 +5,15 @@ const stickyCardUtility = css`
   position: sticky;
   top: 0;
   z-index: 10;
+`;
+
+const controlsStyling = css`
   background: ${({ theme }) => theme.colors.cardBg};
   box-shadow: 0px 6px 2px -1px rgba(0, 0, 0, 0.09);
 `;
 
 const isCardUtility = ({ sticky }) => {
-  if (sticky) {
+  if (sticky === true) {
     return stickyCardUtility;
   }
 };
@@ -44,6 +47,7 @@ export const ActionWrapper = styled.div`
   ${getLayout};
   ${baseCardSettings};
   ${isCardUtility};
+  ${controlsStyling};
 `;
 
 export const ImageCard = styled.div`
