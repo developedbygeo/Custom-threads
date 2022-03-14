@@ -1,6 +1,7 @@
 import withSelectedList from '../components/Products/withSelectedList';
 
 import ProductList from '../components/Products/ProductList';
+import { Controls } from '../components/Extra/Controls';
 
 import Banner from '../components/UI/Banner';
 import jewelry from '../assets/jewelry.webp';
@@ -18,6 +19,7 @@ const Jewelry = () => {
   return (
     <>
       <Banner content={jewelryContent} customBg="#3F4C63" customClr="#eaeaea" />
+      <Controls />
       <JewelryProducts retrieveID="jewelery" />
     </>
   );
