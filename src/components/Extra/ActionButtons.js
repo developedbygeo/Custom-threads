@@ -17,7 +17,7 @@ const ActionButtons = ({ isCart, isCheckout, onDisable, onAction }) => {
         <span>Return</span>
       </SecondaryButton>
       {itemsExist && (
-        <Link to="/checkout" onClick={onDisable}>
+        <Link to="/checkout/review" onClick={onDisable}>
           <CtaButton ctaAltHover disableTransform className="checkout-btn">
             <span>Checkout</span>
             <span className="cart-icon-right">
