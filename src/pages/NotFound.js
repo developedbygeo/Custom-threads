@@ -22,7 +22,7 @@ const NotFound = () => {
     <StyledHero flexSettings={layout} mHeight="90vh" h="100%">
       <div className="notFound-msg">
         <h2>Seems like you found a secret path!</h2>
-        <p>Just kidding, there's nothing here</p>
+        <p>Just kidding, there's nothing here.</p>
       </div>
       <div className="notFound">
         <img src={NotFoundImage} alt="404 not found" />
