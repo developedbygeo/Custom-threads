@@ -166,7 +166,7 @@ export const StyledCheckout = styled(StyledSection)`
       svg {
         ${maxContainer};
         #success-indicator {
-          animation: ${houdini} 5s ease-in-out infinite alternate-reverse;
+          animation: ${houdini} 3s ease-in;
         }
       }
     }
