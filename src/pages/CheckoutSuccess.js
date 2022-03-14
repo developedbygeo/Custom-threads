@@ -26,8 +26,8 @@ const CheckoutSuccess = () => {
   return (
     <article className="success-header">
       <div className="success-text">
-        <h2>We have received your order</h2>
-        <p>and it will be dispatched as soon as possible!</p>
+        <h2>We have received your order!</h2>
+        <p>and it will be dispatched as soon as possible.</p>
       </div>
       <div className="svg-cont">
         <SuccessSVG />
