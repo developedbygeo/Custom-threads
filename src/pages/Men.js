@@ -1,5 +1,7 @@
 import withSelectedList from '../components/Products/withSelectedList';
 
+import { Controls } from '../components/Extra/Controls';
+
 import ProductList from '../components/Products/ProductList';
 
 import Banner from '../components/UI/Banner';
@@ -22,6 +24,7 @@ const Men = () => {
   return (
     <>
       <Banner content={menContent} customBg={gradient} customClr="#141414" customClass="dualImageBanner" />
+      <Controls />
       <MenProducts retrieveID="men's clothing" />
     </>
   );
