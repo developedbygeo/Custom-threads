@@ -41,7 +41,7 @@ const Product = ({ product, onAddItem, onGoBack, isDetails, asElement }) => {
           <p className="price">${product.price}</p>
         </div>
         <div className="cta-wrapper">
-          <CtaButton onClick={onAddItem.bind(null, product)} title="Add this item to your cart">
+          <CtaButton ctaAltHover onClick={onAddItem.bind(null, product)} title="Add this item to your cart">
             Add to Cart
           </CtaButton>
           {!isDetails && seeMoreDetailsButton}
