@@ -16,6 +16,17 @@ const productSlice = createSlice({
         });
       });
     },
+    sortByPrice(state, action) {
+      if (action.payload.sort === 'asc') {
+        state[action.payload.slice] = state[action.payload.slice].sort((productA, productB) =>
+          productA.price > productB.price ? 1 : -1
+        );
+      } else {
+        state[action.payload.slice] = state[action.payload.slice].sort((productA, productB) =>
+          productA.price < productB.price ? 1 : -1
+        );
+      }
+    },
     resetFilters(state) {
       state.filtered = state.products;
     },
