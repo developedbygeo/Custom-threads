@@ -9,7 +9,7 @@ import jewelry from '../assets/jewelry.webp';
 const jewelryContent = {
   header: 'Jewelry!',
   subheader1: 'A fancy necklace or casual earrings?',
-  subheader2: 'We got those too!',
+  subheader2: 'We have got just the thing!',
   imgURL: jewelry,
 };
 
