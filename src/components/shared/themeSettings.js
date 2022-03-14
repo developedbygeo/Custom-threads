@@ -15,6 +15,8 @@ const theme = {
     accent: '#ae471e',
     activeNavRGB: '221, 102, 54',
     filtersRGB: '235, 235, 235',
+    success: '#4bb543',
+    error: '#ff0000',
   },
 };
 
