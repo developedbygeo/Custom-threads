@@ -8,14 +8,14 @@ import { bumpText } from '../shared/animations';
 
 const standardHover = css`
   @media (hover: hover) {
-    &:hover {
+    &:hover:enabled {
       background: ${({ theme }) => theme.colors.ctaEerieBlack};
     }
   }
 `;
 const altHover = css`
   @media (hover: hover) {
-    &:hover {
+    &:hover:enabled {
       background: ${({ theme }) => theme.colors.ctaSecondaryBgClr};
       border: 1.5px solid ${({ theme }) => theme.colors.ctaSecondaryBgClr};
       color: ${({ customClr }) => customClr || 'initial'};
@@ -101,17 +101,20 @@ export const CtaButton = styled.button`
   transition: all 200ms ease-in-out;
   ${getCtaHoverClr};
   @media (hover: hover) {
-    &:hover {
+    &:hover:enabled {
       color: ${({ theme }) => theme.colors.mainBg};
       ${getTransformHover}
     }
+  }
+  &:disabled {
+    background: ${({ theme }) => theme.colors.heroBg};
+    cursor: not-allowed;
   }
 `;
 
 export const SecondaryButton = styled.button`
   ${commonBtnStyling};
   color: ${({ theme }) => theme.colors.ctaDavysGray};
-  text-decoration: underline;
   ${colorInteract}
 `;
 
