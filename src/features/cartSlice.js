@@ -4,6 +4,7 @@ const cartInit = {
   items: [],
   totalQuantity: 0,
   totalCost: 0,
+  isCheckedOut: false,
 };
 
 const cartSlice = createSlice({
@@ -38,8 +39,13 @@ const cartSlice = createSlice({
         existing.totalPrice = existing.price * existing.quantity;
       }
     },
+    setCheckout(state, action) {
+      state.isCheckedOut = action.payload;
+    },
     resetCart(state) {
-      state = cartInit;
+      state.totalCost = 0;
+      state.totalQuantity = 0;
+      state.items.length = 0;
     },
   },
 });
