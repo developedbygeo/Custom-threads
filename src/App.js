@@ -21,11 +21,13 @@ const ProductDetails = React.lazy(() => import('./pages/ProductDetails'));
 const Checkout = React.lazy(() => import('./pages/Checkout'));
 const CheckoutInfo = React.lazy(() => import('./pages/CheckoutInfo'));
 const CheckoutReview = React.lazy(() => import('./pages/CheckoutReview'));
+const CheckoutSuccess = React.lazy(() => import('./pages/CheckoutSuccess'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const App = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+  const userCheckedOut = useSelector((state) => state.cart.isCheckedOut);
   const cartItemsExist = cartItems.length > 0;
 
   useEffect(() => {
@@ -46,12 +48,15 @@ const App = () => {
               <Route path="women" element={<Women />} />
               <Route path="jewelry" element={<Jewelry />} />
               <Route path="electronics" element={<Electronics />} />
-              {cartItemsExist && (
-                <Route path="checkout/" element={<Checkout />}>
+
+              {(cartItemsExist || userCheckedOut) && (
+                <Route path="checkout/" exact element={<Checkout />}>
                   <Route path="review" element={<CheckoutReview />} />
                   <Route path="details" element={<CheckoutInfo />} />
+                  <Route path="success" element={<CheckoutSuccess />} />
                 </Route>
               )}
+
               <Route path="product-details/:id" exact element={<ProductDetails />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
