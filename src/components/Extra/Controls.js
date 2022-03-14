@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import { productActions } from '../../features/productSlice';
 
 import Drawer from '../UI/Drawer/Drawer';
 import Filters from './Filters';
@@ -13,38 +16,70 @@ const wrapperSettings = {
   align: 'center',
   dir: 'row',
 };
+const singleBtnWrapper = {
+  justify: 'flex-end',
+  align: 'center',
+  dir: 'row',
+};
 
 export const Controls = () => {
+  const location = useLocation();
+  const dispatch = useDispatch();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const queryParams = new URLSearchParams(location.search);
+  const sortParams = queryParams.get('sort');
+  const isSortingAsc = sortParams === 'asc';
+  const pathname = location.pathname.replace('/', '');
+  const isHome = pathname === 'home';
+
+  const sortingIcon = sortParams && (isSortingAsc ? <CaretDownFill /> : <CaretUpFill />);
+
+  const sortButtonText = sortParams ? 'Sort' : 'Sort by price';
 
   const menuToggleHandler = () => {
     setMenuOpen((prevState) => !prevState);
   };
 
-  // TODO finish the sorting logic - maybe implement sort on other pages as well
+  const changeSortingHandler = () => {
+    setSearchParams(`?sort=${isSortingAsc ? 'desc' : 'asc'}`);
+  };
+
+  useEffect(() => {
+    if (sortParams) {
+      dispatch(
+        productActions.sortByPrice({
+          sort: searchParams.get('sort'),
+          slice: pathname === 'home' ? 'filtered' : 'products',
+        })
+      );
+    }
+  }, [sortParams, dispatch, pathname, searchParams]);
 
   return (
-    <ActionWrapper sticky flexSettings={wrapperSettings}>
-      <Card p="1rem" customMargin="0%">
-        <StyledUtilityBtn onClick={menuToggleHandler}>
-          <span className="icon">
-            <Filter />
-          </span>
-          <span className="text">Filter</span>
-        </StyledUtilityBtn>
-      </Card>
+    <ActionWrapper sticky={isHome} flexSettings={isHome ? wrapperSettings : singleBtnWrapper}>
+      {isHome && (
+        <Card p="1rem" customMargin="0%">
+          <StyledUtilityBtn onClick={menuToggleHandler} title="Filter by category & price">
+            <span className="icon">
+              <Filter />
+            </span>
+            <span className="text">Filter</span>
+          </StyledUtilityBtn>
+        </Card>
+      )}
       {menuOpen && (
         <Drawer>
           <Filters />
         </Drawer>
       )}
       <Card sticky p="1rem" customMargin="0%">
-        <StyledUtilityBtn>
-          <span className="text">Sort</span>
-          <span className="icon smallIcon">
-            <CaretUpFill />
-            {/* <CaretDownFill /> */}
-          </span>
+        <StyledUtilityBtn
+          onClick={changeSortingHandler}
+          title={sortParams && `Sort by ${isSortingAsc ? 'descending' : 'ascending'} price`}
+        >
+          <span className="text">{sortButtonText}</span>
+          <span className="icon smallIcon">{sortingIcon}</span>
         </StyledUtilityBtn>
       </Card>
     </ActionWrapper>
