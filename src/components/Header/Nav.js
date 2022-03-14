@@ -56,7 +56,7 @@ const Nav = () => {
         <button>
           <Person />
         </button>
-        <CartButton />
+        <CartButton onClick={showCartHandler} />
       </div>
     </nav>
   );
