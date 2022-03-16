@@ -19,6 +19,9 @@ export const cartView = css`
       color: ${({ theme }) => theme.colors.accent};
     }
   }
+  & > .not-found {
+    line-height: 24px;
+  }
   ${cartStyling};
   ${svgAdjustments};
   ${cartActions};
