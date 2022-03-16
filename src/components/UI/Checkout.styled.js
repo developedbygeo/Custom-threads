@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { StyledSection } from './Container.styled';
 import { svgAdjustments, cartStyling, cartActions, priceStyling } from '../shared/styles/cartStyling';
+import { formBaseStyle, messageStyle } from '../shared/styles/miscStyling';
 
 import { flexMixin, maxContainer } from '../shared/mixins';
 import { houdini } from '../shared/animations';
@@ -86,21 +87,7 @@ export const StyledCheckout = styled(StyledSection)`
   }
 
   form {
-    width: 100%;
-    height: 50%;
-    ${flexMixin('center', 'center', 'column')};
-    gap: 3vh;
-    & > div {
-      position: relative;
-      padding: 15px 0 0;
-      margin-top: 10px;
-      width: 50%;
-      ${flexMixin('center', 'flex-start', 'column')};
-    }
-    input,
-    label {
-      font-size: 2rem;
-    }
+    ${formBaseStyle}
   }
 
   .form-action {
@@ -112,32 +99,8 @@ export const StyledCheckout = styled(StyledSection)`
     ${flexMixin('center', 'flex-end', 'row')};
   }
 
-  .msg {
-    text-align: center;
-    font-weight: 300;
-    svg {
-      width: 2rem;
-      height: 2rem;
-      margin-left: 1.25rem;
-      margin-bottom: 0.4rem;
-    }
-    .small-svg {
-      width: 3rem;
-      height: 3rem;
-      margin-left: 1rem;
-    }
-  }
+  ${messageStyle};
 
-  .success {
-    color: ${({ theme }) => theme.colors.success};
-  }
-  .error {
-    color: ${({ theme }) => theme.colors.error};
-  }
-  .success,
-  .error {
-    font-weight: 500;
-  }
   .not-found {
     line-height: 24px;
   }
