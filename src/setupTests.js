@@ -7,12 +7,20 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import theme from './components/shared/themeSettings';
 import { store } from './app/store';
+import GlobalStyle from './components/shared/globalStyle';
+
+window.scrollTo = (y) => {
+  document.documentElement.scrollTop = y;
+};
 
 const AllProviders = ({ children }) => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          {children}
+        </ThemeProvider>
       </BrowserRouter>
     </Provider>
   );
