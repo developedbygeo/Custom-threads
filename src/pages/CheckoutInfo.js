@@ -5,13 +5,13 @@ import { authActions } from '../features/authSlice';
 import StyledInput from '../components/UI/Input.styled';
 import { StyledUtilityBtn } from '../components/UI/Button.styled';
 import { Send } from 'styled-icons/boxicons-regular';
-import { CheckLg } from '@styled-icons/bootstrap/CheckLg';
-import { ErrorCircle } from '@styled-icons/boxicons-regular/ErrorCircle';
-import { InformationCircle } from '@styled-icons/heroicons-outline/InformationCircle';
+import { messages } from '../components/shared/messages';
 
 const basicValidation = (...values) => {
   return values.every((val) => val.trim().length > 1);
 };
+
+const { successMessage, errorMessage, initialMessage } = messages;
 
 const CheckoutInfo = () => {
   const [errorExists, setErrorExists] = useState(null);
@@ -39,41 +39,22 @@ const CheckoutInfo = () => {
     }
   };
 
-  const errorMessage = (
-    <p className="error msg small-svg">
-      Error: All fields are required <ErrorCircle className="small-svg" />
-    </p>
-  );
-
-  const proceedMessage = (
-    <p className="tip msg">
-      Please fill all the fields to proceed <InformationCircle className="small-svg" />
-    </p>
-  );
-
-  const successMessage = (
-    <p className="success msg">
-      You can now check out!
-      <CheckLg />
-    </p>
-  );
-
   return (
     <>
       <form onSubmit={submitDetailsHandler} autoComplete="off">
-        <div>
+        <div className="data-field">
           <StyledInput ref={nameRef} id="name" type="text" placeholder="Name" required />
           <label htmlFor="name">Name</label>
         </div>
-        <div>
+        <div className="data-field">
           <StyledInput ref={lastNameRef} id="lastname" type="text" placeholder="Last Name" required />
           <label htmlFor="name">Last Name</label>
         </div>
-        <div>
+        <div className="data-field">
           <StyledInput ref={addressRef} id="address" type="text" placeholder="Address" required />
           <label htmlFor="address">Address</label>
         </div>
-        <div>
+        <div className="data-field">
           <StyledInput ref={streetRef} id="street" type="text" placeholder="Street No." required />
           <label htmlFor="street">Street Number</label>
         </div>
@@ -88,7 +69,7 @@ const CheckoutInfo = () => {
           )}
         </div>
       </form>
-      {errorExists === null ? proceedMessage : errorExists ? errorMessage : successMessage}
+      {errorExists === null ? initialMessage : errorExists ? errorMessage : successMessage}
     </>
   );
 };
