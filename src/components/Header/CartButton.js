@@ -21,7 +21,7 @@ const CartButton = ({ onClick }) => {
   const spanStyles = `total ${itemsExist ? 'total-active' : ''} ${isCartAnimated ? 'bump' : ''}`;
 
   return (
-    <StyledCartButton onClick={onClick}>
+    <StyledCartButton title="Toggle cart" onClick={onClick}>
       <span>
         <Bag className="bag" />
       </span>
