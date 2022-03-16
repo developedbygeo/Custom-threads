@@ -56,7 +56,7 @@ const ActionButtons = ({ isCart, isCheckout, onDisable, onAction, isDisabled }) 
 
   const genericView = (
     <div className="action-wrapper">
-      <SecondaryButton onClick={onDisable} className="return-btn">
+      <SecondaryButton onClick={onDisable} className="return-btn" title="return">
         <span className="cart-icon-left">
           <AiOutlineArrowLeft />
         </span>
