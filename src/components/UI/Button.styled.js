@@ -81,7 +81,7 @@ const utilityStyling = css`
   svg {
     height: 100%;
     width: auto;
-    max-width: 2rem;
+    max-width: ${({ iconMaxWidth }) => iconMaxWidth || '2rem'};
   }
   .text {
     ${flexMixin('center', 'center', 'row')};
