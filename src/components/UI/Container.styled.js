@@ -3,7 +3,6 @@ import styled, { css } from 'styled-components';
 import { devices } from '../shared/breakpoints';
 import { getLayout } from '../shared/utils';
 import { flexMixin, maxContainer } from '../shared/mixins';
-import { svgAdjustments, cartStyling, cartActions, priceStyling } from '../shared/styles/cartStyling';
 
 const sectionDefaults = css`
   width: 100vw;
