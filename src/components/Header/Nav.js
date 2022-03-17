@@ -21,7 +21,7 @@ const Nav = () => {
   const [isProfileVisible, setIsProfileVisible] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const { pathname } = useLocation();
-  const { isLoggedIn } = useSelector((state) => state.auth);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const isMobile = windowWidth <= 768;
 
   useEffect(() => {
