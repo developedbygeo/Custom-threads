@@ -15,7 +15,7 @@ const StyledDropdown = styled.div`
   ${flexMixin('center', 'center', 'column')};
   gap: 3rem;
   @supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
-    background: rgba(${({ theme }) => theme.colors.mainBgRGB}, 0.5);
+    background: rgba(${({ theme }) => theme.colors.mainBgRGB}, 0.8);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
   }
