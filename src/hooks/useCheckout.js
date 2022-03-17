@@ -13,7 +13,7 @@ const layoutSettings = {
 const useCheckout = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const { isAuth } = useSelector((state) => state.auth);
+  const isAuth = useSelector((state) => state.auth.isAuth);
   const currentStepNum = steps.indexOf(pathname.replace('/checkout/', ''));
   const currentStepText = steps[currentStepNum];
   const nextStep = steps[steps.indexOf(pathname.replace('/checkout/', '')) + 1];
