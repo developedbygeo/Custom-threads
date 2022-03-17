@@ -49,7 +49,7 @@ export const ActionWrapper = styled.div`
   ${isCardUtility};
   ${controlsStyling};
   @supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
-    background: rgba(${({ theme }) => theme.colors.cardBgRGB}, 0.55);
+    background: rgba(${({ theme }) => theme.colors.cardBgRGB}, 0.75);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
   }
