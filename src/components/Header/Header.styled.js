@@ -57,6 +57,9 @@ const StyledHeader = styled.header`
     max-width: 4rem;
     max-height: 80%;
   }
+  .logged-in {
+    color: ${({ theme }) => theme.colors.success};
+  }
   .bag {
     max-width: 4.5rem;
   }
