@@ -15,7 +15,7 @@ const loginLayout = {
 };
 
 const ProfileView = ({ onDisable }) => {
-  const { isLoggedIn } = useSelector((state) => state.auth);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
 
   const logoutHandler = () => {
