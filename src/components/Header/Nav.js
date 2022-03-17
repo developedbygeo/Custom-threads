@@ -37,7 +37,7 @@ const Nav = () => {
   const cart = <CartButton onClick={showCartHandler} />;
 
   const profile = (
-    <button onClick={showProfileHandler} title="My Profile">
+    <button onClick={showProfileHandler} className={`${isLoggedIn ? 'logged-in' : ''}`} title="My Profile">
       {isLoggedIn ? <PersonCheck /> : <Person />}
     </button>
   );
