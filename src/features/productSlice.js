@@ -1,8 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initial = {
+  fetched: false,
+  products: [],
+  filtered: [],
+  activeFilters: ["men's clothing", "women's clothing", 'jewelery', 'electronics'],
+  activePrice: 1000,
+};
+
 const productSlice = createSlice({
   name: 'products',
-  initialState: { fetched: false, products: [], filtered: [] },
+  initialState: initial,
   reducers: {
     addProducts(state, action) {
       state.products = action.payload;
@@ -15,6 +23,15 @@ const productSlice = createSlice({
           return item.category === activeFilter && item.price <= action.payload.price;
         });
       });
+    },
+    addFilter(state, action) {
+      state.activeFilters = [...state.activeFilters, action.payload];
+    },
+    removeFilter(state, action) {
+      state.activeFilters = state.activeFilters.filter((el) => el !== action.payload);
+    },
+    setFilterPrice(state, action) {
+      state.activePrice = action.payload;
     },
     sortByPrice(state, action) {
       if (action.payload.sort === 'asc') {
