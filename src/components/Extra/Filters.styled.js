@@ -9,9 +9,13 @@ const StyledFilters = styled.form`
   margin-top: 3vh;
   gap: 3rem;
   padding: 3rem;
-  background: rgba(${({ theme }) => theme.colors.filtersRGB}, 0.9);
-  backdrop-filter: blur(10px);
+  background: rgba(${({ theme }) => theme.colors.filtersRGB}, 1);
   ${flexMixin('center', 'flex-start', 'column')};
+  @supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+    background: rgba(${({ theme }) => theme.colors.filtersRGB}, 0.95);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
   & > h3 {
     font-weight: 500;
   }
