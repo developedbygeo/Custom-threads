@@ -14,7 +14,7 @@ const ProfileInfo = ({ onDisable }) => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const [isRegister, setIsRegister] = useState(false);
-  const [errorExists, formSubmitHandler] = useForm(authActions.login, [emailRef, passwordRef]);
+  const [errorExists, formSubmitHandler] = useForm(authActions.login);
 
   const toggleRegister = () => {
     setIsRegister((prevState) => !prevState);
@@ -38,7 +38,9 @@ const ProfileInfo = ({ onDisable }) => {
       <h2>
         Welcome <span className="logo">back</span>!
       </h2>
-      <p>Please log in with your credentials.</p>
+      <p>
+        Please log in with your <span className="action-prompt">credentials.</span>
+      </p>
     </>
   );
 
