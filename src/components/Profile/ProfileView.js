@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { authActions } from '../../features/authSlice';
 
 import ProfileInfo from './ProfileInfo';
-import StyledLogin from '../UI/Login.styled';
-import { ReactComponent as LoginSVG } from '../../assets/login.svg';
+import StyledLogin from './Login.styled';
 import { StyledUtilityBtn, CtaButton } from '../UI/Button.styled';
+import { ReactComponent as LoginSVG } from '../../assets/login.svg';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const loginLayout = {
