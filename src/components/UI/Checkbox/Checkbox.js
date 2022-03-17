@@ -1,24 +1,18 @@
-import React, { useState, useImperativeHandle } from 'react';
+import React from 'react';
 
 import { Check } from '@styled-icons/bootstrap/Check';
 import StyledCheckbox from './Checkbox.styled.js';
 
-const Checkbox = React.forwardRef(({ children }, ref) => {
-  const [isChecked, setIsChecked] = useState(true);
-
-  useImperativeHandle(ref, () => ({ isChecked: () => isChecked }), [isChecked]);
-
-  const changeStatusHandler = () => setIsChecked((prevState) => !prevState);
-
+const Checkbox = ({ children, value, onValueChange }) => {
   return (
-    <StyledCheckbox onClick={changeStatusHandler}>
+    <StyledCheckbox onClick={onValueChange}>
       <label>{children}</label>
       <input type="checkbox" />
-      <span className={`checkbox ${isChecked ? 'checkbox--active' : ''}`} aria-hidden="true">
-        {isChecked && <Check />}
+      <span className={`checkbox ${value ? 'checkbox--active' : ''}`} aria-hidden="true">
+        {value && <Check />}
       </span>
     </StyledCheckbox>
   );
-});
+};
 
 export default React.memo(Checkbox);
