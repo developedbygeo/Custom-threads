@@ -1,47 +1,38 @@
-import { useState, useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useRef } from 'react';
 import { authActions } from '../features/authSlice';
+import useForm from '../hooks/useForm';
 
 import StyledInput from '../components/UI/Input.styled';
 import { StyledUtilityBtn } from '../components/UI/Button.styled';
 import { Send } from 'styled-icons/boxicons-regular';
 import { messages } from '../components/shared/messages';
 
-const basicValidation = (...values) => {
-  return values.every((val) => val.trim().length > 1);
-};
-
 const { successMessage, errorMessage, initialMessage } = messages;
 
 const CheckoutInfo = () => {
-  const [errorExists, setErrorExists] = useState(null);
-  const [showButton, setShowButton] = useState(true);
-  const dispatch = useDispatch();
+  const [errorExists, submitHandler] = useForm(authActions.approveAuth);
+
+  const shouldSubmitShow = errorExists === null || errorExists;
+
   const nameRef = useRef();
   const lastNameRef = useRef();
   const addressRef = useRef();
   const streetRef = useRef();
 
-  const submitDetailsHandler = (e) => {
-    e.preventDefault();
-    const res = basicValidation(
-      nameRef.current.value,
-      lastNameRef.current.value,
-      addressRef.current.value,
-      streetRef.current.value
-    );
-    if (!res) {
-      setErrorExists(true);
-    } else {
-      setErrorExists(false);
-      setShowButton(false);
-      dispatch(authActions.approveAuth(res));
-    }
-  };
-
   return (
     <>
-      <form onSubmit={submitDetailsHandler} autoComplete="off">
+      <form
+        onSubmit={(e) =>
+          submitHandler(
+            e,
+            nameRef.current.value,
+            lastNameRef.current.value,
+            addressRef.current.value,
+            streetRef.current.value
+          )
+        }
+        autoComplete="off"
+      >
         <div className="data-field">
           <StyledInput ref={nameRef} id="name" type="text" placeholder="Name" required />
           <label htmlFor="name">Name</label>
@@ -59,7 +50,7 @@ const CheckoutInfo = () => {
           <label htmlFor="street">Street Number</label>
         </div>
         <div className="form-action">
-          {showButton && (
+          {shouldSubmitShow && (
             <StyledUtilityBtn>
               <span className="text">Submit details</span>
               <span className="icon smallIcon">
