@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { productActions } from '../../features/productSlice';
 
@@ -25,6 +25,7 @@ const singleBtnWrapper = {
 export const Controls = () => {
   const location = useLocation();
   const dispatch = useDispatch();
+  const filteredItems = useSelector((state) => state.data.filtered);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const queryParams = new URLSearchParams(location.search);
@@ -32,6 +33,8 @@ export const Controls = () => {
   const isSortingAsc = sortParams === 'asc';
   const pathname = location.pathname.replace('/', '');
   const isHome = pathname === 'home';
+
+  const filtersActive = filteredItems.length < 19;
 
   const sortingIcon = sortParams && (isSortingAsc ? <CaretDownFill /> : <CaretUpFill />);
 
@@ -60,11 +63,15 @@ export const Controls = () => {
     <ActionWrapper sticky={isHome} flexSettings={isHome ? wrapperSettings : singleBtnWrapper}>
       {isHome && (
         <Card p="1rem" customMargin="0%">
-          <StyledUtilityBtn onClick={menuToggleHandler} title="Filter by category & price">
+          <StyledUtilityBtn
+            onClick={menuToggleHandler}
+            className={`${filtersActive ? 'active' : ''}`}
+            title="Filter by category & price"
+          >
             <span className="icon">
               <Filter />
             </span>
-            <span className="text">Filter</span>
+            <span className="text">{filtersActive ? 'Filters are active' : 'Filters'}</span>
           </StyledUtilityBtn>
         </Card>
       )}
