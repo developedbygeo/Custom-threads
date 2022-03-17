@@ -43,11 +43,20 @@ export const Card = styled.div`
 `;
 
 export const ActionWrapper = styled.div`
-  background: ${({ theme, BgClr }) => BgClr || theme.colors.cardBgClr};
+  background: ${({ theme, BgClr }) => BgClr || theme.colors.cardBg};
   ${getLayout};
   ${baseCardSettings};
   ${isCardUtility};
   ${controlsStyling};
+  @supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+    background: rgba(${({ theme }) => theme.colors.cardBgRGB}, 0.55);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  .active {
+    color: ${({ theme }) => theme.colors.activeNav};
+  }
 `;
 
 export const ImageCard = styled.div`
