@@ -65,7 +65,6 @@ export const StyledCheckout = styled(StyledSection)`
     .step {
       background: rgba(${({ theme }) => theme.colors.activeNavRGB}, 0.8);
       color: ${({ theme }) => theme.colors.mainBg};
-      width: 4rem;
       text-align: center;
       font-weight: 700;
       padding: 0.5rem 1rem;
