@@ -80,7 +80,7 @@ const utilityStyling = css`
   }
   svg {
     height: 100%;
-    width: auto;
+    width: 100%;
     max-width: ${({ iconMaxWidth }) => iconMaxWidth || '2rem'};
   }
   .text {
