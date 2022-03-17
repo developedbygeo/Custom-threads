@@ -5,6 +5,7 @@ const stickyCardUtility = css`
   position: sticky;
   top: 0;
   z-index: 10;
+  margin-top: -5px;
 `;
 
 const controlsStyling = css`
