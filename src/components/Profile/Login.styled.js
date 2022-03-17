@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { StyledSection } from './Container.styled';
+import { StyledSection } from '../UI/Container.styled';
 import { formBaseStyle, messageStyle } from '../shared/styles/miscStyling';
 import { flexMixin, maxContainer } from '../shared/mixins';
 
