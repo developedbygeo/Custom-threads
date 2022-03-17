@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { productActions } from '../../features/productSlice';
-import { useState, useRef } from 'react';
+import useLookupFilter from '../../hooks/useLookupFilter';
 
 import StyledFilters from './Filters.styled';
 import { CtaButton } from '../UI/Button.styled';
@@ -11,23 +11,22 @@ import { getFormData } from '../shared/utils';
 
 const Filters = () => {
   const dispatch = useDispatch();
-  const [price, setPrice] = useState(1000);
-  const menRef = useRef();
-  const womenRef = useRef();
-  const jewelryRef = useRef();
-  const electroRef = useRef();
-
-  const changePriceHandler = (e) => {
-    setPrice(e.target.value);
-  };
+  const [menActive, menFilterHandler] = useLookupFilter("men's clothing");
+  const [womenActive, womenFilterHandler] = useLookupFilter("women's clothing");
+  const [jewelryActive, jewelryFilterHandler] = useLookupFilter('jewelery');
+  const [electroActive, electroFilterHandler] = useLookupFilter('electronics');
+  const [price, changePriceHandler] = useLookupFilter(1000);
 
   const submitFiltersHandler = (e) => {
     e.preventDefault();
     const filters = getFormData(
-      { status: menRef.current.isChecked(), id: "men's clothing" },
-      { status: womenRef.current.isChecked(), id: "women's clothing" },
-      { status: jewelryRef.current.isChecked(), id: 'jewelery' },
-      { status: electroRef.current.isChecked(), id: 'electronics' }
+      {
+        status: menActive,
+        id: "men's clothing",
+      },
+      { status: womenActive, id: "women's clothing" },
+      { status: jewelryActive, id: 'jewelery' },
+      { status: electroActive, id: 'electronics' }
     );
     dispatch(productActions.filterByCategory({ filters, price }));
   };
@@ -36,10 +35,19 @@ const Filters = () => {
     <>
       <StyledFilters onSubmit={submitFiltersHandler}>
         <h3>By Category</h3>
-        <Checkbox ref={menRef}>Men</Checkbox>
-        <Checkbox ref={womenRef}>Women</Checkbox>
-        <Checkbox ref={jewelryRef}>Jewelry</Checkbox>
-        <Checkbox ref={electroRef}>Electronics</Checkbox>
+        <Checkbox value={menActive} onValueChange={menFilterHandler}>
+          Men
+        </Checkbox>
+        <Checkbox value={womenActive} onValueChange={womenFilterHandler}>
+          Women
+        </Checkbox>
+        <Checkbox value={jewelryActive} onValueChange={jewelryFilterHandler}>
+          Jewelry
+        </Checkbox>
+        <Checkbox value={electroActive} onValueChange={electroFilterHandler}>
+          Electronics
+        </Checkbox>
+
         <h3>By Price</h3>
         <div className="price">
           <label>Price:</label>
