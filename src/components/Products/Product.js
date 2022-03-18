@@ -1,9 +1,12 @@
 import { ItemCard, DescriptionCard } from './Product.styled';
 import { CtaButton, StyledLink, StyledUtilityBtn } from '../UI/Button.styled';
 import { AiOutlineArrowLeft, AiOutlineEye } from 'react-icons/ai';
+import { Rating } from 'react-simple-star-rating';
 
 const Product = ({ product, onAddItem, onGoBack, isDetails, asElement }) => {
   if (!product) return <p></p>;
+
+  const price = product.price.toFixed(2);
 
   const seeMoreDetailsButton = (
     <StyledLink to={`/product-details/product-${product.id}`}>
@@ -23,6 +26,23 @@ const Product = ({ product, onAddItem, onGoBack, isDetails, asElement }) => {
     </StyledUtilityBtn>
   );
 
+  const showRatingLayout = (
+    <div className="details">
+      <Rating
+        initialValue={product.rating.rate}
+        fullStyle={{ height: 'auto' }}
+        emptyStyle={{ height: 'auto' }}
+        style={{ width: 'auto', height: 'auto' }}
+        size={14}
+        allowHalfIcon
+        tooltipArray={[`${product.rating.count} votes`]}
+        showTooltip={false}
+        readonly
+      />
+      <p className="price">${price}</p>
+    </div>
+  );
+
   const productInfo = isDetails ? (
     <h2 title={product.title}>{product.title}</h2>
   ) : (
@@ -38,7 +58,7 @@ const Product = ({ product, onAddItem, onGoBack, isDetails, asElement }) => {
         <div className="info-wrapper">
           {productInfo}
           {isDetails && <p className="prod-desc">{product.description}</p>}
-          <p className="price">${product.price}</p>
+          {isDetails ? showRatingLayout : <p className="price">${price}</p>}
         </div>
         <div className="cta-wrapper">
           <CtaButton ctaAltHover onClick={onAddItem.bind(null, product)} title="Add this item to your cart">
