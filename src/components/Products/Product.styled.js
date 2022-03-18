@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { Card } from '../UI/Card.styled';
-import { flexMixin } from '../shared/mixins';
+import { flexMixin, maxContainer } from '../shared/mixins';
 import { cartItem, cartItemDescription } from '../Cart/CartItem.styled';
 import { detailsStyles, detailsDescription } from './ProductDetails.styled';
 
@@ -26,11 +26,22 @@ const ProductItem = css`
   h3 {
     text-align: center;
   }
-  .price {
-    color: ${({ theme }) => theme.colors.accent};
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 0.15rem;
+  .details {
+    ${flexMixin('space-between', 'center', 'row')};
+    ${maxContainer};
+
+    /* rating's main span */
+    & > :nth-child(1) {
+      margin-top: 0.4rem;
+    }
+
+    .price {
+      color: ${({ theme }) => theme.colors.accent};
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.15rem;
+    }
+    /* TODO Rating svg size can be set as width=Xpx */
   }
 `;
 
