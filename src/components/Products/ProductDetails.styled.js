@@ -30,6 +30,14 @@ export const detailsStyles = css`
     ${gridMixin('0.8fr 1fr', '1fr')};
     gap: 5vw;
   }
+  @media ${devices.laptopM} {
+    height: 100%;
+    border: none;
+    width: 90%;
+    margin: auto;
+    ${gridMixin('0.8fr 1fr', '1fr')};
+    gap: 5vw;
+  }
 `;
 
 export const detailsDescription = css`
