@@ -13,11 +13,11 @@ export const StyledHero = styled.section`
   ${sectionDefaults};
   ${getLayout};
   background: ${({ bgClr }) => bgClr || 'inherit'};
-  max-height: ${({ mHeight }) => mHeight || '45vh'};
-  height: ${({ h }) => h || 'initial'};
+  max-height: ${({ mHeight }) => mHeight || '40vh'};
+  height: ${({ h }) => h || '40vh'};
 
   & > div {
-    max-height: 45vh;
+    max-height: 40vh;
   }
 
   button {
@@ -115,4 +115,14 @@ export const StyledSection = styled.section`
   margin: auto;
   margin-top: 2vh;
   ${getLayout}
+  @media ${devices.tablet} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media ${devices.laptopM} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media ${devices.laptopL} {
+    gap: 1rem;
+  }
 `;
