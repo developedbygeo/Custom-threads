@@ -29,6 +29,7 @@ const Product = ({ product, onAddItem, onGoBack, isDetails, asElement }) => {
   const showRatingLayout = (
     <div className="details">
       <Rating
+        className="rating"
         initialValue={product.rating.rate}
         fullStyle={{ height: 'auto' }}
         emptyStyle={{ height: 'auto' }}
