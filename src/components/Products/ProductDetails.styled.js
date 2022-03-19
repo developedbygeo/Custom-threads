@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 
-import { flexMixin } from '../shared/mixins';
+import { devices } from '../shared/breakpoints';
+import { flexMixin, gridMixin } from '../shared/mixins';
 
 export const detailsStyles = css`
   min-height: 80vh;
@@ -13,6 +14,21 @@ export const detailsStyles = css`
     max-width: 20rem;
     padding: 0;
     margin: auto;
+    @media ${devices.laptop} {
+      width: 90%;
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+  @media ${devices.laptop} {
+    height: 50%;
+    border: none;
+    width: 90%;
+    margin: auto;
+    ${gridMixin('0.8fr 1fr', '1fr')};
+    gap: 5vw;
   }
 `;
 
@@ -39,5 +55,11 @@ export const detailsDescription = css`
   .price {
     text-align: right;
     font-size: 2.1rem;
+  }
+  @media ${devices.laptop} {
+    width: 100%;
+    margin: auto;
+    border-top: none;
+    border-left: 1px solid ${({ theme }) => theme.colors.heroBg};
   }
 `;
