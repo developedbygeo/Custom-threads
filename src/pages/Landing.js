@@ -6,6 +6,7 @@ import { ImageCard, Card } from '../components/UI/Card.styled';
 import { StyledHero } from '../components/UI/Container.styled';
 import { CtaButton } from '../components/UI/Button.styled';
 import { getColor } from '../components/shared/utils';
+import { FiGithub } from 'react-icons/fi';
 
 const gridSettings = {
   cols: '0.9fr 1fr',
@@ -49,6 +50,12 @@ const Landing = () => {
           <img src={jacketHero} alt="fancy bomber jacket hanging" />
         </ImageCard>
       </StyledHero>
+      <footer>
+        <a href="https://github.com/developedbygeo" target="_blank" rel="noreferrer">
+          developedbygeo
+        </a>
+        <FiGithub />
+      </footer>
     </>
   );
 };
