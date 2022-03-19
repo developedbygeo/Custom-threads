@@ -29,11 +29,17 @@ html{
     @media ${devices.tablet}{
       font-size: 48%;
     }
+    @media ${devices.laptop}{
+      font-size: 48.5%;
+    }
+    @media ${devices.laptopM}{
+      font-size: 51.5%;
+    }
     @media ${devices.laptopL}{
-      font-size: 65.5%;
+      font-size: 62.5%;
     }
     @media ${devices.desktop}{
-      font-size: 70%;
+      font-size: 72.5%;
     }
     @media ${devices.landscapeMobileSS}{
       font-size: 22%;
@@ -129,6 +135,28 @@ button, a{
 a {
   text-decoration: none;
   color: inherit;
+}
+
+footer{
+  height: 10vh;
+  ${flexMixin('center', 'flex-end', 'row')};
+  gap: 2rem;
+  padding-block: 1rem;
+  a{
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.15rem;
+    text-decoration: underline;
+  }
+  svg{
+    width: 3rem;
+    height: 2.5rem;
+    transition: all 400ms ease-in-out;
+    color: ${({ theme }) => theme.colors.accent};
+    &:hover{
+      transform: rotate(360deg) scale(1.1);
+    }
+  }
 }
 `;
 
