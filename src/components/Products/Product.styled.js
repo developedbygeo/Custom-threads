@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
+import { devices } from '../shared/breakpoints';
 import { Card } from '../UI/Card.styled';
-import { flexMixin, maxContainer } from '../shared/mixins';
+import { flexMixin, gridMixin, maxContainer } from '../shared/mixins';
 import { cartItem, cartItemDescription } from '../Cart/CartItem.styled';
 import { detailsStyles, detailsDescription } from './ProductDetails.styled';
 
@@ -21,11 +22,29 @@ const ProductItem = css`
   img {
     height: 100%;
     width: 100%;
+    max-width: 25rem;
     display: block;
+    @media ${devices.laptopM} {
+      padding: 1rem;
+    }
+    @media ${devices.laptopL} {
+      padding: 2rem;
+    }
   }
-  h3 {
-    text-align: center;
+  .info-wrapper {
+    padding-block: 0.75rem;
+    h3 {
+      text-align: center;
+    }
+    .price {
+      color: ${({ theme }) => theme.colors.accent};
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.15rem;
+      text-align: center;
+    }
   }
+
   .details {
     ${flexMixin('space-between', 'center', 'row')};
     ${maxContainer};
@@ -34,14 +53,23 @@ const ProductItem = css`
     & > :nth-child(1) {
       margin-top: 0.4rem;
     }
-
-    .price {
-      color: ${({ theme }) => theme.colors.accent};
-      font-size: 2rem;
-      font-weight: 600;
-      letter-spacing: 0.15rem;
+  }
+  @media ${devices.laptop} {
+    ${gridMixin('1fr', 'repeat(2, 1fr)')};
+    place-items: center;
+    & > .img-wrapper {
+      height: 90%;
+      margin: auto;
     }
-    /* TODO Rating svg size can be set as width=Xpx */
+    .details {
+      & > :nth-child(1) {
+        margin-left: 1.5vw;
+      }
+    }
+
+    .rating {
+      transform: scale(1.7);
+    }
   }
 `;
 
@@ -65,6 +93,13 @@ const ProductItemDescription = css`
       min-height: 2rem;
       max-width: 25rem;
     }
+    @media ${devices.laptopM} {
+      padding: 0.5rem 1rem;
+      gap: 1rem;
+    }
+  }
+  @media ${devices.laptopL} {
+    padding: 0;
   }
 `;
 
