@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+
+import { devices } from '../../shared/breakpoints';
 import { houdini } from '../../shared/animations';
 import { maxContainer } from '../../shared/mixins';
 import { cartView } from '../../Cart/cartView.styled';
@@ -25,6 +27,9 @@ const modalStyle = css`
   border-radius: 1rem;
   min-height: 25vh;
   animation: ${houdini} 150ms ease-in-out;
+  @media ${devices.laptop} {
+    width: 65vw;
+  }
 `;
 
 const getDivStyle = (props) => {
@@ -34,9 +39,8 @@ const getDivStyle = (props) => {
   return modalStyle;
 };
 
-// TODO add default case for the profile view
 const getPurposeStyle = ({ purpose }) => {
-  if (purpose) {
+  if (purpose === 'cart') {
     return cartView;
   }
 };
