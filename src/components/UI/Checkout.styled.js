@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
+import { devices } from '../shared/breakpoints';
 import { StyledSection } from './Container.styled';
 import { svgAdjustments, cartStyling, cartActions, priceStyling } from '../shared/styles/cartStyling';
 import { formBaseStyle, messageStyle } from '../shared/styles/miscStyling';
 
-import { flexMixin, maxContainer } from '../shared/mixins';
+import { flexMixin, gridMixin, maxContainer } from '../shared/mixins';
 import { houdini } from '../shared/animations';
+
+import checkoutBg from '../../assets/checkout.webp';
+import checkoutBlob from '../../assets/checkoutBlob.png';
 
 // TODO StyledCheckout tablet landscape width 70%;
 export const StyledCheckout = styled(StyledSection)`
@@ -135,13 +139,76 @@ export const StyledCheckout = styled(StyledSection)`
   }
   .action-wrapper {
     display: flex;
-    margin-top: 1vh;
+    margin-block: 1vh;
     svg {
       width: 2.5rem;
       margin-bottom: 0.5rem;
     }
     .svg-wrap {
       margin-right: 1rem;
+    }
+  }
+  @media screen and (max-width: 1300px) {
+    .blob {
+      display: none;
+    }
+  }
+
+  @media ${devices.laptop} {
+    width: 80%;
+    margin-top: 0;
+    ${gridMixin('1fr 0.3fr 1fr', '0.1fr 1fr 0.1fr 0.2fr')};
+    .cart {
+      height: 90%;
+      grid-area: 2/1/2/4;
+    }
+    .price-wrapper {
+      grid-area: 3/3/4/4;
+      ${gridMixin('repeat(2, 1fr)', '1fr')};
+      justify-items: flex-end;
+      .price-header {
+        justify-self: flex-start;
+      }
+    }
+    .action-wrapper {
+      grid-area: 4/3/4/4;
+      ${gridMixin('repeat(2, 1fr)', '1fr')};
+      justify-items: flex-end;
+      .return-btn {
+        justify-self: flex-start;
+      }
+    }
+    form {
+      grid-area: 2/3/2/4;
+      & > .data-field {
+        width: 75%;
+      }
+    }
+    .img-container {
+      grid-area: 2/1/5/2;
+      ${maxContainer};
+      background: url(${checkoutBg}) center no-repeat;
+      background-size: cover;
+      max-height: 80vh;
+      z-index: 1;
+    }
+    .blob {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: url(${checkoutBlob}) no-repeat;
+      background-size: contain;
+      width: 65vw;
+      height: 70vh;
+      pointer-events: none;
+    }
+    .msg {
+      grid-area: 3/3/3/4;
+    }
+  }
+  @media screen and (min-width: 1700px) {
+    .blob {
+      left: 15%;
     }
   }
 `;
