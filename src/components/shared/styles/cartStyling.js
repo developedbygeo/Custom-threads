@@ -31,6 +31,8 @@ export const cartStyling = css`
     }
     .img-wrapper {
       padding: 0;
+      display: flex;
+      justify-content: center;
       img {
         width: 100%;
         max-width: 10rem;
