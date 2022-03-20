@@ -14,14 +14,16 @@ const ProductItem = css`
   gap: 1rem;
   border: 1px solid ${({ theme }) => theme.colors.cardBg};
   & > .img-wrapper {
+    width: auto;
+    ${flexMixin('center', 'center', 'row')};
     max-height: 30rem;
-    width: 25rem;
     padding: 3rem;
   }
 
   img {
-    height: 100%;
-    width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 20rem;
     max-width: 25rem;
     display: block;
     @media ${devices.laptopM} {
@@ -54,7 +56,7 @@ const ProductItem = css`
       margin-top: 0.4rem;
     }
   }
-  @media ${devices.laptop} {
+  @media ${devices.tablet} {
     ${gridMixin('1fr', 'repeat(2, 1fr)')};
     place-items: center;
     & > .img-wrapper {
@@ -63,10 +65,9 @@ const ProductItem = css`
     }
     .details {
       & > :nth-child(1) {
-        margin-left: 1.5vw;
+        margin-left: 2.5rem;
       }
     }
-
     .rating {
       transform: scale(1.7);
     }
@@ -93,7 +94,7 @@ const ProductItemDescription = css`
       min-height: 2rem;
       max-width: 25rem;
     }
-    @media ${devices.laptopM} {
+    @media ${devices.tablet} {
       padding: 0.5rem 1rem;
       gap: 1rem;
     }
