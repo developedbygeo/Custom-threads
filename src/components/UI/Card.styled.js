@@ -55,6 +55,11 @@ export const ActionWrapper = styled.div`
     backdrop-filter: blur(12px);
   }
 
+  .filters {
+    display: flex;
+    gap: 1rem;
+  }
+
   .active {
     color: ${({ theme }) => theme.colors.activeNav};
   }
