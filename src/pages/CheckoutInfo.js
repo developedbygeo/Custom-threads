@@ -21,8 +21,8 @@ const CheckoutInfo = () => {
 
   return (
     <>
-      <div className="img-container" />
-      <div className="blob" />
+      <div className="img-container" role="img" alt="a mother and a child after shopping" />
+      <div className="blob" role="img" alt="colored blob" />
       <form
         onSubmit={(e) =>
           submitHandler(
