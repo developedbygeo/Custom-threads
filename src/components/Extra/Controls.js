@@ -23,11 +23,11 @@ const singleBtnWrapper = {
 };
 
 export const Controls = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
   const dispatch = useDispatch();
   const filteredItems = useSelector((state) => state.data.filtered);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
   const queryParams = new URLSearchParams(location.search);
   const sortParams = queryParams.get('sort');
   const isSortingAsc = sortParams === 'asc';
@@ -48,6 +48,11 @@ export const Controls = () => {
     setSearchParams(`?sort=${isSortingAsc ? 'desc' : 'asc'}`);
   };
 
+  const resetFiltersHandler = () => {
+    dispatch(productActions.resetFilters());
+    setMenuOpen(false);
+  };
+
   useEffect(() => {
     if (sortParams) {
       dispatch(
@@ -62,7 +67,7 @@ export const Controls = () => {
   return (
     <ActionWrapper sticky={isHome} flexSettings={isHome ? wrapperSettings : singleBtnWrapper}>
       {isHome && (
-        <Card p="1rem" customMargin="0%">
+        <Card p="1rem" customMargin="0%" className="filters">
           <StyledUtilityBtn
             onClick={menuToggleHandler}
             className={`${filtersActive ? 'active' : ''}`}
@@ -73,6 +78,11 @@ export const Controls = () => {
             </span>
             <span className="text">{filtersActive ? 'Filters are active' : 'Filters'}</span>
           </StyledUtilityBtn>
+          {filtersActive && (
+            <StyledUtilityBtn onClick={resetFiltersHandler}>
+              <span className="text">Reset Filters</span>
+            </StyledUtilityBtn>
+          )}
         </Card>
       )}
       {menuOpen && (
