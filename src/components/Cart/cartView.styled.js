@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 
+import { devices } from '../shared/breakpoints';
 import { flexMixin } from '../shared/mixins';
 import { cartStyling, svgAdjustments, cartActions, priceStyling } from '../shared/styles/cartStyling';
 
@@ -33,5 +34,21 @@ export const cartView = css`
   }
   .single-btn-layout {
     justify-content: center;
+  }
+
+  @media ${devices.tablet} {
+    .cart {
+      width: 95%;
+      margin: auto;
+      max-height: 65vh;
+    }
+    .price-wrapper {
+      width: 95%;
+      margin: auto;
+    }
+  }
+
+  @media ${devices.laptop} {
+    width: 60vw;
   }
 `;
