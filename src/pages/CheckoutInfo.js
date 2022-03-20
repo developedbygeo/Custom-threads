@@ -21,6 +21,8 @@ const CheckoutInfo = () => {
 
   return (
     <>
+      <div className="img-container" />
+      <div className="blob" />
       <form
         onSubmit={(e) =>
           submitHandler(
