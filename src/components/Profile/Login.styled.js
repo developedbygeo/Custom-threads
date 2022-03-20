@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { devices } from '../shared/breakpoints';
 import { StyledSection } from '../UI/Container.styled';
 import { formBaseStyle, messageStyle } from '../shared/styles/miscStyling';
 import { flexMixin, maxContainer } from '../shared/mixins';
@@ -68,6 +69,30 @@ const StyledLogin = styled(StyledSection)`
     ${flexMixin('space-between', 'center', 'row')};
     width: 75%;
     margin: auto;
+  }
+  @media ${devices.laptop} {
+    width: 80%;
+    margin: auto;
+
+    & > form,
+    & > .login-header {
+      width: 65%;
+      margin: auto;
+    }
+    & > .login-header {
+      padding-top: 1rem;
+    }
+    & > .svg-success {
+      ${flexMixin('center', 'center', ' column')};
+      height: 85%;
+      width: 85%;
+      margin: auto;
+      & > svg {
+        height: 85%;
+        width: 85%;
+        margin: auto;
+      }
+    }
   }
 `;
 
