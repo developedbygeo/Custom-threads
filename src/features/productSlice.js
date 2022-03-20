@@ -46,6 +46,7 @@ const productSlice = createSlice({
     },
     resetFilters(state) {
       state.filtered = state.products;
+      state.activeFilters = initial.activeFilters;
     },
   },
 });
