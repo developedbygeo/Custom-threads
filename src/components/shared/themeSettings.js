@@ -13,6 +13,7 @@ const theme = {
     ctaDavysGray: '#5c5c5c',
     ctaEerieBlack: '#141414',
     ctaSecondaryBgClr: '#a96248',
+    ctaSecondaryRGB: '169, 98, 72',
     activeNav: '#dd6636',
     accent: '#ae471e',
     activeNavRGB: '221, 102, 54',
