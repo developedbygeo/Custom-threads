@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { flexMixin } from '../shared/mixins';
+import { flexMixin, transparentBlur } from '../shared/mixins';
 
 const StyledDropdown = styled.div`
   padding: 2rem;
@@ -14,11 +14,7 @@ const StyledDropdown = styled.div`
   background: ${({ theme }) => theme.colors.mainBg};
   ${flexMixin('center', 'center', 'column')};
   gap: 3rem;
-  @supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
-    background: rgba(${({ theme }) => theme.colors.mainBgRGB}, 0.8);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-  }
+  ${transparentBlur};
 
   & > a {
     letter-spacing: 0.1rem;
