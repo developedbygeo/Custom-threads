@@ -2,8 +2,6 @@ import { css } from 'styled-components';
 
 import { flexMixin } from '../shared/mixins';
 
-// injected conditionally in Product.styled based on props;
-
 export const cartItem = css`
   height: 100%;
   width: 100%;
