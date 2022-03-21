@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { flexMixin } from '../shared/mixins';
+import { flexMixin, transparentBlur } from '../shared/mixins';
 import { labelStyle } from '../shared/styles/miscStyling';
 
 const StyledFilters = styled.form`
@@ -7,15 +7,12 @@ const StyledFilters = styled.form`
   z-index: 20;
   padding: 1.25rem;
   margin-top: 3vh;
+  left: -2vw;
   gap: 3rem;
   padding: 3rem;
   background: rgba(${({ theme }) => theme.colors.filtersRGB}, 1);
   ${flexMixin('center', 'flex-start', 'column')};
-  @supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
-    background: rgba(${({ theme }) => theme.colors.filtersRGB}, 0.95);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-  }
+  ${transparentBlur};
   & > h3 {
     font-weight: 500;
   }
