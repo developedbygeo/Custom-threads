@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+
 import { gridMixin, flexMixin, maxContainer } from '../mixins';
 
 export const svgAdjustments = css`
@@ -42,7 +43,7 @@ export const cartStyling = css`
     .info-wrapper {
       h3 {
         text-align: left;
-        font-weight: 400;
+        font-weight: 300;
       }
       .price,
       .quantity {
