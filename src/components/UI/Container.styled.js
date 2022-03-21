@@ -107,6 +107,12 @@ export const StyledPromo = styled.section`
       }
     }
   }
+  @media ${devices.laptop} {
+    & > article {
+      width: 95%;
+      margin: auto;
+    }
+  }
 `;
 
 export const StyledSection = styled.section`
