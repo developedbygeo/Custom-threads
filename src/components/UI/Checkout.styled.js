@@ -5,11 +5,13 @@ import { StyledSection } from './Container.styled';
 import { svgAdjustments, cartStyling, cartActions, priceStyling } from '../shared/styles/cartStyling';
 import { formBaseStyle, messageStyle } from '../shared/styles/miscStyling';
 
-import { flexMixin, gridMixin, maxContainer } from '../shared/mixins';
+import { flexMixin, gridMixin, customScrollbar, maxContainer } from '../shared/mixins';
+import { boxElevationMid } from '../shared/shadows';
 import { houdini } from '../shared/animations';
 
-import checkoutBg from '../../assets/checkout.webp';
-import checkoutBlob from '../../assets/checkoutBlob.png';
+import checkoutBg from '../../assets/page-content/checkout.webp';
+import checkoutBlob from '../../assets/blobs/checkoutBlob.png';
+import successBlob from '../../assets/blobs/successBlob.png';
 
 // TODO StyledCheckout tablet landscape width 70%;
 export const StyledCheckout = styled(StyledSection)`
@@ -26,6 +28,7 @@ export const StyledCheckout = styled(StyledSection)`
     width: 100%;
     max-height: 72.5vh;
     margin-block: 2vh;
+    ${customScrollbar};
   }
   & > .img-wrapper {
     max-width: 15rem;
@@ -158,9 +161,23 @@ export const StyledCheckout = styled(StyledSection)`
     width: 80%;
     margin-top: 0;
     ${gridMixin('1fr 0.3fr 1fr', '0.1fr 1fr 0.1fr 0.2fr')};
+    .step-indicator {
+      margin-top: 2vh;
+      ${boxElevationMid};
+      border-radius: 1.5rem;
+      padding: 1rem;
+      max-width: 30vw;
+    }
     .cart {
       height: 90%;
+      ${boxElevationMid};
       grid-area: 2/1/2/4;
+      .cart-actions {
+        width: 30%;
+      }
+      li {
+        gap: 3rem;
+      }
     }
     .price-wrapper {
       grid-area: 3/3/4/4;
@@ -174,6 +191,18 @@ export const StyledCheckout = styled(StyledSection)`
       grid-area: 4/3/4/4;
       ${gridMixin('repeat(2, 1fr)', '1fr')};
       justify-items: flex-end;
+      button {
+        ${flexMixin('center', 'center', 'row')};
+        svg {
+          transform: translateY(0.3rem) scale(1.15);
+        }
+        .cart-icon-left {
+          margin-right: 1vw;
+        }
+        .cart-icon-right {
+          margin-left: 1vw;
+        }
+      }
       .return-btn {
         justify-self: flex-start;
       }
@@ -204,6 +233,28 @@ export const StyledCheckout = styled(StyledSection)`
     }
     .msg {
       grid-area: 3/3/3/4;
+    }
+    /* success page styling for mq*/
+    &.success {
+      ${gridMixin('1fr', '0.1fr 1fr')};
+      & > article {
+        ${flexMixin('space-between', 'center', 'column')};
+        align-self: flex-start;
+        height: 100%;
+        .svg-cont {
+          height: 50vh;
+        }
+      }
+      .success-blob {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 30vw;
+        height: 100%;
+        background: url(${successBlob}) center no-repeat;
+        background-size: cover;
+        opacity: 0.45;
+      }
     }
   }
   @media screen and (min-width: 1700px) {
