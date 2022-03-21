@@ -9,6 +9,7 @@ export const detailsStyles = css`
   margin: auto;
   margin-top: 2vh;
   padding: 2rem;
+  box-shadow: none;
   ${flexMixin('flex-start', 'center', 'column')};
   & > .img-wrapper {
     max-width: 20rem;
@@ -19,24 +20,29 @@ export const detailsStyles = css`
       img {
         width: auto;
         height: 100%;
+        max-height: 35rem;
       }
     }
   }
-  @media ${devices.laptop} {
-    height: 50%;
-    border: none;
-    width: 90%;
-    margin: auto;
-    ${gridMixin('0.8fr 1fr', '1fr')};
-    gap: 5vw;
+  @media ${devices.mobileS} {
+    width: 100%;
+    img {
+      max-height: 30rem;
+    }
   }
-  @media ${devices.laptopM} {
+  @media ${devices.laptop} {
     height: 100%;
     border: none;
-    width: 90%;
+    width: 95%;
     margin: auto;
     ${gridMixin('0.8fr 1fr', '1fr')};
     gap: 5vw;
+    & > .img-wrapper {
+      height: auto;
+      img {
+        max-height: 45rem;
+      }
+    }
   }
 `;
 
