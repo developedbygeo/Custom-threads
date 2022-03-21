@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
-import { flexMixin, colorInteract } from '../shared/mixins';
+import { flexMixin, colorInteract, buttonClickEffect } from '../shared/mixins';
 import { smallIconStyle } from '../shared/styles/miscStyling';
 import { bumpText } from '../shared/animations';
 
@@ -54,6 +54,7 @@ const commonBtnStyling = css`
   border: none;
   outline: none;
   background: none;
+  border-radius: 1rem;
   color: ${({ theme }) => theme.colors.mainText};
   align-self: ${({ alignSelf }) => alignSelf || 'inherit'};
   justify-self: ${({ justifySelf }) => justifySelf || 'initial'};
@@ -96,10 +97,10 @@ export const CtaButton = styled.button`
   border: 1.5px solid ${({ theme }) => theme.colors.footerBg};
   color: ${({ theme }) => theme.colors.mainText};
   font-weight: 700;
-  border-radius: 0.15rem;
   background: transparent;
   transition: all 200ms ease-in-out;
   ${getCtaHoverClr};
+  ${buttonClickEffect}
   @media (hover: hover) {
     &:hover:enabled {
       color: ${({ theme }) => theme.colors.mainBg};
