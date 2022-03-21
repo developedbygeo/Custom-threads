@@ -28,6 +28,16 @@ export const cartView = css`
   ${cartActions};
   ${priceStyling};
 
+  .return-btn {
+    border: 1px solid ${({ theme }) => theme.colors.cardBg};
+    transition: all 100ms ease;
+    @media (hover: hover) {
+      &:hover {
+        border-color: ${({ theme }) => theme.colors.ctaSecondaryBgClr};
+      }
+    }
+  }
+
   .action-wrapper {
     width: 100%;
     ${flexMixin('space-between', 'center', 'row')};
@@ -38,13 +48,19 @@ export const cartView = css`
 
   @media ${devices.tablet} {
     .cart {
-      width: 95%;
-      margin: auto;
       max-height: 65vh;
     }
-    .price-wrapper {
+
+    .cart-header,
+    .cart,
+    .price-wrapper,
+    .action-wrapper,
+    .not-found {
       width: 95%;
       margin: auto;
+    }
+    .not-found {
+      line-height: 4rem;
     }
   }
 
