@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { devices } from './breakpoints';
-import { flexMixin, maxContainer } from './mixins';
+import { flexMixin, maxContainer, customScrollbar } from './mixins';
 
-import wall from '../../assets/wall-pattern.jpg';
+import wall from '../../assets/page-content/wall-pattern.jpg';
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -18,28 +18,28 @@ html{
       font-size: 27%;
     }
     @media ${devices.mobileS}{
-      font-size: 35%;
+      font-size: 30%;
     }
     @media ${devices.mobileM}{
-      font-size: 40%;
+      font-size: 32%;
     }
     @media ${devices.mobileL}{
-      font-size: 45%;
+      font-size: 36%;
     }
     @media ${devices.tablet}{
-      font-size: 48%;
+      font-size: 38%;
     }
     @media ${devices.laptop}{
-      font-size: 48.5%;
+      font-size: 43.5%;
     }
     @media ${devices.laptopM}{
-      font-size: 51.5%;
+      font-size: 46.5%;
     }
     @media ${devices.laptopL}{
-      font-size: 62.5%;
+      font-size: 50.5%;
     }
     @media ${devices.desktop}{
-      font-size: 72.5%;
+      font-size: 65.5%;
     }
     @media ${devices.landscapeMobileSS}{
       font-size: 22%;
@@ -51,7 +51,7 @@ html{
       font-size: 45%;
     }
     @media ${devices.desktop4K}{
-      font-size: 110%;
+      font-size: 90%;
     }
 }
 
@@ -80,6 +80,7 @@ main{
     margin: auto;
     background: ${({ theme }) => theme.colors.mainBg};
     overflow-y: auto;
+    ${customScrollbar};
 
     &>.loading{
       position: absolute;
