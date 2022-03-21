@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+
+import { transparentBlur } from '../shared/mixins';
 import { getLayout } from '../shared/utils';
 
 const stickyCardUtility = css`
@@ -49,11 +51,9 @@ export const ActionWrapper = styled.div`
   ${baseCardSettings};
   ${isCardUtility};
   ${controlsStyling};
-  @supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
-    background: rgba(${({ theme }) => theme.colors.cardBgRGB}, 0.75);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-  }
+  ${transparentBlur};
+  height: 5vh;
+  padding-inline: 2%;
 
   .filters {
     display: flex;
