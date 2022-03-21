@@ -4,7 +4,7 @@ import ProductList from '../components/Products/ProductList';
 import { Controls } from '../components/Extra/Controls';
 
 import Banner from '../components/UI/Banner';
-import jewelry from '../assets/jewelry.webp';
+import jewelry from '../assets/page-content/jewelry.webp';
 
 const jewelryContent = {
   header: 'Jewelry!',

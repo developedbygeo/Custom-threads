@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { StyledHero } from '../components/UI/Container.styled';
 import { CtaButton } from '../components/UI/Button.styled';
-import NotFoundImage from '../assets/404.svg';
+import NotFoundImage from '../assets/svg/404.svg';
 
 const layout = {
   justify: 'space-evenly',

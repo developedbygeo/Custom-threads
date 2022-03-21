@@ -4,8 +4,8 @@ import ProductList from '../components/Products/ProductList';
 import { Controls } from '../components/Extra/Controls';
 
 import Banner from '../components/UI/Banner';
-import femaleModel1 from '../assets/female-model-1.webp';
-import femaleModel2 from '../assets/female-model-2.webp';
+import femaleModel1 from '../assets/page-content/female-model-1.webp';
+import femaleModel2 from '../assets/page-content/female-model-2.webp';
 
 const womenContent = {
   header: 'Fancy nightout? Chilling by the beach?',

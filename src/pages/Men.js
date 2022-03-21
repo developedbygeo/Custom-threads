@@ -5,8 +5,8 @@ import { Controls } from '../components/Extra/Controls';
 import ProductList from '../components/Products/ProductList';
 
 import Banner from '../components/UI/Banner';
-import maleModel1 from '../assets/male-model-1.webp';
-import maleModel2 from '../assets/male-model-2.webp';
+import maleModel1 from '../assets/page-content/male-model-1.webp';
+import maleModel2 from '../assets/page-content/male-model-2.webp';
 
 const menContent = {
   header: 'No matter the occasion',

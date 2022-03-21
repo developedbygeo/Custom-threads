@@ -4,7 +4,7 @@ import ProductList from '../components/Products/ProductList';
 
 import Banner from '../components/UI/Banner';
 import { Controls } from '../components/Extra/Controls';
-import promoImage from '../assets/home.png';
+import promoImage from '../assets/page-content/home.png';
 
 const memberPromoContent = {
   header: 'Member Exclusive',

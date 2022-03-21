@@ -4,7 +4,7 @@ import ProductList from '../components/Products/ProductList';
 import { Controls } from '../components/Extra/Controls';
 
 import Banner from '../components/UI/Banner';
-import electronics from '../assets/electronics.webp';
+import electronics from '../assets/page-content/electronics.webp';
 
 const electronicsContent = {
   header: 'The latest tech has landed!',

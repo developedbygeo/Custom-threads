@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import modelHero from '../assets/modelHero.webp';
-import jacketHero from '../assets/jacketHero.webp';
+import modelHero from '../assets/page-content/modelHero.webp';
+import jacketHero from '../assets/page-content/jacketHero.webp';
 import { ImageCard, Card } from '../components/UI/Card.styled';
 import { StyledHero } from '../components/UI/Container.styled';
 import { CtaButton } from '../components/UI/Button.styled';
