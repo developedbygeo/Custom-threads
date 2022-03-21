@@ -50,7 +50,7 @@ const Nav = () => {
   );
 
   const modalProfile = (
-    <Modal onDisable={showProfileHandler}>
+    <Modal purpose="login" onDisable={showProfileHandler}>
       <ProfileView onDisable={showProfileHandler} />
     </Modal>
   );
