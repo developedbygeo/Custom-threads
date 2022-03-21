@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { devices } from '../shared/breakpoints';
 import { Card } from '../UI/Card.styled';
 import { flexMixin, gridMixin, maxContainer } from '../shared/mixins';
+import { boxElevationLow } from '../shared/shadows';
 import { cartItem, cartItemDescription } from '../Cart/CartItem.styled';
 import { detailsStyles, detailsDescription } from './ProductDetails.styled';
 
@@ -13,6 +14,7 @@ const ProductItem = css`
   ${flexMixin('center', 'center', 'column')};
   gap: 1rem;
   border: 1px solid ${({ theme }) => theme.colors.cardBg};
+  ${boxElevationLow};
   & > .img-wrapper {
     width: auto;
     ${flexMixin('center', 'center', 'row')};
@@ -62,6 +64,9 @@ const ProductItem = css`
     & > .img-wrapper {
       height: 90%;
       margin: auto;
+    }
+    .info-wrapper {
+      ${gridMixin('1fr', 'minmax(3rem, 12rem)')};
     }
     .details {
       & > :nth-child(1) {
