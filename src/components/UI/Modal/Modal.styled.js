@@ -4,6 +4,7 @@ import { devices } from '../../shared/breakpoints';
 import { houdini } from '../../shared/animations';
 import { maxContainer } from '../../shared/mixins';
 import { cartView } from '../../Cart/cartView.styled';
+import { loginView } from '../../Profile/loginView.styled';
 
 const backdropStyle = css`
   position: fixed;
@@ -40,9 +41,8 @@ const getDivStyle = (props) => {
 };
 
 const getPurposeStyle = ({ purpose }) => {
-  if (purpose === 'cart') {
-    return cartView;
-  }
+  if (purpose === 'cart') return cartView;
+  if (purpose === 'login') return loginView;
 };
 
 const DynamicDiv = styled.div`
