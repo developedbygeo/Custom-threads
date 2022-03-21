@@ -10,7 +10,7 @@ const Checkout = () => {
 
   return (
     <>
-      <StyledCheckout flexSettings={layout}>
+      <StyledCheckout flexSettings={layout} className={currentStepText}>
         <p className="step-indicator">
           <span className="step">{currentStepNum + 1}</span>
           <span className="step-description">{currentStepText}</span>
