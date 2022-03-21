@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { devices } from '../shared/breakpoints';
 import { flexMixin, colorInteract, showActive, underlineEffect } from '../shared/mixins';
 
 const StyledHeader = styled.header`
@@ -73,10 +74,20 @@ const StyledHeader = styled.header`
       gap: 2rem;
       &:not(.desktopNavCtrl) {
         height: 8vh;
-        border: 2px solid ${({ theme }) => theme.colors.heroBg};
+        border: 2px solid ${({ theme }) => theme.colors.mainBg};
         border-inline: none;
       }
     }
+  }
+  @media ${devices.tablet} {
+    .mobileNav {
+      justify-content: space-around;
+    }
+  }
+  @media ${devices.laptop} {
+    width: 95vw;
+    margin: auto;
+    padding: 0;
   }
 `;
 
