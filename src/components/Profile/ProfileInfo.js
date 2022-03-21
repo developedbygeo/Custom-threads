@@ -46,6 +46,7 @@ const ProfileInfo = ({ onDisable }) => {
 
   return (
     <>
+      <div className="login-blob" role="img" alt="login blob" />
       <StyledUtilityBtn onClick={onDisable} className="close-btn" iconMaxWidth="3rem" title="Close Menu">
         <Close />
       </StyledUtilityBtn>
