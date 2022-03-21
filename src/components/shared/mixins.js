@@ -14,6 +14,26 @@ export const flexMixin = (justify, align, direction) => css`
   align-items: ${align};
 `;
 
+export const customScrollbar = css`
+  scrollbar-width: thin;
+  scrollbar-color: rgba(${({ theme }) => theme.colors.ctaSecondaryRGB}, 1) transparent;
+`;
+
+export const buttonClickEffect = css`
+  position: relative;
+  &:active {
+    top: 2px;
+  }
+`;
+
+export const transparentBlur = css`
+  @supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+    background: rgba(${({ theme }) => theme.colors.cardBgRGB}, 0.75);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+`;
+
 export const maxContainer = css`
   height: 100%;
   width: 100%;
