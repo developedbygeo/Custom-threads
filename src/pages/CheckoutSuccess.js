@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { cartActions } from '../features/cartSlice';
 import { authActions } from '../features/authSlice';
 import { CtaButton } from '../components/UI/Button.styled';
-import { ReactComponent as SuccessSVG } from '../assets/success.svg';
+import { ReactComponent as SuccessSVG } from '../assets/svg/success.svg';
 import { Home } from '@styled-icons/boxicons-regular/Home';
 
 const CheckoutSuccess = () => {
@@ -24,23 +24,26 @@ const CheckoutSuccess = () => {
   };
 
   return (
-    <article className="success-header">
-      <div className="success-text">
-        <h2>We have received your order!</h2>
-        <p>and it will be dispatched as soon as possible.</p>
-      </div>
-      <div className="svg-cont">
-        <SuccessSVG />
-      </div>
-      <div className="action-wrapper">
-        <CtaButton onClick={successHandler} ctaAltHover>
-          <span className="svg-wrap">
-            <Home />
-          </span>
-          <span>Return to Home</span>
-        </CtaButton>
-      </div>
-    </article>
+    <>
+      <div className="success-blob" role="img" alt="success blob" />
+      <article className="success-header">
+        <div className="success-text">
+          <h2>We have received your order!</h2>
+          <p>and it will be dispatched as soon as possible.</p>
+        </div>
+        <div className="svg-cont">
+          <SuccessSVG />
+        </div>
+        <div className="action-wrapper">
+          <CtaButton onClick={successHandler} ctaAltHover>
+            <span className="svg-wrap">
+              <Home />
+            </span>
+            <span>Return to Home</span>
+          </CtaButton>
+        </div>
+      </article>
+    </>
   );
 };
 
