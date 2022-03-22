@@ -47,6 +47,7 @@ export const cartView = css`
   }
 
   @media ${devices.tablet} {
+    width: 75vw;
     .cart {
       max-height: 65vh;
     }
@@ -62,9 +63,5 @@ export const cartView = css`
     .not-found {
       line-height: 4rem;
     }
-  }
-
-  @media ${devices.laptop} {
-    width: 60vw;
   }
 `;
