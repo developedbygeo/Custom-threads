@@ -47,7 +47,9 @@ const Product = ({ product, onAddItem, onGoBack, isDetails, asElement }) => {
   const productInfo = isDetails ? (
     <h2 title={product.title}>{product.title}</h2>
   ) : (
-    <h3 title={product.title}>{product.title}</h3>
+    <div className="product-desc">
+      <h3 title={product.title}>{product.title}</h3>
+    </div>
   );
 
   return (
