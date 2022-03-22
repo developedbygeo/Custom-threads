@@ -21,25 +21,25 @@ html{
       font-size: 30%;
     }
     @media ${devices.mobileM}{
-      font-size: 32%;
+      font-size: 35%;
     }
     @media ${devices.mobileL}{
-      font-size: 36%;
+      font-size: 42%;
     }
     @media ${devices.tablet}{
-      font-size: 38%;
+      font-size: 50%;
     }
     @media ${devices.laptop}{
-      font-size: 43.5%;
-    }
-    @media ${devices.laptopM}{
-      font-size: 46.5%;
-    }
-    @media ${devices.laptopL}{
       font-size: 50.5%;
     }
+    @media ${devices.laptopM}{
+      font-size: 56.5%;
+    }
+    @media ${devices.laptopL}{
+      font-size: 60.5%;
+    }
     @media ${devices.desktop}{
-      font-size: 65.5%;
+      font-size: 70.5%;
     }
     @media ${devices.landscapeMobileSS}{
       font-size: 22%;
@@ -67,12 +67,6 @@ body{
     ${maxContainer};
   }
 }
-
-header{
-    height: 10vh;
-    width: 100%;
-}
-
 main{
     position: relative;
     height: 90vh;
@@ -139,7 +133,7 @@ a {
 }
 
 footer{
-  height: 10vh;
+  height: 5vh;
   ${flexMixin('center', 'flex-end', 'row')};
   gap: 2rem;
   padding-block: 1rem;
