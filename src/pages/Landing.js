@@ -9,7 +9,7 @@ import { getColor } from '../components/shared/utils';
 import { FiGithub } from 'react-icons/fi';
 
 const gridSettings = {
-  cols: '0.9fr 1fr',
+  cols: 'repeat(2, auto)',
   rows: '1fr',
 };
 
@@ -23,11 +23,11 @@ const Landing = () => {
   return (
     <>
       <StyledHero bgClr={getColor('heroBg')} gridSettings={gridSettings}>
-        <ImageCard>
-          <img src={modelHero} alt="model posing with clothing" />
+        <ImageCard className="landing-img">
+          <img src={modelHero} alt="model posing with clothing" draggable={false} />
         </ImageCard>
-        <Card flexSettings={flexSettings}>
-          <div>
+        <Card flexSettings={flexSettings} className="cta-wrapper">
+          <div className="cta-text cta-text-top">
             <p>HOT DEALS</p>
             <h2>SALE UP TO 50%</h2>
           </div>
@@ -37,8 +37,8 @@ const Landing = () => {
         </Card>
       </StyledHero>
       <StyledHero gridSettings={gridSettings}>
-        <Card flexSettings={flexSettings} p="4rem">
-          <div>
+        <Card flexSettings={flexSettings} p="4rem" className="cta-wrapper cta-wrapper2">
+          <div className="cta-text cta-text-bottom">
             <h3>Finishing touches? </h3>
             <p>Accessories have landed!</p>
           </div>
@@ -46,8 +46,8 @@ const Landing = () => {
             <CtaButton ctaAltHover>SHOP NOW</CtaButton>
           </Link>
         </Card>
-        <ImageCard justifySelf="flex-end" textAlign="right">
-          <img src={jacketHero} alt="fancy bomber jacket hanging" />
+        <ImageCard className="landing-img" justifySelf="flex-end" textAlign="right">
+          <img src={jacketHero} alt="fancy bomber jacket hanging" draggable={false} />
         </ImageCard>
       </StyledHero>
       <footer>
