@@ -22,7 +22,7 @@ const Nav = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const { pathname } = useLocation();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  const isMobile = windowWidth <= 768;
+  const isMobile = windowWidth <= 1024;
 
   useEffect(() => {
     setShowDropdown(false);
