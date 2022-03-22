@@ -36,7 +36,16 @@ const ProductItem = css`
     }
   }
   .info-wrapper {
+    .product-desc {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 60%;
+    }
     padding-block: 0.75rem;
+
     h3 {
       text-align: center;
     }
@@ -102,6 +111,14 @@ const ProductItemDescription = css`
     @media ${devices.tablet} {
       padding: 0.5rem 1rem;
       gap: 1rem;
+    }
+    @media ${devices.laptopM} {
+      padding: 0;
+      gap: 1rem;
+    }
+    @media ${devices.laptopL} {
+      padding: 2rem;
+      gap: 0;
     }
   }
   @media ${devices.laptopL} {
