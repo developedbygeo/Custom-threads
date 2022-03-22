@@ -15,7 +15,12 @@ export const loginView = css`
     pointer-events: none;
     opacity: 0.35;
   }
+  @media ${devices.tablet} {
+    height: 55vh;
+    width: 60vw;
+  }
   @media ${devices.laptop} {
     width: 45vw;
+    height: 65vh;
   }
 `;
