@@ -63,7 +63,6 @@ export const detailsDescription = css`
   }
 
   h2 {
-    margin-block: 4vh;
     text-align: left;
   }
   .price {
