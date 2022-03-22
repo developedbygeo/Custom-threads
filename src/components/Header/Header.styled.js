@@ -20,10 +20,14 @@ const StyledHeader = styled.header`
     letter-spacing: 0.15rem;
   }
   & > nav {
-    ${flexMixin('space-between', 'flex-end;', 'row')};
+    ${flexMixin('space-between', 'center', 'row')};
     gap: 1rem;
     flex: 1;
     justify-self: flex-end;
+    height: 100%;
+    div {
+      height: auto;
+    }
   }
   button {
     border: none;
@@ -73,7 +77,7 @@ const StyledHeader = styled.header`
       ${flexMixin('space-evenly', 'center', 'row')};
       gap: 2rem;
       &:not(.desktopNavCtrl) {
-        height: 8vh;
+        margin-right: 5vw;
         border: 2px solid ${({ theme }) => theme.colors.mainBg};
         border-inline: none;
       }
@@ -82,9 +86,11 @@ const StyledHeader = styled.header`
   @media ${devices.tablet} {
     .mobileNav {
       justify-content: space-around;
+      flex: 0.75;
     }
   }
   @media ${devices.laptop} {
+    height: 10vh;
     width: 95vw;
     margin: auto;
     padding: 0;
