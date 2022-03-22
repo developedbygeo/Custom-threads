@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { devices } from '../shared/breakpoints';
 import { getLayout } from '../shared/utils';
 import { flexMixin, maxContainer } from '../shared/mixins';
+import { buttonElevationMid } from '../shared/shadows';
 
 const sectionDefaults = css`
   width: 100vw;
@@ -13,15 +14,25 @@ export const StyledHero = styled.section`
   ${sectionDefaults};
   ${getLayout};
   background: ${({ bgClr }) => bgClr || 'inherit'};
-  max-height: ${({ mHeight }) => mHeight || '40vh'};
-  height: ${({ h }) => h || '40vh'};
+  max-height: ${({ mHeight }) => mHeight || '45vh'};
+
+  height: ${({ h }) => h || '45vh'};
 
   & > div {
-    max-height: 40vh;
+    max-height: 45vh;
+  }
+  & > .landing-img {
+    height: 100%;
+    width: 100%;
+    img {
+      max-width: initial;
+      width: 100%;
+    }
   }
 
   button {
     margin-block: 2rem;
+    ${buttonElevationMid};
   }
   p {
     font-weight: 300;
@@ -43,6 +54,22 @@ export const StyledHero = styled.section`
     & > p {
       margin-top: 2vh;
       font-size: 2rem;
+    }
+  }
+  @media ${devices.tablet} {
+    & > .cta-wrapper {
+      width: 85%;
+      button {
+        padding: 3rem 5rem;
+      }
+      h2,
+      h3,
+      p {
+        font-size: 2.8rem;
+      }
+    }
+    & > .cta-wrapper2 {
+      margin-left: 15vw;
     }
   }
 `;
@@ -119,7 +146,7 @@ export const StyledSection = styled.section`
   ${sectionDefaults}
   width: 95%;
   margin: auto;
-  margin-top: 2vh;
+  margin-block: 2vh;
   ${getLayout}
   @media ${devices.tablet} {
     grid-template-columns: repeat(2, 1fr);
