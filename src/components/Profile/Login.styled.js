@@ -6,7 +6,7 @@ import { formBaseStyle, messageStyle } from '../shared/styles/miscStyling';
 import { flexMixin, maxContainer } from '../shared/mixins';
 
 const StyledLogin = styled(StyledSection)`
-  height: 65vh;
+  height: 100%;
   width: 100%;
   margin-top: 4vh;
   ${messageStyle};
@@ -69,6 +69,9 @@ const StyledLogin = styled(StyledSection)`
     ${flexMixin('space-between', 'center', 'row')};
     width: 75%;
     margin: auto;
+  }
+  @media ${devices.tablet} {
+    margin-top: 1vh;
   }
   @media ${devices.laptop} {
     width: 80%;
