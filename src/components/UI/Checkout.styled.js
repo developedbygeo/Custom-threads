@@ -151,9 +151,24 @@ export const StyledCheckout = styled(StyledSection)`
       margin-right: 1rem;
     }
   }
-  @media screen and (max-width: 1300px) {
+  .blob {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(${checkoutBlob}) no-repeat;
+    pointer-events: none;
+  }
+  @media screen and (max-width: 769px) {
     .blob {
       display: none;
+    }
+  }
+  @media ${devices.tablet} {
+    .blob {
+      background-size: cover;
+      width: 100vw;
+      height: 90vh;
+      opacity: 0.35;
     }
   }
 
@@ -222,6 +237,11 @@ export const StyledCheckout = styled(StyledSection)`
       z-index: 1;
     }
     .blob {
+      background-size: contain;
+      width: 65vw;
+      height: 70vh;
+    }
+    /* .blob {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -230,7 +250,7 @@ export const StyledCheckout = styled(StyledSection)`
       width: 65vw;
       height: 70vh;
       pointer-events: none;
-    }
+    } */
     .msg {
       grid-area: 3/3/3/4;
     }
