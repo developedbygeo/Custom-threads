@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { flexMixin } from '../../shared/mixins';
+import { flexMixin, maxContainer } from '../../shared/mixins';
 
 const StyledCheckbox = styled.div`
   padding: ${({ p }) => p || '1.25rem'} ${flexMixin('center', 'flex-start', 'column')};
@@ -24,6 +24,9 @@ const StyledCheckbox = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.davysGrayCta};
     background: ${({ theme }) => theme.colors.mainBg};
     transition: all 50ms linear;
+    svg {
+      ${maxContainer};
+    }
   }
   @media (hover: hover) {
     .checkbox:hover {
