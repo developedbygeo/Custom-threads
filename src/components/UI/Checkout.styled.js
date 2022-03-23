@@ -91,6 +91,13 @@ export const StyledCheckout = styled(StyledSection)`
     }
   }
 
+  &.details {
+    height: 92vh;
+    & > .img-container {
+      max-height: 85vh;
+    }
+  }
+
   form {
     ${formBaseStyle}
   }
@@ -261,7 +268,7 @@ export const StyledCheckout = styled(StyledSection)`
       ${maxContainer};
       background: url(${checkoutBg}) center no-repeat;
       background-size: cover;
-      max-height: 80vh;
+      max-height: 0vh;
       z-index: 1;
     }
     .blob {
