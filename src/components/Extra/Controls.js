@@ -7,9 +7,9 @@ import Drawer from '../UI/Drawer/Drawer';
 import Filters from './Filters';
 import { StyledUtilityBtn } from '../UI/Button.styled';
 import { Card, ActionWrapper } from '../UI/Card.styled';
-import { Filter } from '@styled-icons/fa-solid/Filter';
-import { CaretUpFill } from '@styled-icons/bootstrap/CaretUpFill';
-import { CaretDownFill } from '@styled-icons/bootstrap/CaretDownFill';
+
+import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai';
+import { BsFunnelFill } from 'react-icons/bs';
 
 const wrapperSettings = {
   justify: 'space-between',
@@ -36,7 +36,7 @@ export const Controls = () => {
 
   const filtersActive = filteredItems.length < 19;
 
-  const sortingIcon = sortParams && (isSortingAsc ? <CaretDownFill /> : <CaretUpFill />);
+  const sortingIcon = sortParams && (isSortingAsc ? <AiOutlineCaretDown /> : <AiOutlineCaretUp />);
 
   const sortButtonText = sortParams ? 'Sort' : 'Sort by price';
 
@@ -74,7 +74,7 @@ export const Controls = () => {
             title="Filter by category & price"
           >
             <span className="icon">
-              <Filter />
+              <BsFunnelFill />
             </span>
             <span className="text">{filtersActive ? 'Filters are active' : 'Filters'}</span>
           </StyledUtilityBtn>
