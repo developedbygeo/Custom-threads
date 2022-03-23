@@ -30,7 +30,7 @@ export const detailsStyles = css`
       max-height: 30rem;
     }
   }
-  @media ${devices.laptop} {
+  @media ${devices.laptop}, ${devices.landscapeMobileS} {
     height: 100%;
     border: none;
     width: 95%;
@@ -75,5 +75,8 @@ export const detailsDescription = css`
     margin: auto;
     border-top: none;
     border-left: 1px solid ${({ theme }) => theme.colors.heroBg};
+  }
+  @media ${devices.landscapeMobileSS} {
+    width: 60%;
   }
 `;
