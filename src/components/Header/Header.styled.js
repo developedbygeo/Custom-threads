@@ -16,8 +16,9 @@ const StyledHeader = styled.header`
     position: relative;
   }
 
-  & > h1 {
+  & > a > h1 {
     letter-spacing: 0.15rem;
+    font-weight: 600;
   }
   & > nav {
     ${flexMixin('space-between', 'center', 'row')};
@@ -81,6 +82,11 @@ const StyledHeader = styled.header`
         border: 2px solid ${({ theme }) => theme.colors.mainBg};
         border-inline: none;
       }
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    .mobileNav {
+      flex: 0.7;
     }
   }
   @media ${devices.tablet} {
