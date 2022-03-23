@@ -48,6 +48,7 @@ npm test
 
 - React
 - JavaScript
+- React Router
 - Redux Toolkit
 - Styled Components
 - React Content Loader
