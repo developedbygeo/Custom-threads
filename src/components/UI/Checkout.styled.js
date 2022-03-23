@@ -13,7 +13,6 @@ import checkoutBg from '../../assets/page-content/checkout.webp';
 import checkoutBlob from '../../assets/blobs/checkoutBlob.png';
 import successBlob from '../../assets/blobs/successBlob.png';
 
-// TODO StyledCheckout tablet landscape width 70%;
 export const StyledCheckout = styled(StyledSection)`
   ${svgAdjustments};
   ${cartStyling};
@@ -173,54 +172,6 @@ export const StyledCheckout = styled(StyledSection)`
       transform: scale(0.8);
     }
   }
-
-  @media ${devices.landscapeMobileSS} {
-    form {
-      ${gridMixin('repeat(2, 1fr)', '1fr')};
-      align-items: center;
-      justify-items: center;
-      & > .form-action {
-        grid-area: 3/1/3/3;
-        margin-bottom: 0;
-        margin-block: 1vh;
-      }
-
-      & > .data-field {
-        width: 80%;
-        margin-top: 1.25rem;
-        input:valid ~ label,
-        input:focus ~ label {
-          transform: translateY(-14px);
-        }
-      }
-    }
-    .msg {
-      margin-top: 8vh;
-    }
-    .success-header > .success-text {
-      margin-top: 0;
-    }
-    .action-wrapper {
-      margin-block: 0;
-    }
-    .svg-cont > svg {
-      transform: scale(0.5);
-    }
-    .blob {
-      display: none;
-    }
-  }
-
-  @media ${devices.landscapeMobileS} {
-    form {
-      gap: 6vh;
-    }
-  }
-  @media ${devices.landscapeMobileM} {
-    form {
-      gap: 8vh;
-    }
-  }
   @media ${devices.mobileSS} {
     height: 95.5%;
   }
@@ -244,6 +195,9 @@ export const StyledCheckout = styled(StyledSection)`
         transform: scale(0.8);
       }
     }
+  }
+
+  @media ${devices.landscapeMobileSS} {
   }
 
   @media ${devices.laptop} {
@@ -342,9 +296,79 @@ export const StyledCheckout = styled(StyledSection)`
       }
     }
   }
-  @media screen and (min-width: 1700px) {
+
+  @media ${devices.landscapeMobileSS} {
+    form {
+      ${gridMixin('repeat(2, 1fr)', '1fr')};
+      align-items: center;
+      justify-items: center;
+      & > .form-action {
+        grid-area: 3/1/3/3;
+        margin-bottom: 0;
+        margin-block: 1vh;
+      }
+
+      & > .data-field {
+        width: 80%;
+        margin-top: 1.25rem;
+        input:valid ~ label,
+        input:focus ~ label {
+          transform: translateY(-14px);
+        }
+      }
+    }
+    .cart-actions {
+      width: 30%;
+    }
+    .msg {
+      margin-top: 8vh;
+    }
+
+    &.review,
+    &.details,
+    &.success {
+      width: 70%;
+    }
+    .success-header {
+      ${gridMixin('repeat(2, 1fr)', '1fr 0.3fr')};
+      & > .svg-cont {
+        height: 100%;
+        grid-area: 1/2/3/2;
+      }
+    }
+    .success-header > .success-text {
+      margin-top: 0;
+    }
+    &.success > .action-wrapper {
+      margin-block: 0;
+      justify-content: flex-start;
+    }
+    .svg-cont > svg {
+      transform: scale(1.08);
+    }
     .blob {
-      left: 15%;
+      display: none;
+    }
+  }
+
+  @media ${devices.landscapeMobileS} {
+    form {
+      gap: 6vh;
+    }
+    &.review,
+    &.details,
+    &.success {
+      width: 85%;
+    }
+  }
+  @media ${devices.landscapeMobileM} {
+    form {
+      gap: 8vh;
+    }
+    &.review,
+    &.details,
+    &.success {
+      width: 80%;
     }
   }
 `;
