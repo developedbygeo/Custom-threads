@@ -23,14 +23,14 @@ const Landing = () => {
   return (
     <>
       <StyledHero bgClr={getColor('heroBg')} gridSettings={gridSettings}>
-        <ImageCard className="landing-img">
+        <ImageCard className="landing-img img1-cont">
           <img src={modelHero} alt="model posing with clothing" draggable={false} />
         </ImageCard>
-        <Card flexSettings={flexSettings} className="cta-wrapper">
-          <div className="cta-text cta-text-top">
+        <Card flexSettings={flexSettings} className="cta-wrapper cta-wrapper1">
+          <article className="cta-text cta-text-top">
             <p>HOT DEALS</p>
-            <h2>SALE UP TO 50%</h2>
-          </div>
+            <h2>SALES UP TO 50%</h2>
+          </article>
           <Link to="/home">
             <CtaButton>VIEW NOW</CtaButton>
           </Link>
@@ -38,15 +38,15 @@ const Landing = () => {
       </StyledHero>
       <StyledHero gridSettings={gridSettings}>
         <Card flexSettings={flexSettings} p="4rem" className="cta-wrapper cta-wrapper2">
-          <div className="cta-text cta-text-bottom">
+          <article className="cta-text cta-text-bottom">
             <h3>Finishing touches? </h3>
             <p>Accessories have landed!</p>
-          </div>
+          </article>
           <Link to="/home">
             <CtaButton ctaAltHover>SHOP NOW</CtaButton>
           </Link>
         </Card>
-        <ImageCard className="landing-img" justifySelf="flex-end" textAlign="right">
+        <ImageCard className="landing-img img2-cont" justifySelf="flex-end" textAlign="right">
           <img src={jacketHero} alt="fancy bomber jacket hanging" draggable={false} />
         </ImageCard>
       </StyledHero>
