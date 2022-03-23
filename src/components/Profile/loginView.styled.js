@@ -23,4 +23,8 @@ export const loginView = css`
     width: 45vw;
     height: 65vh;
   }
+  @media ${devices.landscapeMobileSS} {
+    height: 90vh;
+    width: 60vw;
+  }
 `;
