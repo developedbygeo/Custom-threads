@@ -79,6 +79,10 @@ main{
     overflow-y: auto;
     ${customScrollbar};
 
+    &>svg{
+      ${maxContainer};
+    }
+
     &>.loading{
       position: absolute;
       top: 50%;
