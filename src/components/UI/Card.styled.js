@@ -57,8 +57,12 @@ export const ActionWrapper = styled.div`
   padding-inline: 2%;
 
   .filters {
+    border-radius: 1.25rem;
     display: flex;
     gap: 1rem;
+    button > .text {
+      white-space: nowrap;
+    }
   }
 
   .active {
