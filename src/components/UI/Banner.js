@@ -8,7 +8,7 @@ const Banner = ({ customClass, parentClass, content, alt, customBg, customClr, r
     <StyledPromo className={parentClass} customBg={customBg} customClr={customClr} rowReverse={rowReverse}>
       <article className={customClass}>
         {additionalImageExists && (
-          <ImageCard className="image-cont2">
+          <ImageCard className="img-cont2">
             <img className="extra-image" src={content.imgURL2} alt={alt} />
           </ImageCard>
         )}
