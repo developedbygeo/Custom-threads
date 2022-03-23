@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
 html{
     font-size: 62.5%;
     @media ${devices.mobileSS}{
-      font-size: 27%;
+      font-size: 19%;
     }
     @media ${devices.mobileS}{
       font-size: 30%;
@@ -27,13 +27,13 @@ html{
       font-size: 42%;
     }
     @media ${devices.tablet}{
-      font-size: 50%;
+      font-size: 51%;
     }
     @media ${devices.laptop}{
-      font-size: 50.5%;
+      font-size: 53.5%;
     }
     @media ${devices.laptopM}{
-      font-size: 56.5%;
+      font-size: 55.5%;
     }
     @media ${devices.laptopL}{
       font-size: 60.5%;
@@ -47,8 +47,11 @@ html{
     @media ${devices.landscapeMobileS}{
       font-size: 30%;
     }
+    @media ${devices.landscapeMobileM}{
+      font-size: 32.5%;
+    }
     @media ${devices.landscapeMobileL}{
-      font-size: 45%;
+      font-size: 35%;
     }
     @media ${devices.desktop4K}{
       font-size: 90%;
