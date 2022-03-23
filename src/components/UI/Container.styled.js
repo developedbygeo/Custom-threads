@@ -134,6 +134,25 @@ export const StyledPromo = styled.section`
       }
     }
   }
+  @media ${devices.landscapeMobileSS} {
+    height: 25%;
+    & > article {
+      height: 100%;
+      max-height: 25vh;
+    }
+    .text-wrapper {
+      gap: 1.5rem;
+    }
+    .img-cont,
+    .img-cont2 {
+      height: 100%;
+      max-height: 25vh !important;
+      overflow: hidden;
+      img {
+        max-height: 25vh;
+      }
+    }
+  }
   @media ${devices.laptop} {
     & > article {
       width: 95%;
