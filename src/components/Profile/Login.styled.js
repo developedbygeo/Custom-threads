@@ -8,7 +8,7 @@ import { flexMixin, maxContainer } from '../shared/mixins';
 const StyledLogin = styled(StyledSection)`
   height: 100%;
   width: 100%;
-  margin-top: 4vh;
+  margin-block: 4vh;
   ${messageStyle};
   & > .close-btn {
     position: absolute;
@@ -69,6 +69,23 @@ const StyledLogin = styled(StyledSection)`
     ${flexMixin('space-between', 'center', 'row')};
     width: 75%;
     margin: auto;
+  }
+  @media ${devices.mobileSS} {
+    gap: 2rem;
+    & > .svg-success {
+      gap: 2rem;
+      svg {
+        width: 75%;
+      }
+    }
+    & > .success-actions {
+      margin-top: 2vh;
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    & > .svg-success > svg {
+      width: 35%;
+    }
   }
   @media ${devices.tablet} {
     margin-top: 1vh;
