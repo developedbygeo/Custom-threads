@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { flexMixin, colorInteract, buttonClickEffect } from '../shared/mixins';
 import { smallIconStyle } from '../shared/styles/miscStyling';
 import { bumpText } from '../shared/animations';
+import { buttonElevationLow } from '../shared/shadows';
 
 const standardHover = css`
   @media (hover: hover) {
@@ -101,6 +102,7 @@ export const CtaButton = styled.button`
   transition: all 200ms ease-in-out;
   ${getCtaHoverClr};
   ${buttonClickEffect}
+  ${buttonElevationLow}
   @media (hover: hover) {
     &:hover:enabled {
       color: ${({ theme }) => theme.colors.mainBg};
