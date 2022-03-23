@@ -59,6 +59,7 @@ export const cartActions = css`
     height: 100%;
     border-left: 1px solid ${({ theme }) => theme.colors.cardBg};
     ${flexMixin('center', 'center', 'column')};
+    gap: 2rem;
     & > button {
       ${maxContainer}
       transition: all 50ms ease;
