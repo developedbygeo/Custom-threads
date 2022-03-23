@@ -8,7 +8,6 @@ import { flexMixin, maxContainer } from '../shared/mixins';
 const StyledLogin = styled(StyledSection)`
   height: 100%;
   width: 100%;
-  margin-block: 4vh;
   ${messageStyle};
   & > .close-btn {
     position: absolute;
@@ -61,13 +60,21 @@ const StyledLogin = styled(StyledSection)`
   & > .svg-success {
     ${flexMixin('center', 'center', ' column')};
     ${maxContainer};
-    & > svg {
-      ${maxContainer}
+    max-height: 75vh;
+    & > .success-svg-wrapper {
+      height: 80%;
+      width: 100%;
+      & > svg {
+        height: 100%;
+        width: 100%;
+        margin: auto;
+      }
     }
   }
   .success-actions {
     ${flexMixin('space-between', 'center', 'row')};
     width: 75%;
+    height: 100%;
     margin: auto;
   }
   @media ${devices.mobileSS} {
@@ -77,14 +84,6 @@ const StyledLogin = styled(StyledSection)`
       svg {
         width: 75%;
       }
-    }
-    & > .success-actions {
-      margin-top: 2vh;
-    }
-  }
-  @media ${devices.landscapeMobileSS} {
-    & > .svg-success > svg {
-      width: 35%;
     }
   }
   @media ${devices.tablet} {
@@ -112,6 +111,13 @@ const StyledLogin = styled(StyledSection)`
         width: 85%;
         margin: auto;
       }
+    }
+  }
+  @media ${devices.landscapeMobileSS} {
+    gap: 0;
+    margin: 0;
+    & > .svg-success > svg {
+      transform: scale(1);
     }
   }
 `;
