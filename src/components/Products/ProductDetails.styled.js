@@ -69,6 +69,7 @@ export const detailsDescription = css`
     text-align: right;
     font-size: 2.1rem;
   }
+
   @media ${devices.laptop} {
     width: 100%;
     margin: auto;
