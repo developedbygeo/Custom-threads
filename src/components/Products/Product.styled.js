@@ -67,7 +67,20 @@ const ProductItem = css`
       margin-top: 0.4rem;
     }
   }
+  @media ${devices.landscapeMobileSS} {
+    width: 70%;
+  }
+  @media ${devices.mobileSS} {
+    width: 85%;
+  }
+  @media ${devices.mobileM} {
+    width: 80%;
+  }
+  @media ${devices.mobileL} {
+    width: 90%;
+  }
   @media ${devices.tablet} {
+    width: 95%;
     ${gridMixin('1fr', 'repeat(2, 1fr)')};
     place-items: center;
     & > .img-wrapper {
