@@ -34,6 +34,7 @@ export const formBaseStyle = css`
 
 export const messageStyle = css`
   .msg {
+    ${flexMixin('center', 'center', 'row')};
     text-align: center;
     font-weight: 300;
     svg {
