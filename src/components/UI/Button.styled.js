@@ -153,7 +153,7 @@ export const StyledLink = styled(Link)`
     position: absolute;
     bottom: 10%;
     background: ${({ theme }) => theme.colors.lightText};
-    height: 0.5px;
+    height: 1px;
     width: 100%;
     margin: auto;
     transition: all 50ms ease-in-out;
