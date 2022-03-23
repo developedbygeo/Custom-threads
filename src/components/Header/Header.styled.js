@@ -73,7 +73,7 @@ const StyledHeader = styled.header`
   }
   .desktopNav {
     ${flexMixin('space-between', 'center', 'row')};
-    flex: 3.5;
+    flex: 4;
     & > div {
       ${flexMixin('space-evenly', 'center', 'row')};
       gap: 2rem;
@@ -100,6 +100,11 @@ const StyledHeader = styled.header`
     width: 95vw;
     margin: auto;
     padding: 0;
+  }
+  @media ${devices.landscapeMobileSS} {
+    .mobileNav {
+      flex: 0.5;
+    }
   }
 `;
 
