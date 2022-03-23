@@ -140,6 +140,7 @@ footer{
   ${flexMixin('center', 'flex-end', 'row')};
   gap: 2rem;
   padding-block: 1rem;
+  background: ${({ theme }) => theme.colors.heroBg};
   a{
     font-size: 2rem;
     font-weight: 300;
