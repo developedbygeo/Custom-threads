@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Check } from '@styled-icons/bootstrap/Check';
+import { BsCheck } from 'react-icons/bs';
 import StyledCheckbox from './Checkbox.styled.js';
 
 const Checkbox = ({ children, value, onValueChange }) => {
@@ -9,7 +9,7 @@ const Checkbox = ({ children, value, onValueChange }) => {
       <label>{children}</label>
       <input type="checkbox" />
       <span className={`checkbox ${value ? 'checkbox--active' : ''}`} aria-hidden="true">
-        {value && <Check />}
+        {value && <BsCheck />}
       </span>
     </StyledCheckbox>
   );

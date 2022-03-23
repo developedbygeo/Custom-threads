@@ -6,7 +6,7 @@ import { cartActions } from '../features/cartSlice';
 import { authActions } from '../features/authSlice';
 import { CtaButton } from '../components/UI/Button.styled';
 import { ReactComponent as SuccessSVG } from '../assets/svg/success.svg';
-import { Home } from '@styled-icons/boxicons-regular/Home';
+import { BiHome } from 'react-icons/bi';
 
 const CheckoutSuccess = () => {
   const dispatch = useDispatch();
@@ -35,11 +35,11 @@ const CheckoutSuccess = () => {
           <SuccessSVG />
         </div>
         <div className="action-wrapper">
-          <CtaButton onClick={successHandler} ctaAltHover>
-            <span className="svg-wrap">
-              <Home />
-            </span>
+          <CtaButton className="return-success-btn" onClick={successHandler} ctaAltHover>
             <span>Return to Home</span>
+            <span className="svg-wrap">
+              <BiHome />
+            </span>
           </CtaButton>
         </div>
       </article>

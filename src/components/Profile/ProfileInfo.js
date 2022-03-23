@@ -4,9 +4,9 @@ import { authActions } from '../../features/authSlice';
 
 import StyledInput from '../UI/Input.styled';
 import { CtaButton, StyledUtilityBtn } from '../UI/Button.styled';
-import { LogIn } from '@styled-icons/boxicons-regular/LogIn';
 import { messages } from '../shared/messages';
-import { Close } from '@styled-icons/evil/Close';
+import { AiOutlineClose } from 'react-icons/ai';
+import { RiLoginBoxLine } from 'react-icons/ri';
 
 const { errorMessage } = messages;
 
@@ -48,7 +48,7 @@ const ProfileInfo = ({ onDisable }) => {
     <>
       <div className="login-blob" role="img" alt="login blob" />
       <StyledUtilityBtn onClick={onDisable} className="close-btn" iconMaxWidth="3rem" title="Close Menu">
-        <Close />
+        <AiOutlineClose />
       </StyledUtilityBtn>
       <div className="login-header">{isRegister ? registerPrompt : loginPrompt}</div>
       <form
@@ -71,7 +71,7 @@ const ProfileInfo = ({ onDisable }) => {
         <StyledUtilityBtn onClick={toggleRegister}>
           <span className="text">{isRegister ? 'Login' : 'Register'} now</span>
           <span className="icon smallIcon">
-            <LogIn />
+            <RiLoginBoxLine />
           </span>
         </StyledUtilityBtn>
       </div>

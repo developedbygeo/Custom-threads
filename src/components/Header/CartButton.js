@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { StyledCartButton } from '../UI/Button.styled';
-import { Bag } from '@styled-icons/ionicons-outline/Bag';
+
+import { IoBagOutline } from 'react-icons/io5';
 
 const CartButton = ({ onClick }) => {
   const [isCartAnimated, setIsCartAnimated] = useState(false);
@@ -23,7 +24,7 @@ const CartButton = ({ onClick }) => {
   return (
     <StyledCartButton title="Toggle cart" onClick={onClick}>
       <span>
-        <Bag className="bag" />
+        <IoBagOutline className="bag" />
       </span>
       <span className={spanStyles}>{itemsInCart}</span>
     </StyledCartButton>

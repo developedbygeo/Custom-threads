@@ -1,7 +1,7 @@
 import { ItemCard, DescriptionCard } from '../Products/Product.styled';
 import { Card } from '../UI/Card.styled';
 import { StyledUtilityBtn } from '../UI/Button.styled';
-import { BiPlus, BiMinus } from 'react-icons/bi';
+import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
 const CartItem = ({ product, onAddItem, onRemoveItem }) => {
   const { totalPrice } = product;
@@ -10,10 +10,10 @@ const CartItem = ({ product, onAddItem, onRemoveItem }) => {
     <>
       <Card className="cart-actions">
         <StyledUtilityBtn onClick={onAddItem} isCartAction customClr="white">
-          <BiPlus />
+          <AiOutlinePlus />
         </StyledUtilityBtn>
         <StyledUtilityBtn onClick={onRemoveItem} isCartAction customClr="white">
-          <BiMinus />
+          <AiOutlineMinus />
         </StyledUtilityBtn>
       </Card>
     </>

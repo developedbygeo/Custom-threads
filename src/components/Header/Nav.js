@@ -10,10 +10,9 @@ import ProfileView from '../Profile/ProfileView';
 import ActionButtons from '../Extra/ActionButtons';
 
 import CartButton from './CartButton';
-import { Person } from '@styled-icons/bootstrap/Person';
-import { PersonCheck } from '@styled-icons/bootstrap/PersonCheck';
-import { MenuAltRight } from '@styled-icons/boxicons-regular/MenuAltRight';
-import { Menu } from '@styled-icons/boxicons-regular/Menu';
+
+import { BsPerson, BsPersonCheck } from 'react-icons/bs';
+import { BiMenu, BiMenuAltRight } from 'react-icons/bi';
 
 const Nav = () => {
   const windowWidth = useViewport();
@@ -38,7 +37,7 @@ const Nav = () => {
 
   const profile = (
     <button onClick={showProfileHandler} className={`${isLoggedIn ? 'logged-in' : ''}`} title="My Profile">
-      {isLoggedIn ? <PersonCheck /> : <Person />}
+      {isLoggedIn ? <BsPersonCheck /> : <BsPerson />}
     </button>
   );
 
@@ -61,7 +60,7 @@ const Nav = () => {
       {cart}
       <div>
         <button onClick={showDropdownHandler} className="burger" title="Toggle Menu">
-          {showDropdown ? <MenuAltRight /> : <Menu />}
+          {showDropdown ? <BiMenuAltRight /> : <BiMenu />}
         </button>
         {showDropdown && <Dropdown onActivate={showDropdownHandler} />}
       </div>

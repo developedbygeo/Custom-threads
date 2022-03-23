@@ -4,7 +4,7 @@ import useForm from '../hooks/useForm';
 
 import StyledInput from '../components/UI/Input.styled';
 import { StyledUtilityBtn } from '../components/UI/Button.styled';
-import { Send } from 'styled-icons/boxicons-regular';
+import { BiSend } from 'react-icons/bi';
 import { messages } from '../components/shared/messages';
 
 const { successMessage, errorMessage, initialMessage } = messages;
@@ -56,7 +56,7 @@ const CheckoutInfo = () => {
             <StyledUtilityBtn>
               <span className="text">Submit details</span>
               <span className="icon smallIcon">
-                <Send />
+                <BiSend />
               </span>
             </StyledUtilityBtn>
           )}
