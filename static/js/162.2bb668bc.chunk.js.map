@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/162.2bb668bc.chunk.js","mappings":"mJAUA,UARuB,WACrB,OACE,+BACE,SAAC,IAAD","sources":["pages/CheckoutReview.js"],"sourcesContent":["import CartView from '../components/Cart/CartView';\n\nconst CheckoutReview = () => {\n  return (\n    <>\n      <CartView />\n    </>\n  );\n};\n\nexport default CheckoutReview;\n"],"names":[],"sourceRoot":""}
