@@ -46,6 +46,11 @@ export const cartView = css`
     justify-content: center;
   }
 
+  @media ${devices.landscapeMobileSS} {
+    .cart {
+      width: 100%;
+    }
+  }
   @media ${devices.tablet} {
     width: 75vw;
     .cart {
