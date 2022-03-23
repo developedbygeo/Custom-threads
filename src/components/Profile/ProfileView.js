@@ -24,10 +24,14 @@ const ProfileView = ({ onDisable }) => {
 
   const loginSuccess = (
     <>
-      <div className="svg-success">
-        <h2>Glad to have you back!</h2>
-        <LoginSVG />
-      </div>
+      <article className="svg-success">
+        <div>
+          <h2>Glad to have you back!</h2>
+        </div>
+        <div className="success-svg-wrapper">
+          <LoginSVG />
+        </div>
+      </article>
       <div className="success-actions">
         <StyledUtilityBtn onClick={onDisable}>
           <span className="icon smallIcon">
