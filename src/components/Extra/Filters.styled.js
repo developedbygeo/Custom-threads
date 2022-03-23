@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { flexMixin, transparentBlur } from '../shared/mixins';
+import { flexMixin } from '../shared/mixins';
 import { labelStyle } from '../shared/styles/miscStyling';
 
 const StyledFilters = styled.form`
@@ -10,9 +10,10 @@ const StyledFilters = styled.form`
   left: -2vw;
   gap: 3rem;
   padding: 3rem;
-  background: rgba(${({ theme }) => theme.colors.filtersRGB}, 1);
+  border-radius: 1.25rem;
   ${flexMixin('center', 'flex-start', 'column')};
-  ${transparentBlur};
+  background: rgba(${({ theme }) => theme.colors.cardBgRGB}, 0.95);
+
   & > h3 {
     font-weight: 500;
   }
