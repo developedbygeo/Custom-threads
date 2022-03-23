@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import { devices } from '../shared/breakpoints';
 import { transparentBlur } from '../shared/mixins';
 import { getLayout } from '../shared/utils';
 
@@ -62,6 +63,9 @@ export const ActionWrapper = styled.div`
 
   .active {
     color: ${({ theme }) => theme.colors.activeNav};
+  }
+  @media ${devices.landscapeMobileSS} {
+    height: 8vh;
   }
 `;
 
