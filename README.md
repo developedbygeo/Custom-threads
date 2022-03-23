@@ -1,5 +1,13 @@
 # Custom Threads
 
+<div style="display: flex">
+<img src='./public/sample-v.png' height='550px' width='300px' alt='mobile viewport - portrait mode'/>
+<img style="align-self: center" src='./public/sample-h.png' height='250px' width='500px'alt='mobile viewport - landscape mode'/>
+</div>
+
+<br>
+<br>
+
 A React-based, fully responsive, cart SPA that fetches API data and presents them to the user, allowing them to preview & 'order' items.
 
 This project was a lovely opporunity to experiment with a medium-sized SPA that fetches the data it operates on. Additionally, it implements a loading fallback, thanks to React Content Loader and Suspense, and is based on JavaScript, Redux Toolkit and Styled Components. For a detailed overview, please have a look at the [**Features**](#features) & [**Tech**](#tech) section.
