@@ -21,12 +21,22 @@ export const StyledHero = styled.section`
   & > div {
     max-height: 45vh;
   }
+  & > .cta-wrapper {
+    padding: 3rem;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    p {
+      font-size: 2rem;
+    }
+  }
   & > .landing-img {
-    height: 100%;
+    height: 45vh;
     width: 100%;
+    max-width: 55vw;
     img {
-      max-width: initial;
-      width: 100%;
+      max-width: 100%;
+      width: auto;
     }
   }
 
@@ -56,20 +66,67 @@ export const StyledHero = styled.section`
       font-size: 2rem;
     }
   }
-  @media ${devices.tablet} {
+
+  @media ${devices.laptop}, ${devices.landscapeMobileSS} {
+    grid-template-columns: 1fr;
+
+    & > .landing-img {
+      width: fit-content;
+      position: absolute;
+      bottom: 0;
+      height: 90vh;
+      max-height: 90vh;
+      max-width: 45vw;
+    }
+    & > .img1-cont {
+      display: none;
+    }
     & > .cta-wrapper {
-      width: 85%;
-      button {
-        padding: 3rem 5rem;
+      width: auto;
+      z-index: 10;
+      border-radius: 1rem;
+      justify-self: center;
+    }
+    & > .cta-wrapper1 {
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      gap: 5vh;
+      & > article {
+        width: 30vw;
+        text-align: center;
       }
-      h2,
-      h3,
-      p {
-        font-size: 2.8rem;
+      & > a {
+        width: 100%;
+        text-align: center;
+        & > button {
+          width: 100%;
+          margin-block: 0;
+          font-size: 2.25rem;
+        }
       }
     }
     & > .cta-wrapper2 {
-      margin-left: 15vw;
+      display: none;
+    }
+  }
+  @media ${devices.landscapeMobileS}, ${devices.laptop} {
+    article {
+      width: 30vw;
+      text-align: center;
+      p {
+        font-size: 2.8rem;
+      }
+      h2 {
+        font-size: 4rem;
+      }
+    }
+    button {
+      padding: 3rem 4rem;
     }
   }
 `;
@@ -176,5 +233,8 @@ export const StyledSection = styled.section`
   }
   @media ${devices.laptopL} {
     gap: 1rem;
+  }
+  @media ${devices.landscapeMobileSS} {
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
