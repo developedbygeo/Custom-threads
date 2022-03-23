@@ -20,7 +20,9 @@ export const svgAdjustments = css`
 export const cartStyling = css`
   & > .cart {
     ${gridMixin('1fr', 'repeat(auto-fill, minmax(min-content, 40px))', '2vh')};
+    width: 95%;
     max-height: 80vh;
+    margin-inline: auto;
     overflow-y: auto;
     & > li {
       max-height: 15rem;
