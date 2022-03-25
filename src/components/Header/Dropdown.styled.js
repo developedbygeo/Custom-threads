@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { devices } from '../shared/breakpoints';
 import { flexMixin, transparentBlur } from '../shared/mixins';
 
 const StyledDropdown = styled.div`
@@ -19,6 +20,10 @@ const StyledDropdown = styled.div`
   & > a {
     letter-spacing: 0.1rem;
     font-weight: 500;
+  }
+
+  @media ${devices.tablet} {
+    gap: 6rem;
   }
 `;
 
