@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Custom-threads/static/js/main.8c8aaf7a.js",
+    "main.js": "/Custom-threads/static/js/main.7d6240b4.js",
     "static/js/433.23570c1e.chunk.js": "/Custom-threads/static/js/433.23570c1e.chunk.js",
     "static/js/266.b5eae73c.chunk.js": "/Custom-threads/static/js/266.b5eae73c.chunk.js",
     "static/js/797.d408b0ab.chunk.js": "/Custom-threads/static/js/797.d408b0ab.chunk.js",
@@ -30,7 +30,7 @@
     "static/media/404.svg": "/Custom-threads/static/media/404.04950076f62d53cb52f9b0afc608c13d.svg",
     "static/media/login.svg": "/Custom-threads/static/media/login.fc6309131b005bb9525f579186f959a7.svg",
     "index.html": "/Custom-threads/index.html",
-    "main.8c8aaf7a.js.map": "/Custom-threads/static/js/main.8c8aaf7a.js.map",
+    "main.7d6240b4.js.map": "/Custom-threads/static/js/main.7d6240b4.js.map",
     "433.23570c1e.chunk.js.map": "/Custom-threads/static/js/433.23570c1e.chunk.js.map",
     "266.b5eae73c.chunk.js.map": "/Custom-threads/static/js/266.b5eae73c.chunk.js.map",
     "797.d408b0ab.chunk.js.map": "/Custom-threads/static/js/797.d408b0ab.chunk.js.map",
@@ -47,6 +47,6 @@
     "788.88f55587.chunk.js.map": "/Custom-threads/static/js/788.88f55587.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.8c8aaf7a.js"
+    "static/js/main.7d6240b4.js"
   ]
 }
