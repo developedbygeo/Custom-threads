@@ -94,12 +94,22 @@ const StyledHeader = styled.header`
       justify-content: space-around;
       flex: 0.75;
     }
+    button {
+      transform: scale(1.2);
+      max-width: 6.5rem;
+      & > .total {
+        right: -35%;
+      }
+    }
   }
   @media ${devices.laptop} {
     height: 10vh;
     width: 95vw;
     margin: auto;
     padding: 0;
+    button {
+      transform: scale(1.1);
+    }
   }
   @media ${devices.landscapeMobileSS} {
     .mobileNav {
