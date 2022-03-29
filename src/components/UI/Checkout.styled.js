@@ -93,6 +93,7 @@ export const StyledCheckout = styled(StyledSection)`
 
   &.details {
     height: 92vh;
+    overflow-y: scroll;
     & > .img-container {
       max-height: 85vh;
     }
