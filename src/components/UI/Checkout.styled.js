@@ -50,7 +50,9 @@ export const StyledCheckout = styled(StyledSection)`
   }
   .action-wrapper {
     ${flexMixin('space-between', 'center', 'row')};
+    margin-bottom: 5vh;
     width: 100%;
+
     .return-btn {
       border: 1px solid ${({ theme }) => theme.colors.heroBg};
       transition: all 50ms ease-in-out;
@@ -149,7 +151,6 @@ export const StyledCheckout = styled(StyledSection)`
   }
   .action-wrapper {
     display: flex;
-    margin-block: 1vh;
     svg {
       width: 2.5rem;
       margin-bottom: 0.5rem;
