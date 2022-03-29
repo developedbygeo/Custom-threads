@@ -50,7 +50,6 @@ export const StyledCheckout = styled(StyledSection)`
   }
   .action-wrapper {
     ${flexMixin('space-between', 'center', 'row')};
-    margin-bottom: 5vh;
     width: 100%;
 
     .return-btn {
